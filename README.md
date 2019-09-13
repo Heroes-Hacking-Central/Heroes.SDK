@@ -10,7 +10,7 @@ This is a single unified library providing both, an easy way to manipulate the g
 
 It primarily is intended for easier creation of mods with Reloaded II, though it does contain many structures invaluable to creating standalone tools/parsers. There are also some inclu ded parsers of its own, allowing for creation/extraction of various game formats.
 
-This SDK is originally pieced together from mods made by [Sewer](https://github.com/Sewer56) and further driven by ~~Donut's disassembly he will release once Half Life 3 releases~~ the [community disassembly](https://github.com/Heroes-Hacking-Central/Heroes-Disassembly).
+This SDK is originally pieced together from mods made by [Sewer](https://github.com/Sewer56) and further driven by ~~Donut's disassembly he will release once Half Life 3 releases~~ the [community disassembly](https://github.com/Heroes-Hacking-Central/Heroes-Disassembly). At the moment it is not yet tested/used, expect hidden typos, errors and bugs.
 
 ## Using the API
 An easy to use API for manipulating the game at runtime is available in the `Heroes.SDK.API` namespace.
@@ -25,10 +25,10 @@ Event.AfterSleep += AfterSleep;
 // Method to execute at the start of a frame.
 private void AfterSleep()
 {
-	if (State.IsInLevel()) 
-	{
-		/* Do Stuff when in Level */
-	}
+    if (State.IsInLevel()) 
+    {
+        /* Do Stuff when in Level */
+    }
 }
 ```
 
@@ -37,8 +37,8 @@ private void AfterSleep()
 Camera.IsCameraEnabled = false; // Takes away camera control from the game.
 if (State.IsInLevel()) 
 {
-	/* Do Stuff with Camera */
-	ref var camera = ref Camera.Cameras[0];
+    /* Do Stuff with Camera */
+    ref var camera = ref Camera.Cameras[0];
     camera.MoveBy(new Vector3(1, 0, 0));
 }
 ```
@@ -48,7 +48,7 @@ if (State.IsInLevel())
 ref var PlayerOneInputs = ref State.FinalInputs[0];
 if (PlayerOneInputs.ButtonFlags.HasFlag(ButtonFlags.Jump)) 
 {
-	/* Execute Code when Jump Button Pressed */
+    /* Execute Code when Jump Button Pressed */
 }
 ```
 
@@ -56,8 +56,8 @@ if (PlayerOneInputs.ButtonFlags.HasFlag(ButtonFlags.Jump))
 ```csharp
 if (State.IsInLevel() && Player.GetCharacterCount() > 0) 
 {
-	ref var speedCharacter = ref Player.PlayerTop[0];
-	speedCharacter.Physics.GravitationalPull = 9.81F;
+    ref var speedCharacter = ref Player.PlayerTop[0];
+    speedCharacter.Physics.GravitationalPull = 9.81F;
 }
 ```
 
@@ -108,7 +108,7 @@ _convertPadData = GamePeri.Fun_ConvertPadData.Hook(ConvertPadData).Activate();
 // Function to replace original with.
 private unsafe SkyPad* ConvertPadData(HeroesController* heroesController, SkyPad* skyPad)
 {
-	/* Insert code to hijack controller inputs here. */
+    /* Insert code to hijack controller inputs here. */
 }
 ```
 
