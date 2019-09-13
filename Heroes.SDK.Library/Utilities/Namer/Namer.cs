@@ -1,23 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Heroes.SDK.Game.Enums;
+using Heroes.SDK.Definitions.Enums;
 
 namespace Heroes.SDK.Utilities.Namer
 {
     /// <summary>
     /// Utility class that can obtain string representations for various items.
     /// </summary>
-    public class Namer
+    public static class Namer
     {
         /// <summary>
         /// Retrieves the string name of a given stage.
         /// </summary>
-        public string GetStageName(Game.Enums.Stage stage) => StageNameDictionary.Dictionary[stage];
+        public static string GetStageName(Stage stage)
+        {
+            if (StageNameDictionary.Dictionary.TryGetValue(stage, out string stageName))
+                return stageName;
+
+            return "Unknown Stage";
+        }
 
         /// <summary>
         /// Retrieves the string name of a given team.
         /// </summary>
-        public string GetTeamName(Team team) => TeamNameDictionary.Dictionary[team];
+        public static string GetTeamName(Team team)
+        {
+            if (TeamNameDictionary.Dictionary.TryGetValue(team, out string teamName))
+                return teamName;
+
+            return "Unknown Team";
+        }
     }
 }

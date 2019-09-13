@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Heroes.SDK.Game.Enums;
+using Heroes.SDK.Definitions.Enums;
 
 namespace Heroes.SDK.Utilities.Namer
 {

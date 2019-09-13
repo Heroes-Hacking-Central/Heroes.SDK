@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK", "Heroes.SDK.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK.Tests", "Heroes.SDK.Tests\Heroes.SDK.Tests.csproj", "{5CDE7381-48EE-4F81-82D5-A273B12073FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK.Archive", "Heroes.SDK.Library.Archive\Heroes.SDK.Archive.csproj", "{19479284-C664-48C4-9CB1-DB04AF32B4D9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK.RenderWare", "Heroes.SDK.Library.RenderWare\Heroes.SDK.RenderWare.csproj", "{63B86226-57EB-4D63-9D87-9FEDFA2CDFB2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK.Utility", "Heroes.SDK.Library.Utility\Heroes.SDK.Utility.csproj", "{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}"
 EndProject
 Global
@@ -27,14 +23,6 @@ Global
 		{5CDE7381-48EE-4F81-82D5-A273B12073FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CDE7381-48EE-4F81-82D5-A273B12073FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CDE7381-48EE-4F81-82D5-A273B12073FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19479284-C664-48C4-9CB1-DB04AF32B4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19479284-C664-48C4-9CB1-DB04AF32B4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19479284-C664-48C4-9CB1-DB04AF32B4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19479284-C664-48C4-9CB1-DB04AF32B4D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63B86226-57EB-4D63-9D87-9FEDFA2CDFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63B86226-57EB-4D63-9D87-9FEDFA2CDFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63B86226-57EB-4D63-9D87-9FEDFA2CDFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63B86226-57EB-4D63-9D87-9FEDFA2CDFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
