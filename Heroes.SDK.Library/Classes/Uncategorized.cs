@@ -112,6 +112,7 @@ namespace Heroes.SDK.Classes
 
         /// <summary>
         /// Draws the special stage emerald indicator and the emerald gauge on results screen.
+        /// Note: Does not hook well. Expects data up the stack.
         /// </summary>
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.eax, Register.esi }, Register.eax, StackCleanup.Callee)]
