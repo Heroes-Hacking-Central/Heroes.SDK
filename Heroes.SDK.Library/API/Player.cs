@@ -4,6 +4,7 @@ using Heroes.SDK.Definitions.Structures.Collision.Object;
 using Heroes.SDK.Definitions.Structures.Player;
 using Heroes.SDK.Definitions.Structures.State;
 using Heroes.SDK.Utilities.Namer;
+using Heroes.SDK.Utility;
 using Reloaded.Memory.Pointers;
 
 namespace Heroes.SDK.API
@@ -23,18 +24,18 @@ namespace Heroes.SDK.API
         /// <summary>
         /// Contains properties for P1, P2, P3 and P4 respectively.
         /// </summary>
-        public static RefFixedArrayPtr<TeamTop> TeamTop { get; } = new RefFixedArrayPtr<TeamTop>(0x00A4C268, MaxNumberOfPlayers);
+        public static RefFixedArrayPtr<BlittablePointer<TeamTop>> TeamTop { get; } = new RefFixedArrayPtr<BlittablePointer<TeamTop>>(0x00A4C268, MaxNumberOfPlayers);
 
         /// <summary>
         /// Contains properties for each of the characters in order of Speed, Power, Flight.
         /// Size of this array is <see cref="GetCharacterCount"/>.
         /// </summary>
-        public static RefFixedArrayPtr<PlayerTop> PlayerTop { get; } = new RefFixedArrayPtr<PlayerTop>(0x00A4B1B0, 8);
+        public static RefFixedArrayPtr<BlittablePointer<PlayerTop>> PlayerTop { get; } = new RefFixedArrayPtr<BlittablePointer<PlayerTop>>(0x00A4B1B0, 8);
 
         /// <summary>
         /// Contains the individual physics entries for each of the characters.
         /// These entries are applied on stage load and character swap.
-        /// To edit physics mid-level, see <see cref="PlayerTop"/>'s <see cref="PlayerTop.Physics"/> structure.
+        /// To edit physics mid-level, see <see cref="PlayerTop"/>'s <see cref="Definitions.Structures.Player.Physics"/> structure.
         /// </summary>
         public static RefFixedArrayPtr<Physics> Physics { get; } = new RefFixedArrayPtr<Physics>(0x008BE550, 12);
 
