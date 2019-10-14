@@ -1,6 +1,6 @@
 ﻿namespace Heroes.SDK.Definitions.Structures.Player.TeamTopComponents
 {
-    public enum PartnerFormation
+    public enum PartnerFormation : int
     {
         /// <summary>
         /// Normal formation of partners when Sonic is standing.
