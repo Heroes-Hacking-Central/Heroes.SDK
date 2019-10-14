@@ -16,14 +16,16 @@ namespace Heroes.SDK.Definitions.Structures.Player
         /// <summary>
         /// Known object properties at offset 0xB4.
         /// </summary>
-        [FieldOffset(0xB4)]
-        public PlayerTopAt0xB4 OffsetB4;
+        [FieldOffset(0xD4)]
+        public PlayerTopAt0xD4 OffsetD4;
 
-        /// <summary>
-        /// BAMS 0 - 65535: The yaw angle which the teammates follow the character if this character is the leader.
-        /// </summary>
-        [FieldOffset(0xB4)]
-        public int TeammateFollowingYaw;
+        /*
+        // /// <summary>
+        // /// BAMS 0 - 65535: The yaw angle which the teammates follow the character if this character is the leader.
+        // /// </summary>
+        // [FieldOffset(0xB4)]
+        // public int TeammateFollowingYaw; // Forgot the offset.
+        */
 
         /// <summary>
         /// Contains the actively used physics constants for this character.

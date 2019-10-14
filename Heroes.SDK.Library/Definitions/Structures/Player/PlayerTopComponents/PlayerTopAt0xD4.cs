@@ -2,7 +2,7 @@
 
 namespace Heroes.SDK.Definitions.Structures.Player.PlayerTopComponents
 {
-    public unsafe struct PlayerTopAt0xB4
+    public unsafe struct PlayerTopAt0xD4
     {
         // Start at 0xD4
 
