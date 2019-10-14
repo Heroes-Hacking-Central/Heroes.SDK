@@ -22,7 +22,7 @@ namespace Heroes.SDK.API
             add
             {
                 if (_endFrameHook == null)
-                    _endFrameHook = RenderFunctions.Fun_EndFrame.Hook(OnEndFrame);
+                    _endFrameHook = RenderFunctions.Fun_EndFrame.Hook(OnEndFrame).Activate();
 
                 _onSleep += value;
             }
@@ -37,7 +37,7 @@ namespace Heroes.SDK.API
             add
             {
                 if (_endFrameHook == null)
-                    _endFrameHook = RenderFunctions.Fun_EndFrame.Hook(OnEndFrame);
+                    _endFrameHook = RenderFunctions.Fun_EndFrame.Hook(OnEndFrame).Activate();
 
                 _afterSleep += value;
             }
