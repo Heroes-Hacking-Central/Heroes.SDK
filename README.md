@@ -125,6 +125,8 @@ private unsafe SkyPad* ConvertPadData(HeroesController* heroesController, SkyPad
 2. Add `Heroes.SDK` to your solution.
 3. Add `Heroes.SDK` as a project reference to your project.
 
+You might need to update the project you are referencing this library from to `netstandard2.1`/`netcoreapp3.0` or newer.
+
 ## Submitting Issues
 
 If you are submitting an issue, your issue should include the following:
