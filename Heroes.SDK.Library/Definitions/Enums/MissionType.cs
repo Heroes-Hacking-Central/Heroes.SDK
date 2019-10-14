@@ -1,6 +1,6 @@
 ﻿namespace Heroes.SDK.Definitions.Enums
 {
-    public enum MissionType
+    public enum MissionType : byte
     {
         Normal = 0,
 
