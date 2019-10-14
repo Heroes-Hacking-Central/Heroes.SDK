@@ -56,7 +56,7 @@ if (PlayerOneInputs.ButtonFlags.HasFlag(ButtonFlags.Jump))
 ```csharp
 if (State.IsInLevel() && Player.GetCharacterCount() > 0) 
 {
-    ref var speedCharacter = ref Player.PlayerTop[0];
+    ref var speedCharacter = ref Player.PlayerTop[0].AsReference();
     speedCharacter.Physics.GravitationalPull = 9.81F;
 }
 ```
