@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Camera
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential)]
     public struct RwPlane
     {

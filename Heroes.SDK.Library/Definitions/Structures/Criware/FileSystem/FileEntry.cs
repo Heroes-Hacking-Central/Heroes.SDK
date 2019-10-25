@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Criware.FileSystem
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public unsafe struct FileEntry
     {

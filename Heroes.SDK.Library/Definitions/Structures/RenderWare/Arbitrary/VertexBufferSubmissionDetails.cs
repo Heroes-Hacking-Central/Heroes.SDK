@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct VertexBufferSubmissionDetails
     {
@@ -21,6 +22,7 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary
         public short Y;
     }
 
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct VertexBufferSubmission
     {

@@ -6,6 +6,7 @@ using Vector3 = System.Numerics.Vector3;
 
 namespace Heroes.SDK.Definitions.Structures.World.Camera
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x2324)] // The size is not a typo. Verified in PC AND PS2 Disassembly
     public struct HeroesCamera
     {

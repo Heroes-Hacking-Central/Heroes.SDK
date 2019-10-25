@@ -3,6 +3,7 @@ using Heroes.SDK.Definitions.Structures.RenderWare.Camera.Enum;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Camera
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     public unsafe struct RwCamera
     {
         public RwObjectHasFrame OnjectHasFrame;

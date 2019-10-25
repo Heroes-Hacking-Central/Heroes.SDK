@@ -7,6 +7,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
     /// <summary>
     /// Represents an individual vertex of a SADX/SA2/Heroes spline.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct SplineVertex
     {
         /// <summary>

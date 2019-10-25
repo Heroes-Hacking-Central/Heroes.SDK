@@ -2,6 +2,7 @@
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Object
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct RwObject
     {

@@ -5,6 +5,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
     /// <summary>
     /// Represents a colour formed using the R,G,B,A components.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct RgbaColor
     {
         /// <summary>

@@ -6,6 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
     /// Represents a coordinate whereby an individual team performs their ending poses after finishing a stage.
     /// Disassembly/Internal Name: ???
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct PositionEnd
     {
         /// <summary>

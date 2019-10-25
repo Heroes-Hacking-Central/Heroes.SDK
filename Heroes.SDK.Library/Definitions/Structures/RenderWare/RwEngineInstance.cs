@@ -9,6 +9,7 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare
     /// <summary>
     /// Disassembly name: Utilfns_t
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x158)]
     public unsafe struct RwEngineInstance
     {

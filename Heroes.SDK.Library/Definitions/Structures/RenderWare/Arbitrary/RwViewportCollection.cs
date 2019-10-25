@@ -5,6 +5,7 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary
     /// <summary>
     /// This is technically a possibly endless array of viewports. The struct is for convenience only.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit)]
     public struct RwViewportCollection
     {

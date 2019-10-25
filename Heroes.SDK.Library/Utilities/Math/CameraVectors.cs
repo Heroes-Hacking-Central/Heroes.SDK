@@ -9,6 +9,7 @@ namespace Heroes.SDK.Utilities.Math
     /// The CameraVectors class calculates and provides the forward, right and up direction vector for a generic
     /// rotation of the camera.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct CameraVectors
     {
         /// <summary>

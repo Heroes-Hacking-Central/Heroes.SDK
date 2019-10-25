@@ -12,6 +12,7 @@ namespace Heroes.SDK.Parsers
     /// Represents an individual spline in the format used by the stage injector mod: https://github.com/Sewer56/Heroes.StageInjector.ReloadedII
     /// To Serialize/Deserialize this type, refer to the following guide. https://github.com/Reloaded-Project/Reloaded.Messaging/blob/master/Docs/UseAsSerializationLibrary.md
     /// </summary>
+    [Equals(DoNotAddEqualityOperators = true)]
     public class ManagedSpline : ISerializable
     {
         public SplineType SplineType { get; set; }

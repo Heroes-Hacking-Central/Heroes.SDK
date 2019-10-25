@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Heroes.SDK.Definitions.Structures.World.Camera
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct HeroesCameraRotation
     {
         private const float MaxAngleDegrees = 360F;

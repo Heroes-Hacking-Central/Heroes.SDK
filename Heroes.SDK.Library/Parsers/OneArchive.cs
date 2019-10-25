@@ -12,6 +12,7 @@ namespace Heroes.SDK.Parsers
     ///
     /// If you are looking for the ONEFILE class used by the game, consider <see cref="OneFile"/>
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public unsafe class OneArchive : IDisposable
     {
         /// <summary>

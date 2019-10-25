@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Object
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Pack = 0)]
     public struct CclSomeArrayEntry
     {

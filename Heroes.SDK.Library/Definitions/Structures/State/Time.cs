@@ -6,6 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.State
     /// This struct contains the in-game timer.
     /// The timer you see when playing a level.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct Time
     {
         private const float Framerate = 60F;

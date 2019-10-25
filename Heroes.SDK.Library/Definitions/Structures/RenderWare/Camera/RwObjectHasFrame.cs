@@ -3,6 +3,7 @@ using Heroes.SDK.Definitions.Structures.RenderWare.Object;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Camera
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct RwObjectHasFrame
     {

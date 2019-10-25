@@ -4,6 +4,7 @@ using Heroes.SDK.Definitions.Structures.RenderWare;
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     public unsafe struct OneFileEntry
     {
         /// <summary>

@@ -8,6 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// Defines an individual quadnode in the collision file.
     /// Note: Big Endian
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = 32)]
     public struct Quadnode : IEndianConvertible
     {

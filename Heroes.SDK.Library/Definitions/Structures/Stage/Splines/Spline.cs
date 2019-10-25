@@ -8,6 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
     /// <summary>
     /// Struct that defines a spline header.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public unsafe struct Spline : IDisposable
     {
         /// <summary>

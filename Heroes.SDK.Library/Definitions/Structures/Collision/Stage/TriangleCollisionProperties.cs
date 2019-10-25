@@ -1,5 +1,6 @@
 ﻿namespace Heroes.SDK.Definitions.Structures.Collision.Stage
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct TriangleCollisionProperties
     {
         public static TriangleCollisionProperties Floor         => new TriangleCollisionProperties(TriangleCollisionFlag.None, 0, 0, 0x00);

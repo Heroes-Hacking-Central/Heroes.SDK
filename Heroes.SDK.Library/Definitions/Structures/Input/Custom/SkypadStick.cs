@@ -3,6 +3,7 @@
     /// <summary>
     /// Defines an individual analog stick.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct SkypadStick
     {
         /// <summary>

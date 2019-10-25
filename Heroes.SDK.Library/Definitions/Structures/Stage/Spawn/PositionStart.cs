@@ -7,6 +7,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
     /// Describes the position and how the player starts off the stage.
     /// Disassembly/Internal Name: ???
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential)]
     public struct PositionStart
     {

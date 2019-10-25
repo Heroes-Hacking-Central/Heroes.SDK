@@ -5,6 +5,7 @@ using Heroes.SDK.Definitions.Structures.Player.PlayerTopComponents;
 
 namespace Heroes.SDK.Definitions.Structures.Player
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit)]
     public struct PlayerTop
     {

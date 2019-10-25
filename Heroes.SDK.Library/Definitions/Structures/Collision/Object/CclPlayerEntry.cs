@@ -8,6 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Object
     /// <summary>
     /// Note: This is not one big struct but a series of smaller structs accessed via both pointer to this and structs inside.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x88)]
     public unsafe struct CclPlayerEntry
     {

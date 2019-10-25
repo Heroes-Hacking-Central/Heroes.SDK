@@ -9,6 +9,7 @@ using Strings = Heroes.SDK.Utilities.Misc.Strings;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit, Size = 0x5C)]
     public unsafe struct OneFile
     {

@@ -7,6 +7,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// Note: Triangle vertices have no specific order.
     /// Note: Big Endian
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct TriangleVertices : IEndianConvertible
     {
         /// <summary>

@@ -3,6 +3,7 @@ using Heroes.SDK.Definitions.Enums;
 
 namespace Heroes.SDK.Definitions.Structures.State
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x44)]
     public unsafe struct ModeSwitch
     {

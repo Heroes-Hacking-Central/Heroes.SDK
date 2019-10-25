@@ -8,6 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
     /// <summary>
     /// A version of <see cref="RgbaColor"/> where each of the four components is stored in a different memory location.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public unsafe struct RgbaColorComponentPtrSet : IRgbaColor
     {
         /// <summary>

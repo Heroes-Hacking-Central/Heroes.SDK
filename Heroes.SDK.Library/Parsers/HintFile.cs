@@ -12,6 +12,7 @@ namespace Heroes.SDK.Parsers
     /// Parses a hint file for any of the western languages.
     /// e.g. hint001e.bin, hint001f.bin
     /// </summary>
+    [Equals(DoNotAddEqualityOperators = true)]
     public class HintFile
     {
         // Approximate length of a long string, used for file size estimations.
@@ -54,7 +55,7 @@ namespace Heroes.SDK.Parsers
                     reader.Read(out entry);
                     entries.Add(entry);
                 }
-                while (entry != Entry.Null);
+                while (!entry.Equals(Entry.Null));
                 entries.RemoveAt(entries.Count - 1);
 
                 // Convert all entries to managed.

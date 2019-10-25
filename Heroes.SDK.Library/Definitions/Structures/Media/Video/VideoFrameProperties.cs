@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Heroes.SDK.Definitions.Structures.Media.Video
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit)]
     public struct VideoRenderProperties
     {

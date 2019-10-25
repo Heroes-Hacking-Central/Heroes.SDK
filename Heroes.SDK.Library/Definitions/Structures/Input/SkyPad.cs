@@ -6,6 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.Input
     /// <summary>
     /// The internal structure consumed by the game logic which actually determines the behaviour of the game.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x4C)]
     public struct SkyPad
     {

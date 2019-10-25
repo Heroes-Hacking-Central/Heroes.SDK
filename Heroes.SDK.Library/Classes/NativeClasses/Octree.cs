@@ -9,6 +9,7 @@ namespace Heroes.SDK.Classes.NativeClasses
     /// <summary>
     /// Note: This is actually a quadtree.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct Octree
     {
         // TODO: In-memory parser of Collision Files, just like there is a parser of ONE files.

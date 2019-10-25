@@ -5,6 +5,7 @@ namespace Heroes.SDK.Definitions.Structures.Graphics.Device
     /// <summary>
     /// Replicates the hardcoded resolution struct stored inside the Sonic Heroes executable.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct NativeResolutionEntry
     {
         // TODO: No idea where to put this. Changing this has kinda no effect once the game starts running so /shrug

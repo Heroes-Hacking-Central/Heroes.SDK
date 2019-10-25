@@ -7,6 +7,7 @@ namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
     /// <summary>
     /// Defines the file name of an individual file inside a .ONE archive.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential, Size = FileNameLength)]
     public unsafe struct OneFileName
     {

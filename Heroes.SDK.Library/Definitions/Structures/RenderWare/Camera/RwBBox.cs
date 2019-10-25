@@ -7,6 +7,7 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare.Camera
     /// specified by the positions of two corners which lie on a diagonal.
     /// Typically used to specify a world bounding-box when the world is created
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct RwBBox
     {
         /* Must be in this order */

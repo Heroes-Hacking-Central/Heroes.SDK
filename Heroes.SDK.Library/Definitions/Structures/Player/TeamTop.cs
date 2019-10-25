@@ -8,6 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Player
     /// <summary>
     /// Stores the state of an individual team used by a player.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct TeamTop
     {

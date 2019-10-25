@@ -5,6 +5,7 @@ namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
     /// <summary>
     /// Contains the header for the ONE file.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct OneArchiveHeader
     {
         /// <summary>

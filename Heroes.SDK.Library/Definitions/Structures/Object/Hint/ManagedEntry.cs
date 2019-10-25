@@ -4,6 +4,7 @@ using Heroes.SDK.Definitions.Structures.Object.Hint.Enum;
 
 namespace Heroes.SDK.Definitions.Structures.Object.Hint
 {
+    [Equals(DoNotAddEqualityOperators =true)]
     public class ManagedEntry : INotifyPropertyChanged
     {
         /// <summary>

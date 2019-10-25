@@ -9,6 +9,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// Disassembly/Internal Name: OCTREE_FILE_HEADER
     /// Note: Big Endian
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     [StructLayout(LayoutKind.Sequential)]
     public struct QuadtreeFileHeader : IEndianConvertible
     {

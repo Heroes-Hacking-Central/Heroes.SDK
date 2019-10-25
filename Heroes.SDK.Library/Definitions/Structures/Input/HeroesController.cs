@@ -3,6 +3,7 @@
     /// <summary>
     /// Describes a controller structure used for storing controls obtained from the PC version of the game.
     /// </summary>
+    [Equals(DoNotAddEqualityOperators =true)]
     public struct HeroesController
     {
         /// <summary>
