@@ -4,7 +4,6 @@ using Heroes.SDK.Definitions.Structures.Collision.Object;
 using Heroes.SDK.Definitions.Structures.Player;
 using Heroes.SDK.Definitions.Structures.State;
 using Heroes.SDK.Utilities.Namer;
-using Heroes.SDK.Utility;
 using Reloaded.Memory.Pointers;
 
 namespace Heroes.SDK.API

@@ -179,5 +179,10 @@ namespace Heroes.SDK.Definitions.Structures.Player
 
             return obj is Physics other && Equals(other);
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

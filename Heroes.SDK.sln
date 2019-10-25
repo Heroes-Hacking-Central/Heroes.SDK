@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK", "Heroes.SDK.Library\Heroes.SDK.csproj", "{DA25850E-D0C9-4B57-BEF0-2FD33BACE31A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.SDK", "Heroes.SDK.Library\Heroes.SDK.csproj", "{DA25850E-D0C9-4B57-BEF0-2FD33BACE31A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK.Tests", "Heroes.SDK.Tests\Heroes.SDK.Tests.csproj", "{5CDE7381-48EE-4F81-82D5-A273B12073FA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.SDK.Utility", "Heroes.SDK.Library.Utility\Heroes.SDK.Utility.csproj", "{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.SDK.Tests", "Heroes.SDK.Tests\Heroes.SDK.Tests.csproj", "{5CDE7381-48EE-4F81-82D5-A273B12073FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{5CDE7381-48EE-4F81-82D5-A273B12073FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CDE7381-48EE-4F81-82D5-A273B12073FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CDE7381-48EE-4F81-82D5-A273B12073FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA6EEB49-8EBC-4192-88ED-166D1D24FA88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

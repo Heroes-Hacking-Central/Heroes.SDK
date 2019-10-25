@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using System.Runtime.InteropServices;
-using Heroes.SDK.Utility.Interfaces;
 using Reloaded.Memory;
+using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
 {

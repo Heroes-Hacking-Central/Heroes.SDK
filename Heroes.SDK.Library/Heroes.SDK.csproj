@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Heroes.SDK.Library.Utility\Heroes.SDK.Utility.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <NativeLibs Remove="Player.cs" />
   </ItemGroup>
 

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Utility;
+using Heroes.SDK.Utilities.Misc;
+using Strings = Heroes.SDK.Utilities.Misc.Strings;
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
 {

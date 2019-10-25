@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Heroes.SDK.Definitions.Enums;
 using Heroes.SDK.Utilities.Tagger.Enums;
-using static Heroes.SDK.Utility.Mathematics;
+using static Heroes.SDK.Utilities.Misc.Mathematics;
 
 namespace Heroes.SDK.Utilities.Tagger
 {

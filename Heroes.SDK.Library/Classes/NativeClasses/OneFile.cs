@@ -1,10 +1,11 @@
 ﻿using System.Runtime.InteropServices;
 using Heroes.SDK.Definitions.Structures.Archive.OneFile;
 using Heroes.SDK.Parsers;
-using Heroes.SDK.Utility;
+using Heroes.SDK.Utilities.Misc;
 using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using Strings = Heroes.SDK.Utilities.Misc.Strings;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
