@@ -1,5 +1,7 @@
 ﻿using System.Runtime.InteropServices;
+using Heroes.SDK.Classes.NativeClasses;
 using Heroes.SDK.Definitions.Structures.Input;
+using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions.X86;
 using Reloaded.Memory.Pointers;
 
@@ -20,6 +22,9 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// These inputs are used to control the actual game.
         /// </summary>
         public static RefFixedArrayPtr<SkyPad> FinalInputs { get; } = new RefFixedArrayPtr<SkyPad>(0x00A23A68, NumberOfControllers);
+
+        // Function Declarations
+        public static Function<psPADServerPC> Fun_psPADServerPC { get; } = new Function<psPADServerPC>(0x00444F30, ReloadedHooks.Instance);
 
         // Function Definitions 
 
