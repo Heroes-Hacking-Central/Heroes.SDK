@@ -30,14 +30,14 @@ namespace Heroes.SDK.Definitions.Structures.Input
         public ButtonFlags OneFrameReleaseButtonFlags;
 
         /// <summary>
-        /// Pressure of the left trigger.
+        /// Pressure of the left trigger between 0 and 255.
         /// </summary>
-        public short TriggerPressureL;          // 0-255
+        public short TriggerPressureL;          
 
         /// <summary>
-        /// Pressure of the right trigger.
+        /// Pressure of the right trigger between 0 and 255.
         /// </summary>
-        public short TriggerPressureR;          // 0-255
+        public short TriggerPressureR;          
 
         public int Field14;
         public int Field18;
