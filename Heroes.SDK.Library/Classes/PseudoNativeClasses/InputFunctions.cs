@@ -2,6 +2,7 @@
 using Heroes.SDK.Classes.NativeClasses;
 using Heroes.SDK.Definitions.Structures.Input;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using Reloaded.Memory.Pointers;
 
@@ -24,7 +25,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         public static RefFixedArrayPtr<SkyPad> FinalInputs { get; } = new RefFixedArrayPtr<SkyPad>(0x00A23A68, NumberOfControllers);
 
         // Function Declarations
-        public static Function<psPADServerPC> Fun_psPADServerPC { get; } = new Function<psPADServerPC>(0x00444F30, Reloaded.ReloadedHooks);
+        public static IFunction<psPADServerPC> Fun_psPADServerPC { get; } = SDK.ReloadedHooks.CreateFunction<psPADServerPC>(0x00444F30);
 
         // Function Definitions 
 

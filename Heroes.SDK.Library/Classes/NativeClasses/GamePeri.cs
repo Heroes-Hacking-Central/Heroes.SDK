@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using Heroes.SDK.Definitions.Structures.Input;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 namespace Heroes.SDK.Classes.NativeClasses
@@ -12,8 +13,8 @@ namespace Heroes.SDK.Classes.NativeClasses
     {
         /* Function Definitions */
 
-        public static Function<Native_MakeRepeatCount> Fun_MakeRepeatCount { get; } = new Function<Native_MakeRepeatCount>(0x00434FF0, Reloaded.ReloadedHooks);
-        public static Function<Native_ConvertPadData>  Fun_ConvertPadData  { get; } = new Function<Native_ConvertPadData>(0x004351A0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_MakeRepeatCount> Fun_MakeRepeatCount { get; } = SDK.ReloadedHooks.CreateFunction<Native_MakeRepeatCount>(0x00434FF0);
+        public static IFunction<Native_ConvertPadData>  Fun_ConvertPadData  { get; } = SDK.ReloadedHooks.CreateFunction<Native_ConvertPadData>(0x004351A0);
 
         /* Function Declarations */
 

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 namespace Heroes.SDK.Classes.PseudoNativeClasses
@@ -10,7 +11,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
     public class HudFunctions
     {
         /* Function Declarations */
-        public static Function<DispGDisp> Fun_DrawHud { get; } = new Function<DispGDisp>(0x0041DFD0, Reloaded.ReloadedHooks);
+        public static IFunction<DispGDisp> Fun_DrawHud { get; } = SDK.ReloadedHooks.CreateFunction<DispGDisp>(0x0041DFD0);
 
         /* Function Definitions */
 

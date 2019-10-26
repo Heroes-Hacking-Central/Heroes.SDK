@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using Heroes.SDK.Definitions.Structures.Criware.FileSystem;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
@@ -33,19 +34,19 @@ namespace Heroes.SDK.Classes.NativeClasses
         // TODO: Document the functions, should be mostly self explainable. Sorry for not doing it right now, just too much on my hands. - Sewer
 
         /* Method Declarations */
-        public static Function<Native_AddFileToFileTable> Fun_AddFileToFileTable { get; } = new Function<Native_AddFileToFileTable>(0x006CFF40, Reloaded.ReloadedHooks);
-        public static Function<Native_CreateFromDirectory> Fun_CreateFromDirectory { get; } = new Function<Native_CreateFromDirectory>(0x006C8000, Reloaded.ReloadedHooks);
-        public static Function<Native_SetFileTablePointer> Fun_SetFileTablePointer { get; } = new Function<Native_SetFileTablePointer>(0x006D6310, Reloaded.ReloadedHooks);
-        public static Function<Native_SetTablePointersAndBuild> Fun_SetTablePointersAndBuild { get; } = new Function<Native_SetTablePointersAndBuild>(0x006CFE70, Reloaded.ReloadedHooks);
-        public static Function<Native_BuildFileTable> Fun_BuildFileTable { get; } = new Function<Native_BuildFileTable>(0x006D63B0, Reloaded.ReloadedHooks);
-        public static Function<Native_CallsBuildFileTable> Fun_CallsBuildFileTable { get; } = new Function<Native_CallsBuildFileTable>(0x006D6330, Reloaded.ReloadedHooks);
-        public static Function<Native_GetDvdrootFullPath> Fun_GetDvdrootFullPath { get; } = new Function<Native_GetDvdrootFullPath>(0x006B4040, Reloaded.ReloadedHooks);
-        public static Function<Native_GetFileEntryCount> Fun_GetFileEntryCount { get; } = new Function<Native_GetFileEntryCount>(0x006CEFE0, Reloaded.ReloadedHooks);
-        public static Function<Native_GetFileEntryFromFilePath> Fun_GetFileEntryFromFilePath { get; } = new Function<Native_GetFileEntryFromFilePath>(0x006D00F0, Reloaded.ReloadedHooks);
-        public static Function<Native_GetNextFileEntry> Fun_GetNextFileEntry { get; } = new Function<Native_GetNextFileEntry>(0x006D01D0, Reloaded.ReloadedHooks);
-        public static Function<Native_LoadADXFromFileTable> Fun_LoadADXFromFileTable { get; } = new Function<Native_LoadADXFromFileTable>(0x006D00D0, Reloaded.ReloadedHooks);
-        public static Function<Native_MaybeConstructor> Fun_MaybeConstructor { get; } = new Function<Native_MaybeConstructor>(0x006CFBA0, Reloaded.ReloadedHooks);
-        public static Function<Native_ProbablyResetFileTable> Fun_ProbablyResetFileTable { get; } = new Function<Native_ProbablyResetFileTable>(0x006CF9D0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_AddFileToFileTable> Fun_AddFileToFileTable { get; } = SDK.ReloadedHooks.CreateFunction<Native_AddFileToFileTable>(0x006CFF40);
+        public static IFunction<Native_CreateFromDirectory> Fun_CreateFromDirectory { get; } = SDK.ReloadedHooks.CreateFunction<Native_CreateFromDirectory>(0x006C8000);
+        public static IFunction<Native_SetFileTablePointer> Fun_SetFileTablePointer { get; } = SDK.ReloadedHooks.CreateFunction<Native_SetFileTablePointer>(0x006D6310);
+        public static IFunction<Native_SetTablePointersAndBuild> Fun_SetTablePointersAndBuild { get; } = SDK.ReloadedHooks.CreateFunction<Native_SetTablePointersAndBuild>(0x006CFE70);
+        public static IFunction<Native_BuildFileTable> Fun_BuildFileTable { get; } = SDK.ReloadedHooks.CreateFunction<Native_BuildFileTable>(0x006D63B0);
+        public static IFunction<Native_CallsBuildFileTable> Fun_CallsBuildFileTable { get; } = SDK.ReloadedHooks.CreateFunction<Native_CallsBuildFileTable>(0x006D6330);
+        public static IFunction<Native_GetDvdrootFullPath> Fun_GetDvdrootFullPath { get; } = SDK.ReloadedHooks.CreateFunction<Native_GetDvdrootFullPath>(0x006B4040);
+        public static IFunction<Native_GetFileEntryCount> Fun_GetFileEntryCount { get; } = SDK.ReloadedHooks.CreateFunction<Native_GetFileEntryCount>(0x006CEFE0);
+        public static IFunction<Native_GetFileEntryFromFilePath> Fun_GetFileEntryFromFilePath { get; } = SDK.ReloadedHooks.CreateFunction<Native_GetFileEntryFromFilePath>(0x006D00F0);
+        public static IFunction<Native_GetNextFileEntry> Fun_GetNextFileEntry { get; } = SDK.ReloadedHooks.CreateFunction<Native_GetNextFileEntry>(0x006D01D0);
+        public static IFunction<Native_LoadADXFromFileTable> Fun_LoadADXFromFileTable { get; } = SDK.ReloadedHooks.CreateFunction<Native_LoadADXFromFileTable>(0x006D00D0);
+        public static IFunction<Native_MaybeConstructor> Fun_MaybeConstructor { get; } = SDK.ReloadedHooks.CreateFunction<Native_MaybeConstructor>(0x006CFBA0);
+        public static IFunction<Native_ProbablyResetFileTable> Fun_ProbablyResetFileTable { get; } = SDK.ReloadedHooks.CreateFunction<Native_ProbablyResetFileTable>(0x006CF9D0);
 
         /* Method Definitions */
 

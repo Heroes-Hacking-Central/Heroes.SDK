@@ -1,12 +1,13 @@
 ﻿using System.Runtime.InteropServices;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 namespace Heroes.SDK.Classes.PseudoNativeClasses
 {
     public unsafe class CStandardLibrary
     {
-        public static Function<Native_Free> Fun_Free = new Function<Native_Free>(0x0067B35D, Reloaded.ReloadedHooks);
+        public static IFunction<Native_Free> Fun_Free = SDK.ReloadedHooks.CreateFunction<Native_Free>(0x0067B35D);
         public static Native_Free Free { get; } = Fun_Free.GetWrapper();
 
         /// <summary>

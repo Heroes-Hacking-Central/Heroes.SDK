@@ -1,12 +1,13 @@
 ﻿using System.Runtime.InteropServices;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
     public unsafe struct TObjTeam
     {
-        public static Function<Native_Exec> Fun_Exec { get; } = new Function<Native_Exec>(0x005B10E0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_Exec> Fun_Exec { get; } = SDK.ReloadedHooks.CreateFunction<Native_Exec>(0x005B10E0);
 
         /* Bindings */
         public void* Exec()

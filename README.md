@@ -72,19 +72,31 @@ See [Advanced Usage](./Docs/AdvancedUsage.md)
 
 You might need to update the project you are referencing this library from to `netstandard2.1`/`netcoreapp3.0` or newer.
 
+### Adding Reloaded.Hooks
+
+As of 26th of October 2019, the SDK does not ship with `Reloaded.Hooks` anymore to reduce on both mod and program sizes using the SDK.
+
+If you plan to create mods using the SDK, you need to supply the SDK an instance of `IReloadedHooks`.
+
+To do so, download [Reloaded.Hooks](https://github.com/Reloaded-Project/Reloaded.Hooks) from NuGet and call the function `SDK.Init`, passing your instance of `ReloadedHooks` before executing any other SDK code.
+
+```csharp
+SDK.Init(new ReloadedHooks());   
+```
+
+If you are developing a mod with `Reloaded II`, consider using Shared Libraries as outlined below.
+
 ### In Reloaded II Mods
 
-The following are a simple set of recommended guidelines for using the Heroes SDK in conjunction with developing [Reloaded II](https://github.com/Reloaded-Project/Reloaded-II) mods.
+The following are a simple set of heavily recommended guidelines for using the Heroes SDK in conjunction with developing [Reloaded II](https://github.com/Reloaded-Project/Reloaded-II) mods.
 
 - Use the [Reloaded.Hooks Shared Library](https://github.com/Sewer56/Reloaded.SharedLib.Hooks). Why? Please see the [three main reasons](https://github.com/Sewer56/Reloaded.SharedLib.Hooks#fast-startup-times).
 
 ```csharp
 // In Start() function of a Reloaded II mod, set the ReloadedHooks instance used to the shared one.
 _modLoader.GetController<IReloadedHooks>().TryGetTarget(out ReloadedHooks);
-SDK.Reloaded.Init(ReloadedHooks);    
+SDK.Init(ReloadedHooks);    
 ```
-`Reloaded.Init` is an endpoint that allows you to integrate your shared libraries into the `Heroes.SDK`. You should call this function before using the rest of the SDK.
-
 - If using Reloaded-II's [Inter Mod Communication](https://github.com/Reloaded-Project/Reloaded-II/blob/master/Docs/InterModCommunication.md) to expose interfaces, **DO NOT INCLUDE THE TYPES FROM THE SDK IN YOUR INTERFACES**. 
   - Not only would that force mods to have a copy of the SDK in their output folder but it would force them to use the same version of the SDK as the source mod.
   - If you require to use some structs from the SDK, copy the structs into your interface library from the SDK and cast wherever needed from the copied type to the SDK type. See [Heroes.Controller.Hook](https://github.com/Sewer56/Heroes.Controller.Hook.ReloadedII/tree/master/Heroes.Controller.Hook.Interfaces) if an example is required.

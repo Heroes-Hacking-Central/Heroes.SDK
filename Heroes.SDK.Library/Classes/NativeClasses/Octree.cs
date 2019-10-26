@@ -2,6 +2,7 @@
 using Heroes.SDK.Classes.PseudoNativeClasses;
 using Heroes.SDK.Definitions.Structures.Collision.Stage;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 namespace Heroes.SDK.Classes.NativeClasses
@@ -18,7 +19,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         public QuadtreeFileHeader Header;
 
         /* Function Declarations */
-        public static Function<Native_Destructor> Fun_Destructor = new Function<Native_Destructor>(0x0042D1E0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_Destructor> Fun_Destructor = SDK.ReloadedHooks.CreateFunction<Native_Destructor>(0x0042D1E0);
 
         /// <summary>
         /// Destructor for the current class.

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 namespace Heroes.SDK.Classes.NativeClasses
@@ -7,7 +8,7 @@ namespace Heroes.SDK.Classes.NativeClasses
     public unsafe struct TObjCamera
     {
         /* Function Declarations */
-        public static Function<Native_Init> Fun_Init { get; } = new Function<Native_Init>(0x0061D3B0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_Init> Fun_Init { get; } = SDK.ReloadedHooks.CreateFunction<Native_Init>(0x0061D3B0);
 
         /* Function Definitions */
 

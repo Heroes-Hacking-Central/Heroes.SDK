@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 
 // ReSharper disable InconsistentNaming
@@ -8,9 +9,9 @@ namespace Heroes.SDK.Classes.NativeClasses
 {
     public unsafe struct MoviePlay
     {
-        public static Function<Native_Play> Fun_Play { get; } = new Function<Native_Play>(0x00643DE0, Reloaded.ReloadedHooks);
-        public static Function<Native_Loop> Fun_Loop { get; } = new Function<Native_Loop>(0x00643E20, Reloaded.ReloadedHooks);
-        public static Function<Native_End> Fun_End { get; } = new Function<Native_End>(0x00643E00, Reloaded.ReloadedHooks);
+        public static IFunction<Native_Play> Fun_Play { get; } = SDK.ReloadedHooks.CreateFunction<Native_Play>(0x00643DE0);
+        public static IFunction<Native_Loop> Fun_Loop { get; } = SDK.ReloadedHooks.CreateFunction<Native_Loop>(0x00643E20);
+        public static IFunction<Native_End> Fun_End { get; } = SDK.ReloadedHooks.CreateFunction<Native_End>(0x00643E00);
 
         /* Functions */
         public int Play() => Fun_Play.GetWrapper()(ref this);

@@ -4,6 +4,7 @@ using Heroes.SDK.Definitions.Structures.Stage.Spawn;
 using Heroes.SDK.Definitions.Structures.Stage.Spawn.Collections;
 using Heroes.SDK.Definitions.Structures.Stage.Splines;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using Reloaded.Memory.Pointers;
 
@@ -30,10 +31,10 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
 
 
         /* Function Declarations */
-        public static Function<SearchGoalStageLocator>  Fun_GetEndPosition { get; } = new Function<SearchGoalStageLocator>(0x00426FD0, Reloaded.ReloadedHooks);
-        public static Function<SearchStartStageLocator> Fun_GetStartPosition { get; } = new Function<SearchStartStageLocator>(0x00426F10, Reloaded.ReloadedHooks);
-        public static Function<SearchIntroStageLocator>  Fun_GetIntroPosition { get; } = new Function<SearchIntroStageLocator>(0x00427010, Reloaded.ReloadedHooks);
-        public static Function<InitPath>  Fun_InitializeSplines { get; } = new Function<InitPath>(0x00439020, Reloaded.ReloadedHooks);
+        public static IFunction<SearchGoalStageLocator>  Fun_GetEndPosition { get; } = SDK.ReloadedHooks.CreateFunction<SearchGoalStageLocator>(0x00426FD0);
+        public static IFunction<SearchStartStageLocator> Fun_GetStartPosition { get; } = SDK.ReloadedHooks.CreateFunction<SearchStartStageLocator>(0x00426F10);
+        public static IFunction<SearchIntroStageLocator>  Fun_GetIntroPosition { get; } = SDK.ReloadedHooks.CreateFunction<SearchIntroStageLocator>(0x00427010);
+        public static IFunction<InitPath>  Fun_InitializeSplines { get; } = SDK.ReloadedHooks.CreateFunction<InitPath>(0x00439020);
 
         /* Functions */
         public static SearchGoalStageLocator GetEndPosition     { get; } = Fun_GetEndPosition.GetWrapper();

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Heroes.SDK.Definitions.Structures.Media.Video;
 using Reloaded.Hooks;
+using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
@@ -12,20 +13,20 @@ namespace Heroes.SDK.Classes
     public unsafe struct Uncategorized
     {
         /* Function Declarations */
-        public static Function<DrawSpecialStageGauge> Fun_DrawSpecialStageGauge { get; } = new Function<DrawSpecialStageGauge>(0x5263C0, Reloaded.ReloadedHooks);
-        public static Function<DrawSpecialStageBar> Fun_DrawSpecialStageBar { get; } = new Function<DrawSpecialStageBar>(0x526280, Reloaded.ReloadedHooks);
-        public static Function<DrawTwoPlayerStatusBar> Fun_DrawTwoPlayerStatusBar { get; } = new Function<DrawTwoPlayerStatusBar>(0x422A70, Reloaded.ReloadedHooks);
-        public static Function<RenderVideoFrame> Fun_RenderVideoFrame { get; } = new Function<RenderVideoFrame>(0x644450, Reloaded.ReloadedHooks);
-        public static Function<DrawFullVideoFrame> Fun_DrawFullVideoFrame { get; } = new Function<DrawFullVideoFrame>(0x0042A100, Reloaded.ReloadedHooks);
-        public static Function<DrawSmallFrame> Fun_DrawSmallFrame { get; } = new Function<DrawSmallFrame>(0x00429F80, Reloaded.ReloadedHooks);
-        public static Function<Calls_DrawSpecialStageLinkText> Fun_DrawSpecialStageLinkText { get; } = new Function<Calls_DrawSpecialStageLinkText>(0x526F60, Reloaded.ReloadedHooks);
-        public static Function<DrawNowLoading> Fun_DrawNowLoading { get; } = new Function<DrawNowLoading>(0x44EAC0, Reloaded.ReloadedHooks);
-        public static Function<DrawViewPorts> Fun_DrawViewPorts { get; } = new Function<DrawViewPorts>(0x422AF0, Reloaded.ReloadedHooks);
-        public static Function<DrawTitlecardElements> Fun_DrawTitlecardElements { get; } = new Function<DrawTitlecardElements>(0x442850, Reloaded.ReloadedHooks);
-        public static Function<TObjCreditsExecute> Fun_TObjCreditsExecute { get; } = new Function<TObjCreditsExecute>(0x4545F0, Reloaded.ReloadedHooks);
-        public static Function<DrawSpecialStageEmeraldAndResultScreenGauge> Fun_DrawSpecialStageEmeraldAndResultScreenGauge { get; } = new Function<DrawSpecialStageEmeraldAndResultScreenGauge>(0x458920, Reloaded.ReloadedHooks);
-        public static Function<DrawResultScreenLevelupDotsAndSomeOtherElements> Fun_DrawResultScreenLevelupDotsAndSomeOtherElements { get; } = new Function<DrawResultScreenLevelupDotsAndSomeOtherElements>(0x438A90, Reloaded.ReloadedHooks);
-        public static Function<DrawPowerupBox> Fun_DrawPowerupBox { get; } = new Function<DrawPowerupBox>(0x479AB0, Reloaded.ReloadedHooks);
+        public static IFunction<DrawSpecialStageGauge> Fun_DrawSpecialStageGauge { get; } = SDK.ReloadedHooks.CreateFunction<DrawSpecialStageGauge>(0x5263C0);
+        public static IFunction<DrawSpecialStageBar> Fun_DrawSpecialStageBar { get; } = SDK.ReloadedHooks.CreateFunction<DrawSpecialStageBar>(0x526280);
+        public static IFunction<DrawTwoPlayerStatusBar> Fun_DrawTwoPlayerStatusBar { get; } = SDK.ReloadedHooks.CreateFunction<DrawTwoPlayerStatusBar>(0x422A70);
+        public static IFunction<RenderVideoFrame> Fun_RenderVideoFrame { get; } = SDK.ReloadedHooks.CreateFunction<RenderVideoFrame>(0x644450);
+        public static IFunction<DrawFullVideoFrame> Fun_DrawFullVideoFrame { get; } = SDK.ReloadedHooks.CreateFunction<DrawFullVideoFrame>(0x0042A100);
+        public static IFunction<DrawSmallFrame> Fun_DrawSmallFrame { get; } = SDK.ReloadedHooks.CreateFunction<DrawSmallFrame>(0x00429F80);
+        public static IFunction<Calls_DrawSpecialStageLinkText> Fun_DrawSpecialStageLinkText { get; } = SDK.ReloadedHooks.CreateFunction<Calls_DrawSpecialStageLinkText>(0x526F60);
+        public static IFunction<DrawNowLoading> Fun_DrawNowLoading { get; } = SDK.ReloadedHooks.CreateFunction<DrawNowLoading>(0x44EAC0);
+        public static IFunction<DrawViewPorts> Fun_DrawViewPorts { get; } = SDK.ReloadedHooks.CreateFunction<DrawViewPorts>(0x422AF0);
+        public static IFunction<DrawTitlecardElements> Fun_DrawTitlecardElements { get; } = SDK.ReloadedHooks.CreateFunction<DrawTitlecardElements>(0x442850);
+        public static IFunction<TObjCreditsExecute> Fun_TObjCreditsExecute { get; } = SDK.ReloadedHooks.CreateFunction<TObjCreditsExecute>(0x4545F0);
+        public static IFunction<DrawSpecialStageEmeraldAndResultScreenGauge> Fun_DrawSpecialStageEmeraldAndResultScreenGauge { get; } = SDK.ReloadedHooks.CreateFunction<DrawSpecialStageEmeraldAndResultScreenGauge>(0x458920);
+        public static IFunction<DrawResultScreenLevelupDotsAndSomeOtherElements> Fun_DrawResultScreenLevelupDotsAndSomeOtherElements { get; } = SDK.ReloadedHooks.CreateFunction<DrawResultScreenLevelupDotsAndSomeOtherElements>(0x438A90);
+        public static IFunction<DrawPowerupBox> Fun_DrawPowerupBox { get; } = SDK.ReloadedHooks.CreateFunction<DrawPowerupBox>(0x479AB0);
 
         /* Function Definitions */
 
