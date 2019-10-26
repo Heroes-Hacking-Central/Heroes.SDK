@@ -27,7 +27,7 @@
     <PackageReference Include="Reloaded.Hooks.Definitions" Version="1.2.0" />
     <PackageReference Include="Reloaded.Memory" Version="2.5.0" />
     <PackageReference Include="Reloaded.Messaging.Serializer.SystemTextJson" Version="1.0.1" />
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.6.0-preview9.19421.4" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>
