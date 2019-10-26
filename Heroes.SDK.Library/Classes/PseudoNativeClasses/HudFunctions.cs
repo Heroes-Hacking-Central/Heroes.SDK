@@ -10,7 +10,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
     public class HudFunctions
     {
         /* Function Declarations */
-        public static Function<DispGDisp> Fun_DrawHud { get; } = new Function<DispGDisp>(0x0041DFD0, ReloadedHooks.Instance);
+        public static Function<DispGDisp> Fun_DrawHud { get; } = new Function<DispGDisp>(0x0041DFD0, Reloaded.ReloadedHooks);
 
         /* Function Definitions */
 

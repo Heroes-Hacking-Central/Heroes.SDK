@@ -12,20 +12,20 @@ namespace Heroes.SDK.Classes
     public unsafe struct Uncategorized
     {
         /* Function Declarations */
-        public static Function<DrawSpecialStageGauge> Fun_DrawSpecialStageGauge { get; } = new Function<DrawSpecialStageGauge>(0x5263C0, ReloadedHooks.Instance);
-        public static Function<DrawSpecialStageBar> Fun_DrawSpecialStageBar { get; } = new Function<DrawSpecialStageBar>(0x526280, ReloadedHooks.Instance);
-        public static Function<DrawTwoPlayerStatusBar> Fun_DrawTwoPlayerStatusBar { get; } = new Function<DrawTwoPlayerStatusBar>(0x422A70, ReloadedHooks.Instance);
-        public static Function<RenderVideoFrame> Fun_RenderVideoFrame { get; } = new Function<RenderVideoFrame>(0x644450, ReloadedHooks.Instance);
-        public static Function<DrawFullVideoFrame> Fun_DrawFullVideoFrame { get; } = new Function<DrawFullVideoFrame>(0x0042A100, ReloadedHooks.Instance);
-        public static Function<DrawSmallFrame> Fun_DrawSmallFrame { get; } = new Function<DrawSmallFrame>(0x00429F80, ReloadedHooks.Instance);
-        public static Function<Calls_DrawSpecialStageLinkText> Fun_DrawSpecialStageLinkText { get; } = new Function<Calls_DrawSpecialStageLinkText>(0x526F60, ReloadedHooks.Instance);
-        public static Function<DrawNowLoading> Fun_DrawNowLoading { get; } = new Function<DrawNowLoading>(0x44EAC0, ReloadedHooks.Instance);
-        public static Function<DrawViewPorts> Fun_DrawViewPorts { get; } = new Function<DrawViewPorts>(0x422AF0, ReloadedHooks.Instance);
-        public static Function<DrawTitlecardElements> Fun_DrawTitlecardElements { get; } = new Function<DrawTitlecardElements>(0x442850, ReloadedHooks.Instance);
-        public static Function<TObjCreditsExecute> Fun_TObjCreditsExecute { get; } = new Function<TObjCreditsExecute>(0x4545F0, ReloadedHooks.Instance);
-        public static Function<DrawSpecialStageEmeraldAndResultScreenGauge> Fun_DrawSpecialStageEmeraldAndResultScreenGauge { get; } = new Function<DrawSpecialStageEmeraldAndResultScreenGauge>(0x458920, ReloadedHooks.Instance);
-        public static Function<DrawResultScreenLevelupDotsAndSomeOtherElements> Fun_DrawResultScreenLevelupDotsAndSomeOtherElements { get; } = new Function<DrawResultScreenLevelupDotsAndSomeOtherElements>(0x438A90, ReloadedHooks.Instance);
-        public static Function<DrawPowerupBox> Fun_DrawPowerupBox { get; } = new Function<DrawPowerupBox>(0x479AB0, ReloadedHooks.Instance);
+        public static Function<DrawSpecialStageGauge> Fun_DrawSpecialStageGauge { get; } = new Function<DrawSpecialStageGauge>(0x5263C0, Reloaded.ReloadedHooks);
+        public static Function<DrawSpecialStageBar> Fun_DrawSpecialStageBar { get; } = new Function<DrawSpecialStageBar>(0x526280, Reloaded.ReloadedHooks);
+        public static Function<DrawTwoPlayerStatusBar> Fun_DrawTwoPlayerStatusBar { get; } = new Function<DrawTwoPlayerStatusBar>(0x422A70, Reloaded.ReloadedHooks);
+        public static Function<RenderVideoFrame> Fun_RenderVideoFrame { get; } = new Function<RenderVideoFrame>(0x644450, Reloaded.ReloadedHooks);
+        public static Function<DrawFullVideoFrame> Fun_DrawFullVideoFrame { get; } = new Function<DrawFullVideoFrame>(0x0042A100, Reloaded.ReloadedHooks);
+        public static Function<DrawSmallFrame> Fun_DrawSmallFrame { get; } = new Function<DrawSmallFrame>(0x00429F80, Reloaded.ReloadedHooks);
+        public static Function<Calls_DrawSpecialStageLinkText> Fun_DrawSpecialStageLinkText { get; } = new Function<Calls_DrawSpecialStageLinkText>(0x526F60, Reloaded.ReloadedHooks);
+        public static Function<DrawNowLoading> Fun_DrawNowLoading { get; } = new Function<DrawNowLoading>(0x44EAC0, Reloaded.ReloadedHooks);
+        public static Function<DrawViewPorts> Fun_DrawViewPorts { get; } = new Function<DrawViewPorts>(0x422AF0, Reloaded.ReloadedHooks);
+        public static Function<DrawTitlecardElements> Fun_DrawTitlecardElements { get; } = new Function<DrawTitlecardElements>(0x442850, Reloaded.ReloadedHooks);
+        public static Function<TObjCreditsExecute> Fun_TObjCreditsExecute { get; } = new Function<TObjCreditsExecute>(0x4545F0, Reloaded.ReloadedHooks);
+        public static Function<DrawSpecialStageEmeraldAndResultScreenGauge> Fun_DrawSpecialStageEmeraldAndResultScreenGauge { get; } = new Function<DrawSpecialStageEmeraldAndResultScreenGauge>(0x458920, Reloaded.ReloadedHooks);
+        public static Function<DrawResultScreenLevelupDotsAndSomeOtherElements> Fun_DrawResultScreenLevelupDotsAndSomeOtherElements { get; } = new Function<DrawResultScreenLevelupDotsAndSomeOtherElements>(0x438A90, Reloaded.ReloadedHooks);
+        public static Function<DrawPowerupBox> Fun_DrawPowerupBox { get; } = new Function<DrawPowerupBox>(0x479AB0, Reloaded.ReloadedHooks);
 
         /* Function Definitions */
 

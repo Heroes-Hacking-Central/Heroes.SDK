@@ -18,7 +18,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         public QuadtreeFileHeader Header;
 
         /* Function Declarations */
-        public static Function<Native_Destructor> Fun_Destructor = new Function<Native_Destructor>(0x0042D1E0, ReloadedHooks.Instance);
+        public static Function<Native_Destructor> Fun_Destructor = new Function<Native_Destructor>(0x0042D1E0, Reloaded.ReloadedHooks);
 
         /// <summary>
         /// Destructor for the current class.

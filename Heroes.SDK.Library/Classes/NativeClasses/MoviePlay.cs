@@ -8,9 +8,9 @@ namespace Heroes.SDK.Classes.NativeClasses
 {
     public unsafe struct MoviePlay
     {
-        public static Function<Native_Play> Fun_Play { get; } = new Function<Native_Play>(0x00643DE0, ReloadedHooks.Instance);
-        public static Function<Native_Loop> Fun_Loop { get; } = new Function<Native_Loop>(0x00643E20, ReloadedHooks.Instance);
-        public static Function<Native_End> Fun_End { get; } = new Function<Native_End>(0x00643E00, ReloadedHooks.Instance);
+        public static Function<Native_Play> Fun_Play { get; } = new Function<Native_Play>(0x00643DE0, Reloaded.ReloadedHooks);
+        public static Function<Native_Loop> Fun_Loop { get; } = new Function<Native_Loop>(0x00643E20, Reloaded.ReloadedHooks);
+        public static Function<Native_End> Fun_End { get; } = new Function<Native_End>(0x00643E00, Reloaded.ReloadedHooks);
 
         /* Functions */
         public int Play() => Fun_Play.GetWrapper()(ref this);

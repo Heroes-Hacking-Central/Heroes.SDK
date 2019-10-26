@@ -30,10 +30,10 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
 
 
         /* Function Declarations */
-        public static Function<SearchGoalStageLocator>  Fun_GetEndPosition { get; } = new Function<SearchGoalStageLocator>(0x00426FD0, ReloadedHooks.Instance);
-        public static Function<SearchStartStageLocator> Fun_GetStartPosition { get; } = new Function<SearchStartStageLocator>(0x00426F10, ReloadedHooks.Instance);
-        public static Function<SearchIntroStageLocator>  Fun_GetIntroPosition { get; } = new Function<SearchIntroStageLocator>(0x00427010, ReloadedHooks.Instance);
-        public static Function<InitPath>  Fun_InitializeSplines { get; } = new Function<InitPath>(0x00439020, ReloadedHooks.Instance);
+        public static Function<SearchGoalStageLocator>  Fun_GetEndPosition { get; } = new Function<SearchGoalStageLocator>(0x00426FD0, Reloaded.ReloadedHooks);
+        public static Function<SearchStartStageLocator> Fun_GetStartPosition { get; } = new Function<SearchStartStageLocator>(0x00426F10, Reloaded.ReloadedHooks);
+        public static Function<SearchIntroStageLocator>  Fun_GetIntroPosition { get; } = new Function<SearchIntroStageLocator>(0x00427010, Reloaded.ReloadedHooks);
+        public static Function<InitPath>  Fun_InitializeSplines { get; } = new Function<InitPath>(0x00439020, Reloaded.ReloadedHooks);
 
         /* Functions */
         public static SearchGoalStageLocator GetEndPosition     { get; } = Fun_GetEndPosition.GetWrapper();

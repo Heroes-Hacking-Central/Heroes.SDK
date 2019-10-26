@@ -70,22 +70,22 @@ namespace Heroes.SDK.Classes.NativeClasses
 
         /* Function Listing */
 
-        public static IFunction<Native_CheckFileID> Fun_CheckFileId { get; } = new Function<Native_CheckFileID>(0x0042F280, ReloadedHooks.Instance);
-        public static IFunction<Native_LoadHAnimationEx> Fun_LoadHAnimationEx { get; } = new Function<Native_LoadHAnimationEx>(0x0042F7C0, ReloadedHooks.Instance);
-        public static IFunction<Native_LoadOneFile> Fun_LoadOneFile { get; } = new Function<Native_LoadOneFile>(0x0042F100, ReloadedHooks.Instance);
-        public static IFunction<Native_OnefileConstructor> Fun_Constructor { get; } = new Function<Native_OnefileConstructor>(0x0042F0D0, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadCameraTmb> Fun_LoadCameraTmb { get; } = new Function<Native_OneFileLoadCameraTmb>(0x0042F770, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadClump> Fun_LoadClump { get; } = new Function<Native_OneFileLoadClump>(0x0042F440, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadDeltaMorph> Fun_LoadDeltaMorph { get; } = new Function<Native_OneFileLoadDeltaMorph>(0x0042F520, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadHAnimation> Fun_LoadHAnimation { get; } = new Function<Native_OneFileLoadHAnimation>(0x0042F600, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadMaestro> Fun_LoadMaestro { get; } = new Function<Native_OneFileLoadMaestro>(0x0042F6F0, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadSpline> Fun_LoadSpline { get; } = new Function<Native_OneFileLoadSpline>(0x0042F4B0, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadTextureDictionary> Fun_LoadTextureDictionary { get; } = new Function<Native_OneFileLoadTextureDictionary>(0x0042F3C0, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadUVAnim> Fun_LoadUVAnim { get; } = new Function<Native_OneFileLoadUVAnim>(0x0042F670, ReloadedHooks.Instance);
-        public static IFunction<Native_OneFileLoadWorld> Fun_LoadWorld { get; } = new Function<Native_OneFileLoadWorld>(0x0042F590, ReloadedHooks.Instance);
-        public static IFunction<Native_OpenData> Fun_OpenData { get; } = new Function<Native_OpenData>(0x0042F340, ReloadedHooks.Instance);
-        public static IFunction<Native_ReleaseOneFile> Fun_ReleaseOneFile { get; } = new Function<Native_ReleaseOneFile>(0x0042F210, ReloadedHooks.Instance);
-        public static IFunction<Native_SetOneFileOneTime> Fun_SetOneFileOneTime { get; } = new Function<Native_SetOneFileOneTime>(0x0042F7F0, ReloadedHooks.Instance);
+        public static IFunction<Native_CheckFileID> Fun_CheckFileId { get; } = new Function<Native_CheckFileID>(0x0042F280, Reloaded.ReloadedHooks);
+        public static IFunction<Native_LoadHAnimationEx> Fun_LoadHAnimationEx { get; } = new Function<Native_LoadHAnimationEx>(0x0042F7C0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_LoadOneFile> Fun_LoadOneFile { get; } = new Function<Native_LoadOneFile>(0x0042F100, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OnefileConstructor> Fun_Constructor { get; } = new Function<Native_OnefileConstructor>(0x0042F0D0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadCameraTmb> Fun_LoadCameraTmb { get; } = new Function<Native_OneFileLoadCameraTmb>(0x0042F770, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadClump> Fun_LoadClump { get; } = new Function<Native_OneFileLoadClump>(0x0042F440, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadDeltaMorph> Fun_LoadDeltaMorph { get; } = new Function<Native_OneFileLoadDeltaMorph>(0x0042F520, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadHAnimation> Fun_LoadHAnimation { get; } = new Function<Native_OneFileLoadHAnimation>(0x0042F600, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadMaestro> Fun_LoadMaestro { get; } = new Function<Native_OneFileLoadMaestro>(0x0042F6F0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadSpline> Fun_LoadSpline { get; } = new Function<Native_OneFileLoadSpline>(0x0042F4B0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadTextureDictionary> Fun_LoadTextureDictionary { get; } = new Function<Native_OneFileLoadTextureDictionary>(0x0042F3C0, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadUVAnim> Fun_LoadUVAnim { get; } = new Function<Native_OneFileLoadUVAnim>(0x0042F670, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OneFileLoadWorld> Fun_LoadWorld { get; } = new Function<Native_OneFileLoadWorld>(0x0042F590, Reloaded.ReloadedHooks);
+        public static IFunction<Native_OpenData> Fun_OpenData { get; } = new Function<Native_OpenData>(0x0042F340, Reloaded.ReloadedHooks);
+        public static IFunction<Native_ReleaseOneFile> Fun_ReleaseOneFile { get; } = new Function<Native_ReleaseOneFile>(0x0042F210, Reloaded.ReloadedHooks);
+        public static IFunction<Native_SetOneFileOneTime> Fun_SetOneFileOneTime { get; } = new Function<Native_SetOneFileOneTime>(0x0042F7F0, Reloaded.ReloadedHooks);
 
         /*
             Original Function Calls 

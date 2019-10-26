@@ -29,7 +29,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         public static RefPointer<Octree> DeathCollisionFile { get; } = new RefPointer<Octree>((Octree*) 0x00A7768C, 2);
 
         /* Function Declarations */
-        public static Function<Native_InitCollision> Fun_InitCollision { get; } = new Function<Native_InitCollision>(0x00425500, ReloadedHooks.Instance);
+        public static Function<Native_InitCollision> Fun_InitCollision { get; } = new Function<Native_InitCollision>(0x00425500, Reloaded.ReloadedHooks);
 
         /* Functions */
 

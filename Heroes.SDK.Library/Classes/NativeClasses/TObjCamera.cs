@@ -7,7 +7,7 @@ namespace Heroes.SDK.Classes.NativeClasses
     public unsafe struct TObjCamera
     {
         /* Function Declarations */
-        public static Function<Native_Init> Fun_Init { get; } = new Function<Native_Init>(0x0061D3B0, ReloadedHooks.Instance);
+        public static Function<Native_Init> Fun_Init { get; } = new Function<Native_Init>(0x0061D3B0, Reloaded.ReloadedHooks);
 
         /* Function Definitions */
 

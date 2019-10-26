@@ -6,7 +6,7 @@ namespace Heroes.SDK.Classes.NativeClasses
 {
     public unsafe struct TObjTeam
     {
-        public static Function<Native_Exec> Fun_Exec { get; } = new Function<Native_Exec>(0x005B10E0, ReloadedHooks.Instance);
+        public static Function<Native_Exec> Fun_Exec { get; } = new Function<Native_Exec>(0x005B10E0, Reloaded.ReloadedHooks);
 
         /* Bindings */
         public void* Exec()

@@ -12,8 +12,8 @@ namespace Heroes.SDK.Classes.NativeClasses
     {
         /* Function Definitions */
 
-        public static Function<Native_MakeRepeatCount> Fun_MakeRepeatCount { get; } = new Function<Native_MakeRepeatCount>(0x00434FF0, ReloadedHooks.Instance);
-        public static Function<Native_ConvertPadData>  Fun_ConvertPadData  { get; } = new Function<Native_ConvertPadData>(0x004351A0, ReloadedHooks.Instance);
+        public static Function<Native_MakeRepeatCount> Fun_MakeRepeatCount { get; } = new Function<Native_MakeRepeatCount>(0x00434FF0, Reloaded.ReloadedHooks);
+        public static Function<Native_ConvertPadData>  Fun_ConvertPadData  { get; } = new Function<Native_ConvertPadData>(0x004351A0, Reloaded.ReloadedHooks);
 
         /* Function Declarations */
 

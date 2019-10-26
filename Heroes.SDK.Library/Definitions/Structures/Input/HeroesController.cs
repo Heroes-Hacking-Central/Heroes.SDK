@@ -1,8 +1,11 @@
-﻿namespace Heroes.SDK.Definitions.Structures.Input
+﻿using System.Runtime.InteropServices;
+
+namespace Heroes.SDK.Definitions.Structures.Input
 {
     /// <summary>
     /// Describes a controller structure used for storing controls obtained from the PC version of the game.
     /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
     [Equals(DoNotAddEqualityOperators =true)]
     public struct HeroesController
     {
@@ -81,7 +84,7 @@
         /// <summary>
         /// Returns the buttons that have been pressed <see cref="before"/> but not pressed <see cref="after"/>.
         /// </summary>
-        private ButtonFlags GetReleasedButtons(ButtonFlags before, ButtonFlags after)
+        public ButtonFlags GetReleasedButtons(ButtonFlags before, ButtonFlags after)
         {
             // Return B and NOT A
             // "Return those before without the ones after"
@@ -91,14 +94,14 @@
         /// <summary>
         /// Returns the buttons that have been pressed in <see cref="after"/> but not pressed <see cref="before"/>.
         /// </summary>
-        private ButtonFlags GetPressedButtons(ButtonFlags before, ButtonFlags after)
+        public ButtonFlags GetPressedButtons(ButtonFlags before, ButtonFlags after)
         {
             // Return A and NOT B
             // "Return those after without the ones before"
             return after & (~before);
         }
 
-        private int GetMinusOneButtonFlags(ButtonFlags buttonFlags)
+        public int GetMinusOneButtonFlags(ButtonFlags buttonFlags)
         {
             return (-1 - (int)buttonFlags);
         }

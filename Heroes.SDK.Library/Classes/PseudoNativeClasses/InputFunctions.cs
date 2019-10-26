@@ -24,7 +24,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         public static RefFixedArrayPtr<SkyPad> FinalInputs { get; } = new RefFixedArrayPtr<SkyPad>(0x00A23A68, NumberOfControllers);
 
         // Function Declarations
-        public static Function<psPADServerPC> Fun_psPADServerPC { get; } = new Function<psPADServerPC>(0x00444F30, ReloadedHooks.Instance);
+        public static Function<psPADServerPC> Fun_psPADServerPC { get; } = new Function<psPADServerPC>(0x00444F30, Reloaded.ReloadedHooks);
 
         // Function Definitions 
 

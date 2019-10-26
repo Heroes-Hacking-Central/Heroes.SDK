@@ -7,7 +7,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
     public unsafe struct PcPortFunctions
     {
         /* Function Declarations */
-        public static Function<Native_ReadConfigfromINI> Fun_ReadConfigfromINI { get; } = new Function<Native_ReadConfigfromINI>(0x00629CE0, ReloadedHooks.Instance);
+        public static Function<Native_ReadConfigfromINI> Fun_ReadConfigfromINI { get; } = new Function<Native_ReadConfigfromINI>(0x00629CE0, Reloaded.ReloadedHooks);
         
         /* Function Definitions */
 

@@ -10,7 +10,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
     public class RenderFunctions
     {
         /* Function Definitions */
-        public static Function<EndFrame> Fun_EndFrame { get; } = new Function<EndFrame>(0x00443110, ReloadedHooks.Instance);
+        public static Function<EndFrame> Fun_EndFrame { get; } = new Function<EndFrame>(0x00443110, Reloaded.ReloadedHooks);
 
         /// <summary>
         /// Obtains inputs, runs some code and sleeps for the remainder of the frame.

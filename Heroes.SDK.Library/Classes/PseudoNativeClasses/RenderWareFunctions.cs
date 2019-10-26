@@ -12,10 +12,10 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
     public unsafe struct RenderWareFunctions
     {
         /* Function Declarations */
-        public static Function<Native_RwCameraSetViewWindow> Fun_RwCameraSetViewWindow { get; } = new Function<Native_RwCameraSetViewWindow>(0x0064AC80, ReloadedHooks.Instance);
-        public static Function<Native_CameraBuildPerspClipPlanes> Fun_CameraBuildPerspClipPlanes { get; } = new Function<Native_CameraBuildPerspClipPlanes>(0x0064AF80, ReloadedHooks.Instance);
-        public static Function<Native_GetVertexBufferSubmission> Fun_GetVertexBufferSubmission { get; } = new Function<Native_GetVertexBufferSubmission>(0x651E20, ReloadedHooks.Instance);
-        public static Function<Native_rwD3D8Im2DRenderPrimitive> Fun_D3D8Im2DRenderPrimitive { get; } = new Function<Native_rwD3D8Im2DRenderPrimitive>(0x00662B00, ReloadedHooks.Instance);
+        public static Function<Native_RwCameraSetViewWindow> Fun_RwCameraSetViewWindow { get; } = new Function<Native_RwCameraSetViewWindow>(0x0064AC80, Reloaded.ReloadedHooks);
+        public static Function<Native_CameraBuildPerspClipPlanes> Fun_CameraBuildPerspClipPlanes { get; } = new Function<Native_CameraBuildPerspClipPlanes>(0x0064AF80, Reloaded.ReloadedHooks);
+        public static Function<Native_GetVertexBufferSubmission> Fun_GetVertexBufferSubmission { get; } = new Function<Native_GetVertexBufferSubmission>(0x651E20, Reloaded.ReloadedHooks);
+        public static Function<Native_rwD3D8Im2DRenderPrimitive> Fun_D3D8Im2DRenderPrimitive { get; } = new Function<Native_rwD3D8Im2DRenderPrimitive>(0x00662B00, Reloaded.ReloadedHooks);
 
         /* Function Definitions */
 

@@ -6,7 +6,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
 {
     public unsafe class CStandardLibrary
     {
-        public static Function<Native_Free> Fun_Free = new Function<Native_Free>(0x0067B35D, ReloadedHooks.Instance);
+        public static Function<Native_Free> Fun_Free = new Function<Native_Free>(0x0067B35D, Reloaded.ReloadedHooks);
         public static Native_Free Free { get; } = Fun_Free.GetWrapper();
 
         /// <summary>
