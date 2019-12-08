@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
@@ -88,7 +88,7 @@ namespace Heroes.SDK.Definitions.Structures.World.Camera
             if (transformMode == Transform.Relative)
             {
                 // Transform.
-                var rotationMatrix = Matrix4x4.CreateRotationZ(BAMSToRadians(_angleRollBams));
+                var rotationMatrix = Matrix4x4.CreateRotationZ(BAMSToRadians(_angleRollBams) * -1);
                 var rotationVector = Vector3.Transform(new Vector3(vector.X, vector.Y, 0), rotationMatrix);
 
                 if (invertOnUpsideDown && IsUpsideDown())
