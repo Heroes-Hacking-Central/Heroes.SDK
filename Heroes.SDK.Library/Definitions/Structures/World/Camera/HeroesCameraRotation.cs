@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
@@ -137,7 +137,7 @@ namespace Heroes.SDK.Definitions.Structures.World.Camera
         private float BAMSToRadians(uint bams) => (float)((bams % ushort.MaxValue) / (float) ushort.MaxValue * DoublePi);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private uint DegreesToBAMS(float degrees) => (uint) ((degrees % MaxAngleDegrees) / MaxAngleDegrees) * ushort.MaxValue;
+        private uint DegreesToBAMS(float degrees) => (uint)((degrees % MaxAngleDegrees) / MaxAngleDegrees * ushort.MaxValue);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private float BAMSToDegrees(uint bams) => ((bams % ushort.MaxValue) / (float) ushort.MaxValue) * MaxAngleDegrees;
