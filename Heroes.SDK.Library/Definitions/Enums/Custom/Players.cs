@@ -1,6 +1,6 @@
 ﻿namespace Heroes.SDK.Definitions.Enums.Custom
 {
-    public enum Player
+    public enum Players : int
     {
         One,
         Two,
