@@ -1,4 +1,5 @@
-﻿using SonicHeroes.Utils.StageInjector.Common.Utilities;
+﻿using Heroes.SDK.Parsers;
+using SonicHeroes.Utils.StageInjector.Common.Utilities;
 
 namespace SonicHeroes.Utils.StageInjector.Common
 {
