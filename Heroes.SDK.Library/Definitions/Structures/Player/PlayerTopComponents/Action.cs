@@ -30,7 +30,7 @@
         Captured = 0x26,
         Vanished = 0x27,
         PinballMode = 0x28,
-        SpeedFlyGliding = 0x29,
+        FlyFormationDefault = 0x29, // Performed by fly formation characters not in control of the current formation position.
         Event = 0x2B,
         Dead = 0x2C,
         Fly = 0x34,
