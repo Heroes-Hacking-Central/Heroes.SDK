@@ -13,7 +13,7 @@ namespace Heroes.SDK.Definitions.Structures.World.Camera
         /// <summary>
         /// The position of the camera.
         /// </summary>
-        private Vector3 Position;
+        public Vector3 Position;
 
         /// <summary>
         /// The rotation of the camera.
