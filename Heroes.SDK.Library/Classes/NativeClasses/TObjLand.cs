@@ -3,6 +3,7 @@ using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using Reloaded.Memory.Pointers;
+using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
@@ -51,9 +52,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         /// <param name="landManagerPtr">Address of a pointer to the land manager object.</param>
         /// <param name="fileNameWithoutExtension">Name of the file in the collisions folder minus the name of the extension.</param>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        [Function(new[] { FunctionAttribute.Register.esi, FunctionAttribute.Register.edi }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.None)]
-        public delegate int Native_InitCollision([MarshalAs(UnmanagedType.LPStr)] string fileNameWithoutExtension, int landManagerPtr = LandManager);
-
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.esi, Register.edi}, Register.eax, StackCleanup.None)]
+        public delegate int Native_InitCollision(string fileNameWithoutExtension, int landManagerPtr = LandManager);
     }
 }
