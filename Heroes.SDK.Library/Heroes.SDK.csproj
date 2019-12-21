@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <UserSecretsId>39722dde-1d29-4bcf-9871-cef44536c371</UserSecretsId>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
@@ -14,29 +13,5 @@
     <PackageReference Include="Reloaded.Memory" Version="2.5.0" />
     <PackageReference Include="Reloaded.Messaging.Serializer.SystemTextJson" Version="1.0.1" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="Player.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="World.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="Camera.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="UI.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="Audio.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="Window.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="Event.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeLibs Remove="SDK.cs" />
   </ItemGroup>
 </Project>
