@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Heroes.SDK.Utilities.Misc;
 
 namespace Heroes.SDK.Utilities.Math.Structs
 {
@@ -13,18 +15,7 @@ namespace Heroes.SDK.Utilities.Math.Structs
         public float Y { get; set; }
         public float Z { get; set; }
 
-        public Vector3(System.Numerics.Vector3 vector)
-        {
-            X = vector.X;
-            Y = vector.Y;
-            Z = vector.Z;
-        }
-
-        public Vector3(float x, float y, float z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
+        public static implicit operator Vector3(System.Numerics.Vector3 vector3) => vector3.ReinterpretCast<System.Numerics.Vector3, Vector3>();
+        public static implicit operator System.Numerics.Vector3(Vector3 vector3) => vector3.ReinterpretCast<Vector3, System.Numerics.Vector3>();
     }
 }

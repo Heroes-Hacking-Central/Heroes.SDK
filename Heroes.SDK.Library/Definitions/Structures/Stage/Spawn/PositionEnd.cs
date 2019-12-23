@@ -1,4 +1,5 @@
 using System.Numerics;
+using Vector3 = Heroes.SDK.Utilities.Math.Structs.Vector3;
 
 namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
 {

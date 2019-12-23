@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
@@ -31,15 +32,9 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         public float DistanceToNextVertex { get; set; }
 
         /// <summary>
-        /// Used for serialization only.
+        /// Stores the position of this spline vertex.
         /// </summary>
-        public Utilities.Math.Structs.Vector3 Position => new Utilities.Math.Structs.Vector3(ActualPosition);
-
-        /// <summary>
-        /// Represents the position of the spline's vertex in 3D space.
-        /// </summary>
-        [JsonIgnore]
-        private Vector3 ActualPosition { get; set; }
+        public Utilities.Math.Structs.Vector3 Position { get; set; }
 
         public SplineVertex(float x, float y, float z) : this(new Vector3(x, y, z)) { }
 
@@ -48,7 +43,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         /// </summary>
         public SplineVertex(Vector3 position)
         {
-            this.ActualPosition = position;
+            Position = position;
             DistanceToNextVertex = 0;
 
             Pitch = 0;
@@ -61,7 +56,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         public SplineVertex(int unknownRotation, Vector3 position)
         {
             DistanceToNextVertex = 0;
-            ActualPosition = position;
+            Position = position;
 
             Pitch = 0;
             Roll = 0;
@@ -74,7 +69,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float GetDistance(SplineVertex other)
         {
-            return Vector3.Distance(ActualPosition, other.ActualPosition);
+            return Vector3.Distance(Position, other.Position);
         }
 
         /// <summary>
@@ -84,12 +79,12 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public short GetPitch(SplineVertex other)
         {
-            float differenceX = ActualPosition.X - other.ActualPosition.X;
-            float differenceZ = ActualPosition.Z - other.ActualPosition.Z;
+            float differenceX = Position.X - other.Position.X;
+            float differenceZ = Position.Z - other.Position.Z;
             double adjacent   = Math.Sqrt(Math.Pow(differenceX, 2) + Math.Pow(differenceZ, 2));
 
             // Use Pythagoras to get angle between hypotenuse and Y.
-            float opposite = ActualPosition.Y - other.ActualPosition.Y;
+            float opposite = Position.Y - other.Position.Y;
 
             // Calculate angle.
             double tan   = opposite / adjacent;
