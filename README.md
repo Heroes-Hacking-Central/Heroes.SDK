@@ -10,7 +10,7 @@ This is a single unified library providing both, an easy way to manipulate the g
 
 It primarily is intended for easier creation of mods with Reloaded II, though it does contain many structures invaluable to creating standalone tools/parsers. There are also some included parsers of its own, allowing for creation/extraction of various game formats.
 
-This SDK is originally pieced together from mods made by [Sewer](https://github.com/Sewer56) and further driven by ~~Donut's disassembly he will release once Half Life 3 releases~~ the [community disassembly](https://github.com/Heroes-Hacking-Central/Heroes-Disassembly). At the moment it is not yet tested/used: Expect hidden typos, errors and bugs.
+This SDK is originally pieced together from mods made by [Sewer](https://github.com/Sewer56) and further driven by ~~Donut's disassembly he will release once Half Life 3 releases~~ the [community disassembly](https://github.com/Heroes-Hacking-Central/Heroes-Disassembly).
 
 ## Using the API
 An easy to use API for manipulating the game at runtime is available in the `Heroes.SDK.API` namespace.
