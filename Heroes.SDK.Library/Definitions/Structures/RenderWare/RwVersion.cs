@@ -10,6 +10,23 @@
         public uint Version;
 
         /// <summary>
+        /// Creates a <see cref="Heroes.SDK.Definitions.Structures.RenderWare"/> version tag.
+        /// </summary>
+        /// <param name="version">Sets the version. i.e. 3.5.0.1 ; The RW version would be 3.</param>
+        /// <param name="major">Sets the major version. i.e. 3.5.0.1 ; The RW version would be 5.</param>
+        /// <param name="minor">Sets the minor version. i.e. 3.5.0.1 ; The RW version would be 0.</param>
+        /// <param name="revision">Sets the revision. i.e. 3.5.0.1 ; The RW version would be 1.</param>
+        /// <param name="build">The build.</param>
+        public RwVersion(uint version, uint major, uint minor, uint revision, ushort build = 0xFFFF) : this()
+        {
+            SetVersion(version);
+            SetMajor(major);
+            SetMinor(minor);
+            SetRevision(revision);
+            SetBuild(build);
+        }
+
+        /// <summary>
         /// Gets the RW version from the RenderWare version identifier.
         /// i.e. 3.5.0.1 ; The RW version would be 3.
         /// </summary>

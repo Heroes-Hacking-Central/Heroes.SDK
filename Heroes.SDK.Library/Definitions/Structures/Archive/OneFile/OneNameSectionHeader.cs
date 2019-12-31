@@ -23,6 +23,16 @@ namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
         /// </summary>
         public RwVersion RenderWareVersion;
 
+        /// <param name="unknown">Unknown. Probably compression flag.</param>
+        /// <param name="fileNameSectionLength">Length of this section.</param>
+        /// <param name="renderWareVersion">RenderWare version assigned to this section.</param>
+        public OneNameSectionHeader(int fileNameSectionLength, RwVersion renderWareVersion, int unknown = 1)
+        {
+            Unknown = unknown;
+            FileNameSectionLength = fileNameSectionLength;
+            RenderWareVersion = renderWareVersion;
+        }
+
         /// <summary>
         /// Retrieves the amount of ArchiveFile Name entries following the header.
         /// </summary>

@@ -22,5 +22,25 @@ namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
         /// Stores the RenderWare version assigned to this .ONE file.
         /// </summary>
         public RwVersion RenderWareVersion;
+
+        /// <summary>
+        /// Creates a new Archive header.
+        /// </summary>
+        /// <param name="fileSize">Size of entire file, minus header</param>
+        /// <param name="renderWareVersion">RenderWare version tag assigned to this archive</param>
+        public OneArchiveHeader(int fileSize, RwVersion renderWareVersion) : this()
+        {
+            FileSize = fileSize;
+            RenderWareVersion = renderWareVersion;
+        }
+
+        /// <summary>
+        /// Creates a new Archive header.
+        /// </summary>
+        /// <param name="renderWareVersion">RenderWare version tag assigned to this archive</param>
+        public OneArchiveHeader(RwVersion renderWareVersion) : this()
+        {
+            RenderWareVersion = renderWareVersion;
+        }
     }
 }
