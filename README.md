@@ -92,13 +92,18 @@ If you are developing a mod with `Reloaded II`, consider using Shared Libraries 
 
 The following are a simple set of heavily recommended guidelines for using the Heroes SDK in conjunction with developing [Reloaded II](https://github.com/Reloaded-Project/Reloaded-II) mods.
 
-- Use the [Reloaded.Hooks Shared Library](https://github.com/Sewer56/Reloaded.SharedLib.Hooks). Why? Please see the [three main reasons](https://github.com/Sewer56/Reloaded.SharedLib.Hooks#fast-startup-times).
+- Use the [Shared Libraries](https://github.com/Sewer56/Reloaded.SharedLib.Hooks). Why? Please see the [three main reasons](https://github.com/Sewer56/Reloaded.SharedLib.Hooks#fast-startup-times).
 
 ```csharp
 // In Start() function of a Reloaded II mod, set the ReloadedHooks instance used to the shared one.
 _modLoader.GetController<IReloadedHooks>().TryGetTarget(out ReloadedHooks);
-SDK.Init(ReloadedHooks);    
+_modLoader.GetController<IPrsInstance>().TryGetTarget(out PrsInstance);
+SDK.Init(ReloadedHooks, PrsInstance);    
 ```
+
+[Reloaded.Hooks Shared Library](https://github.com/Sewer56/Reloaded.SharedLib.Hooks)
+[CSharp.Prs Shared Library](https://github.com/Sewer56/Reloaded.SharedLib.Csharp.Prs.ReloadedII)
+
 - If using Reloaded-II's [Inter Mod Communication](https://github.com/Reloaded-Project/Reloaded-II/blob/master/Docs/InterModCommunication.md) to expose interfaces, **DO NOT INCLUDE THE TYPES FROM THE SDK IN YOUR INTERFACES**. 
   - Not only would that force mods to have a copy of the SDK in their output folder but it would force them to use the same version of the SDK as the source mod.
   - If you require to use some structs from the SDK, copy the structs into your interface library from the SDK and cast wherever needed from the copied type to the SDK type. See [Heroes.Controller.Hook](https://github.com/Sewer56/Heroes.Controller.Hook.ReloadedII/tree/master/Heroes.Controller.Hook.Interfaces) if an example is required.
