@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using csharp_prs;
 using Heroes.SDK.Definitions.Structures.RenderWare;
+using static Heroes.SDK.SDK;
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom
 {

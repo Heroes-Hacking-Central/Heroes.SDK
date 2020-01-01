@@ -72,17 +72,19 @@ See [Advanced Usage](./Docs/AdvancedUsage.md)
 
 You might need to update the project you are referencing this library from to `netstandard2.1`/`netcoreapp3.0` or newer.
 
-### Adding Reloaded.Hooks
+### Adding External Libraries
 
-As of 26th of October 2019, the SDK does not ship with `Reloaded.Hooks` anymore to reduce on both mod and program sizes using the SDK.
+To keep build sizes of compiled projects small, the library does not ship with all of its dependencies. Some dependencies need to be supplied manually to the library.
 
-If you plan to create mods using the SDK, you need to supply the SDK an instance of `IReloadedHooks`.
+If you plan to create mods using the SDK, you may need to supply the SDK an instance of `IReloadedHooks` (Hooks/Detours), and `IPrsInstance` (Prs Compression).
 
-To do so, download [Reloaded.Hooks](https://github.com/Reloaded-Project/Reloaded.Hooks) from NuGet and call the function `SDK.Init`, passing your instance of `ReloadedHooks` before executing any other SDK code.
+To do so, download [Reloaded.Hooks](https://github.com/Reloaded-Project/Reloaded.Hooks), and [csharp-prs](https://www.nuget.org/packages/csharp-prs/) from NuGet and call the function `SDK.Init`, passing your instance of `ReloadedHooks` before executing any other SDK code. 
 
 ```csharp
-SDK.Init(new ReloadedHooks());   
+SDK.Init(new ReloadedHooks(), new PrsInstance());   
 ```
+
+Only download what you need, you can pass in null for the libraries you don't need.
 
 If you are developing a mod with `Reloaded II`, consider using Shared Libraries as outlined below.
 

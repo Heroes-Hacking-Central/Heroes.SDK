@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using csharp_prs;
 using Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom;
 using Heroes.SDK.Definitions.Structures.RenderWare;
+using static Heroes.SDK.SDK;
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
 {
