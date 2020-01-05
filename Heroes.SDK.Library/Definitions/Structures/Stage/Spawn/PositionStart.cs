@@ -13,9 +13,18 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
     public struct PositionStart
     {
         /// <summary>
+        /// Use to edit the <see cref="Position"/> directly without making copies if necessary.
+        /// </summary>
+        public Vector3 _position;
+
+        /// <summary>
         /// The starting position of the player.
         /// </summary>
-        public Vector3 Position { get; set; }
+        public Vector3 Position
+        {
+            get => _position;
+            set => _position = value;
+        }
 
         /// <summary>
         /// BAMS 0 - 65535. Pitch is clockwise, i.e. rotating 90 degrees causes the characters' legs to point AWAY from the camera.
