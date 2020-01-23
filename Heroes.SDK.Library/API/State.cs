@@ -20,7 +20,7 @@ namespace Heroes.SDK.API
         /// <summary>
         /// The stage that is currently being played.
         /// </summary>
-        public static ref Definitions.Enums.Stage CurrentStage => ref RefPointer< Definitions.Enums.Stage>.Create((Definitions.Enums.Stage*) 0x008D6720);
+        public static ref Definitions.Enums.Stage CurrentStage => ref RefPointer< Definitions.Enums.Stage>.Create((Definitions.Enums.Stage*) 0x008D6710);
 
         /// <summary>
         /// Describes the state of the game at a given moment in time when the player is inside a stage.
