@@ -9,36 +9,12 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Rank
     {
         public Enums.Stage StageId { get; set; }
         /// <summary>
-        /// Score required for Team Sonic to get a D rank, divided by 100.
+        /// Score required for Team Sonic rankings.
         /// </summary>
-        public ushort SonicD { get; set; }
+        public RankEntryScore Sonic { get; set; }
         /// <summary>
-        /// Score required for Team Sonic to get a C rank, divided by 100.
+        /// Score required for Team Chaotix rankings.
         /// </summary>
-        public ushort SonicC { get; set; }
-        /// <summary>
-        /// Score required for Team Sonic to get a B rank, divided by 100.
-        /// </summary>
-        public ushort SonicB { get; set; }
-        /// <summary>
-        /// Score required for Team Sonic to get an A rank, divided by 100.
-        /// </summary>
-        public ushort SonicA { get; set; }
-        /// <summary>
-        /// Score required for Team Chaotix to get a D rank, divided by 100.
-        /// </summary>
-        public ushort ChaotixD { get; set; }
-        /// <summary>
-        /// Score required for Team Chaotix to get a C rank, divided by 100.
-        /// </summary>
-        public ushort ChaotixC { get; set; }
-        /// <summary>
-        /// Score required for Team Chaotix to get a B rank, divided by 100.
-        /// </summary>
-        public ushort ChaotixB { get; set; }
-        /// <summary>
-        /// Score required for Team Chaotix to get an A rank, divided by 100.
-        /// </summary>
-        public ushort ChaotixA { get; set; }
+        public RankEntryScore Chaotix { get; set; }
     }
 }

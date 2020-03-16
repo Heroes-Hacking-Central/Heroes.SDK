@@ -9,132 +9,20 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Rank
     {
         public Enums.Stage StageId { get; set; }
         /// <summary>
-        /// Minutes of time required for Team Sonic to get a D rank.
+        /// Team Sonic ranking requirements.
         /// </summary>
-        public byte SonicDMin { get; set; }
+        public RankEntryTime Sonic { get; set; }
         /// <summary>
-        /// Seconds of time required for Team Sonic to get a D rank.
+        /// Team Dark ranking requirements.
         /// </summary>
-        public byte SonicDSec { get; set; }
+        public RankEntryTime Dark { get; set; }
         /// <summary>
-        /// Minutes of time required for Team Sonic to get a C rank.
+        /// Team Rose ranking requirements.
         /// </summary>
-        public byte SonicCMin { get; set; }
+        public RankEntryTime Rose { get; set; }
         /// <summary>
-        /// Seconds of time required for Team Sonic to get a C rank.
+        /// Team Chaotix ranking requirements.
         /// </summary>
-        public byte SonicCSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Sonic to get a B rank.
-        /// </summary>
-        public byte SonicBMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Sonic to get a B rank.
-        /// </summary>
-        public byte SonicBSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Sonic to get a A rank.
-        /// </summary>
-        public byte SonicAMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Sonic to get a A rank.
-        /// </summary>
-        public byte SonicASec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Dark to get a D rank.
-        /// </summary>
-        public byte DarkDMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Dark to get a D rank.
-        /// </summary>
-        public byte DarkDSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Dark to get a C rank.
-        /// </summary>
-        public byte DarkCMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Dark to get a C rank.
-        /// </summary>
-        public byte DarkCSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Dark to get a B rank.
-        /// </summary>
-        public byte DarkBMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Dark to get a B rank.
-        /// </summary>
-        public byte DarkBSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Dark to get a A rank.
-        /// </summary>
-        public byte DarkAMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Dark to get a A rank.
-        /// </summary>
-        public byte DarkASec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Rose to get a D rank.
-        /// </summary>
-        public byte RoseDMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Rose to get a D rank.
-        /// </summary>
-        public byte RoseDSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Rose to get a C rank.
-        /// </summary>
-        public byte RoseCMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Rose to get a C rank.
-        /// </summary>
-        public byte RoseCSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Rose to get a B rank.
-        /// </summary>
-        public byte RoseBMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Rose to get a B rank.
-        /// </summary>
-        public byte RoseBSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Rose to get a A rank.
-        /// </summary>
-        public byte RoseAMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Rose to get a A rank.
-        /// </summary>
-        public byte RoseASec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Chaotix to get a D rank.
-        /// </summary>
-        public byte ChaotixDMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Chaotix to get a D rank.
-        /// </summary>
-        public byte ChaotixDSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Chaotix to get a C rank.
-        /// </summary>
-        public byte ChaotixCMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Chaotix to get a C rank.
-        /// </summary>
-        public byte ChaotixCSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Chaotix to get a B rank.
-        /// </summary>
-        public byte ChaotixBMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Chaotix to get a B rank.
-        /// </summary>
-        public byte ChaotixBSec { get; set; }
-        /// <summary>
-        /// Minutes of time required for Team Chaotix to get a A rank.
-        /// </summary>
-        public byte ChaotixAMin { get; set; }
-        /// <summary>
-        /// Seconds of time required for Team Chaotix to get a A rank.
-        /// </summary>
-        public byte ChaotixASec { get; set; }
+        public RankEntryTime Chaotix { get; set; }
     }
 }
