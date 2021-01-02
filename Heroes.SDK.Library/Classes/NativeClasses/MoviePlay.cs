@@ -20,15 +20,12 @@ namespace Heroes.SDK.Classes.NativeClasses
 
         /* Function Mapping */
         [Function(CallingConventions.MicrosoftThiscall)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int Native_Play(ref MoviePlay thisPointer); // 00643DE0
 
         [Function(CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int Native_Loop(); // 00643E20
 
         [Function(CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int Native_End(); // 00643E00 
 
         // TODO: These remaining functions below are placed here by guess, I have not yet

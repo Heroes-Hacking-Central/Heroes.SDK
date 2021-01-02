@@ -34,7 +34,6 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// Obtains the inputs from connected directinput devices and writes them to the <see cref="InputFunctions.Inputs"/>.
         /// </summary>
         /// <returns></returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.Cdecl)]
         public delegate int psPADServerPC(); // 00444F30
     }

@@ -5,6 +5,7 @@ using Heroes.SDK.Utilities.Misc;
 using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 using Strings = Heroes.SDK.Utilities.Misc.Strings;
 
 namespace Heroes.SDK.Classes.NativeClasses
@@ -259,8 +260,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="thisPointer">[EAX] Pointer To 'This' Variable</param>
         /// <param name="fileNamePtr">[ECX] The name of the ONE file to load. Up to 64 characters.</param>
         /// <returns>he index of the file with specified file name (or -1). Up to 255</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller, 0x40)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Caller, 0x40)]
         public delegate int Native_CheckFileID(ref OneFile thisPointer, string fileNamePtr);
 
         /// <summary>
@@ -271,8 +272,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="thisPointer">[ESI] "This" pointer for the ONEFILE class instance.</param>
         /// <param name="animationFileIndex">The index of the file inside the .ONE archive (starting with 2)</param>
         /// <returns>The address containing the read in ANM (H Anim - Character Animation) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.edi, FunctionAttribute.Register.esi }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.edi, Register.esi }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_LoadHAnimationEx(string fileNamePtr, void* allocatedMemoryPtr, ref OneFile thisPointer, int animationFileIndex);
 
         /// <summary>
@@ -282,8 +283,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="allocatedMemoryPtr">[EDI] Malloc'd Memory Struct To Write ONE File to.</param>
         /// <param name="fileNamePtr">The name of the ONE file to load.</param>
         /// <returns>1 if the operation succeeded, else 0.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.edi }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.edi }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_LoadOneFile(ref OneFile thisPointer, void* allocatedMemoryPtr, string fileNamePtr);
 
         /// <summary>
@@ -294,8 +295,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="thisPointer">[ESI] "This" pointer to write ONEFILE class to.</param>
         /// <param name="boolLoadOneFile">Informs the ONEFile class instance whether the .ONE file should be loaded on instantiation. Set 1 to true, 0 to false.</param>
         /// <returns>The "This" pointer with ONEFILE class written to it.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.edi, FunctionAttribute.Register.esi }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.edi, Register.esi }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OnefileConstructor(string fileName, void* allocatedMemoryPtr, ref OneFile thisPointer, int boolLoadOneFile);
 
         /// <summary>
@@ -305,8 +306,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in Camera TMB (NJS_MOTION *) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadCameraTmb(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -316,8 +317,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in DFF (Clump) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadClump(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -327,8 +328,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in DMA (Delta Morph) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadDeltaMorph(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -338,8 +339,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in ANM (H Anim - Character Animation) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadHAnimation(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -349,8 +350,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[EAX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in ANM (RW Maestro) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadMaestro(void* addressToDecompressTo, ref OneFile thisPointer, int fileIndex);
 
         /// <summary>
@@ -360,8 +361,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in SPL (Spline) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadSpline(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -371,8 +372,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in TXD (Texture Dictionary) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadTextureDictionary(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -382,8 +383,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in UVA (UV Anim) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadUVAnim(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -393,8 +394,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="addressToDecompressTo">[ECX] The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <param name="thisPointer">"This" pointer for the ONEFILE class instance.</param>
         /// <returns>The address containing the read in BSP (World) stream.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.ecx }, Register.eax, StackCleanup.Callee)]
         public delegate void* Native_OneFileLoadWorld(int fileIndex, void* addressToDecompressTo, ref OneFile thisPointer);
 
         /// <summary>
@@ -404,8 +405,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="fileIndex">The index of the file inside the .ONE archive (starting with 2).</param>
         /// <param name="pointerToWriteTo">The address to which the file inside the ONE archive will be decompressed to.</param>
         /// <returns>The amount of decompressed bytes (the data is at the supplied pointer to write to address).</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee, 0x68)] // Reserved stack space needed probably 54h but I added extra for safety.
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax }, Register.eax, StackCleanup.Callee, 0x68)] // Reserved stack space needed probably 54h but I added extra for safety.
         public delegate int Native_OpenData(ref OneFile thisPointer, int fileIndex, void* pointerToWriteTo);
 
         /// <summary>
@@ -413,8 +414,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         /// <param name="thisPointer">[EBX] "This" pointer for the ONEFILE class instance.</param>
         /// <returns>1 if the operation succeeded, else 0.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.ebx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.ebx }, Register.eax, StackCleanup.Caller)]
         public delegate int Native_ReleaseOneFile(ref OneFile thisPointer);
 
         /// <summary>
@@ -426,8 +427,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="thisPointer">[EDX] This pointer to a ONEFile class.</param>
         /// <param name="oneFileSize">[ECX] The size of the .ONE file to load.</param>
         /// <returns>1 if the operation is successful, else 0.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(new[] { FunctionAttribute.Register.eax, FunctionAttribute.Register.edx, FunctionAttribute.Register.ecx }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller, 0x100)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(new[] { Register.eax, Register.edx, Register.ecx }, Register.eax, StackCleanup.Caller, 0x100)]
         public delegate int Native_SetOneFileOneTime(void* addressContainingONEFile, ref OneFile thisPointer, int oneFileSize);
     }
 }

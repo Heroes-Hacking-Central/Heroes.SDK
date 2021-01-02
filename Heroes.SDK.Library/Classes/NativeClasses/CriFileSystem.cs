@@ -55,7 +55,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate CriFileSystem* Native_CreateFromDirectory(char* directoryPath, int a2NormallyMinusOne, int a3NormallyZero, int a4NormallyZero);
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate int Native_SetFileTablePointer(IntPtr newFunctionPointer, CriFileSystem* fileTablePointer);
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate CriFileSystem* Native_SetTablePointersAndBuild(CriFileSystem* fileTablePointer);
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate int Native_AddFileToFileTable(NewFileInfoTuple* filePath, CriFileSystem* fileTable);
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate int Native_BuildFileTable(string folderPath, int decrementsOnNewDirectory, int* a3);
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate int Native_CallsBuildFileTable(char* a1, int a2, int* a3);
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate char* Native_GetDvdrootFullPath(CriFileSystem* fileTable);
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate int Native_GetFileEntryCount(CriFileSystem* fileTable);
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate FileEntry* Native_GetFileEntryFromFilePath(string fullFilePath);
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate FileEntry* Native_GetNextFileEntry(CriFileSystem* fileTable);
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate FileEntry* Native_LoadADXFromFileTable(string fullFilePath);
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate CriFileSystem* Native_MaybeConstructor(string directoryPath, int a2NormallyMinusOne, char* a3NormallyZero, int a4NormallyZero);
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         [global::Reloaded.Hooks.Definitions.X64.Function(global::Reloaded.Hooks.Definitions.X64.CallingConventions.Microsoft)]
         [global::Reloaded.Hooks.Definitions.X86.Function(global::Reloaded.Hooks.Definitions.X86.CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public delegate int Native_ProbablyResetFileTable();
     }
 }

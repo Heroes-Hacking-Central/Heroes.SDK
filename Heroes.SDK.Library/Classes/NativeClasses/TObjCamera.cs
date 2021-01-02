@@ -2,6 +2,7 @@
 using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
@@ -18,8 +19,8 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="thisPointer">Pre-allocated memory for this camera instance.</param>
         /// <param name="camLimit">The amount of cameras to create.</param>
         /// <returns></returns>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(FunctionAttribute.Register.eax, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(Register.eax, Register.eax, StackCleanup.Callee)]
         public delegate int Native_Init(TObjCamera* thisPointer, int camLimit);
     }
 }

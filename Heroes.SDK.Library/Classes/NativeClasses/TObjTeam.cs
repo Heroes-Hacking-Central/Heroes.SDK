@@ -17,7 +17,6 @@ namespace Heroes.SDK.Classes.NativeClasses
 
         /* Definitions */
         [Function(CallingConventions.MicrosoftThiscall)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void* Native_Exec(ref TObjTeam thisPointer);
     }
 }

@@ -3,6 +3,7 @@ using Heroes.SDK.Definitions.Structures.Input;
 using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
@@ -22,8 +23,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// Increments the repetition count (how many frames the buttons are held) for all buttons.
         /// </summary>
         /// <param name="skyPad">Input structure used to control the game. Can be for any player 1 - player 4.</param>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        [Function(new[] { FunctionAttribute.Register.eax, }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller)]
+        [Function(new[] { Register.eax, }, Register.eax, StackCleanup.Caller)]
         public delegate SkyPad* Native_MakeRepeatCount(SkyPad* skyPad); // 00434FF0
 
         /// <summary>
@@ -33,8 +33,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         /// <param name="heroesController">Input structure used to gather controls from DInput. Can be for any player 1 - player 4.</param>
         /// <param name="skyPad">Input structure used to control the game. Can be for any player 1 - player 4.</param>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        [Function(new[] { FunctionAttribute.Register.edi, FunctionAttribute.Register.esi }, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller)]
+        [Function(new[] { Register.edi, Register.esi }, Register.eax, StackCleanup.Caller)]
         public delegate SkyPad* Native_ConvertPadData(HeroesController* heroesController, SkyPad* skyPad); // 004351A0
     }
 }

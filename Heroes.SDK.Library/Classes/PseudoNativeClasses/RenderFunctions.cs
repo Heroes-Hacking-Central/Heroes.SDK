@@ -16,7 +16,6 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// <summary>
         /// Obtains inputs, runs some code and sleeps for the remainder of the frame.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.Cdecl)]
         public delegate int EndFrame(); // 00443110
     }

@@ -7,6 +7,7 @@ using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using Reloaded.Memory.Pointers;
+using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.PseudoNativeClasses
 {
@@ -49,8 +50,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// </summary>
         /// <param name="team">The team to get the position for.</param>
         /// <returns>0 if no end position found, else address of position.</returns>
-        [Function(FunctionAttribute.Register.esi, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        [Function(Register.esi, Register.eax, StackCleanup.Caller)]
         public delegate PositionEnd* SearchGoalStageLocator(Team team); // 00426FD0
 
         /// <summary>
@@ -58,16 +58,14 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// </summary>
         /// <param name="team">The team to get the position for.</param>
         /// <returns>0 if no end position found, else address of position.</returns>
-        [Function(FunctionAttribute.Register.eax, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        [Function(Register.eax, Register.eax, StackCleanup.Caller)]
         public delegate PositionStart* SearchStartStageLocator(Team team); // 00426F10
 
         /// <summary>
         /// Retrieves the start position for a given team.
         /// </summary>
         /// <param name="team">The team to get the position for.</param>
-        [Function(FunctionAttribute.Register.eax, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Caller)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        [Function(Register.eax, Register.eax, StackCleanup.Caller)]
         public delegate PositionEnd* SearchIntroStageLocator(Team team); // 00427010
 
         /// <summary>
@@ -76,8 +74,6 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// <param name="splinePointerArray">Address of array of pointers to splines.</param>
         /// <returns>A value of 1 or 0 for success/failure.</returns>
         [Function(CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate bool InitPath(Spline** splinePointerArray); // 0x00439020
-
     }
 }

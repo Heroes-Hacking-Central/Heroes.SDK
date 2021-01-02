@@ -33,7 +33,6 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// Unloads a given collision file.
         /// </summary>*
         /// <param name="octreeFilePtr">Address of the Octree file in memory.</param>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.esi }, Register.eax, StackCleanup.None)]
         public delegate int Native_Destructor(ref Octree octreeFilePtr);
     }

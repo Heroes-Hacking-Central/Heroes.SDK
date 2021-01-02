@@ -2,6 +2,7 @@
 using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.PseudoNativeClasses
 {
@@ -15,8 +16,8 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// <summary>
         /// Reads the default game configuration from an INI file and applies it to game memory.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        [Function(FunctionAttribute.Register.eax, FunctionAttribute.Register.eax, FunctionAttribute.StackCleanup.Callee)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [Function(Register.eax, Register.eax, StackCleanup.Callee)]
         public delegate int Native_ReadConfigfromINI(char* configPath);
     }
 }

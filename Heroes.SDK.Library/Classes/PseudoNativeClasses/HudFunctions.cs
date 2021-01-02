@@ -18,7 +18,6 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// <summary>
         /// Draws the heads up display over game content.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.Cdecl)]
         public delegate int DispGDisp();
     }

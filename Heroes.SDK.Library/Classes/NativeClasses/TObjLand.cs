@@ -52,7 +52,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// </summary>
         /// <param name="landManagerPtr">Address of a pointer to the land manager object.</param>
         /// <param name="fileNameWithoutExtension">Name of the file in the collisions folder minus the name of the extension.</param>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         [Function(new[] { Register.esi, Register.edi}, Register.eax, StackCleanup.None)]
         public delegate int Native_InitCollision(string fileNameWithoutExtension, int landManagerPtr = LandManager);
     }

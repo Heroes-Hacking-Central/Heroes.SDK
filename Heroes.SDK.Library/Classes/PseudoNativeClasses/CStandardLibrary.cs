@@ -15,7 +15,6 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         /// </summary>
         /// <param name="memoryAddress">Address of the block of memory.</param>
         [Function(CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void Native_Free(void* memoryAddress);
     }
 }

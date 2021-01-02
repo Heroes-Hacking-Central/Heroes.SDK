@@ -33,21 +33,18 @@ namespace Heroes.SDK.Classes
         /// <summary>
         /// Draws the special stage gauge, which contains the internal bar.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(Register.eax, Register.eax, StackCleanup.Caller)]
         public delegate int DrawSpecialStageGauge(int preserveEax, float x, float y, float width, float height, int a5, int a6, int a7, float a8, float a9);
 
         /// <summary>
         /// Draws the special stage bar inside the <see cref="DrawSpecialStageGauge"/>
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(Register.eax, Register.eax, StackCleanup.Caller)]
         public delegate int DrawSpecialStageBar(int preserveEax, float x, float y, float width, float height);
 
         /// <summary>
         /// Draws the status bar at the bottom of the screen in 2P mode, showing relative position of teams to goal ring.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(Register.eax, Register.eax, StackCleanup.Caller)]
         public delegate int DrawTwoPlayerStatusBar(int preserveEax, float x, float y, float width, float height);
 
@@ -55,14 +52,12 @@ namespace Heroes.SDK.Classes
         /// Renders a single frame of a SofDec video.
         /// This is not a CRI function but a game one.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.eax }, Register.eax, StackCleanup.Callee)]
         public delegate int RenderVideoFrame(VideoRenderProperties* properties, int a2);
 
         /// <summary>
         /// Renders a single frame of a SofDec video which covers the whole screen.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.ebx }, Register.eax, StackCleanup.Caller)]
         public delegate int DrawFullVideoFrame(int ebx, float x, float y, float width, float height, int a5, float a6, float a7); // sub_42A100
 
@@ -70,14 +65,12 @@ namespace Heroes.SDK.Classes
         /// Renders a single frame of a SofDec video which is displayed in a corner of the screen.
         /// Used in the credits sequence.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.ebx }, Register.eax, StackCleanup.Caller)]
         public delegate int DrawSmallFrame(int ebx, float x, float y, float width, float height, int a5);
 
         /// <summary>
         /// Special stage link text is drawn inside this function.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.eax }, Register.eax, StackCleanup.Callee)]
         public delegate int Calls_DrawSpecialStageLinkText(int preserveEax, int a1, float a2, float a3, float a4, float a5, int a6, int a7,
             int a8, int a9, int a10);
@@ -85,21 +78,18 @@ namespace Heroes.SDK.Classes
         /// <summary>
         /// Renders the "Now Loading" text.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.eax, Register.ecx, Register.ebx }, Register.eax, StackCleanup.Caller)]
         public delegate int* DrawNowLoading(int a1, char* a2, float* a3);
 
         /// <summary>
         /// Renders the viewports of the game.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.Cdecl)]
         public delegate int DrawViewPorts();
 
         /// <summary>
         /// Draws individual titlecard elements such as the mission text.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.MicrosoftThiscall)]
         public delegate int DrawTitlecardElements(int thisPtr);
 
@@ -107,7 +97,6 @@ namespace Heroes.SDK.Classes
         /// Executes the credits sequence.
         /// TObjCredits is added here as placeholder.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.MicrosoftThiscall)]
         public delegate int TObjCreditsExecute(int thisPtr);
 
@@ -115,21 +104,18 @@ namespace Heroes.SDK.Classes
         /// Draws the special stage emerald indicator and the emerald gauge on results screen.
         /// Note: Does not hook well. Expects data up the stack.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.eax, Register.esi }, Register.eax, StackCleanup.Callee)]
         public delegate void* DrawSpecialStageEmeraldAndResultScreenGauge(void* preserveEax, void* preserveEsi, float x, float y, float width, float height);
 
         /// <summary>
         /// Draws the level up dots on the result screen.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(CallingConventions.Cdecl)]
         public delegate void* DrawResultScreenLevelupDotsAndSomeOtherElements();
 
         /// <summary>
         /// Draws a powerup box onto the screen projection.
         /// </summary>
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [Function(new[] { Register.eax }, Register.eax, StackCleanup.Callee)]
         public delegate void* DrawPowerupBox(void* preseveEax, float probablyX, float probablyY, float size); // 479AB0
     }
