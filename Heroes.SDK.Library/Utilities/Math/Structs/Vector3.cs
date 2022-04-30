@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-using Heroes.SDK.Utilities.Misc;
+﻿using Heroes.SDK.Utilities.Misc;
 
 namespace Heroes.SDK.Utilities.Math.Structs
 {

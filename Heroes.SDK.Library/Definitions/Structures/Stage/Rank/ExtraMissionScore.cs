@@ -4,7 +4,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Rank
     /// Represents the scores required for ranking for the Extra mission of an action stage, for teams Sonic and Chaotix.
     /// Disassembly/Internal Name: ???
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct ExtraMissionScore
     {
         // TODO: Check if this can be removed

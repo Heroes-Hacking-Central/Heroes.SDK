@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Parsers;
+﻿using Heroes.SDK.Parsers;
 using Xunit;
 
 namespace Heroes.SDK.Tests
@@ -19,11 +16,11 @@ namespace Heroes.SDK.Tests
         public void CanDecompressAndRecompress()
         {
             var oneArchive = new OneArchive(Assets.Assets.PrimitiveModels);
-            var files      = oneArchive.GetFiles();
+            var files = oneArchive.GetFiles();
 
             var newArchiveData = OneArchive.FromFiles(files, 255);
             var newArchive = new OneArchive(newArchiveData);
-            var newFiles   = newArchive.GetFiles();
+            var newFiles = newArchive.GetFiles();
 
             Assert.Equal(files.Count, newFiles.Count);
             for (int x = 0; x < files.Count; x++)

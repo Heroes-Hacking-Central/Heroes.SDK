@@ -1,7 +1,5 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Classes.NativeClasses;
+﻿using Heroes.SDK.Classes.NativeClasses;
 using Heroes.SDK.Definitions.Structures.Input;
-using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using Reloaded.Memory.Pointers;

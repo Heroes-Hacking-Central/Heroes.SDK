@@ -1,4 +1,3 @@
-using System.Numerics;
 using Vector3 = Heroes.SDK.Utilities.Math.Structs.Vector3;
 
 namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
@@ -7,7 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
     /// Represents a coordinate whereby an individual team performs their ending poses after finishing a stage.
     /// Disassembly/Internal Name: ???
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct PositionEnd
     {
         /// <summary>
@@ -27,7 +26,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Spawn
         /// <summary>
         /// BAMS 0 - 65535. Pitch is clockwise, i.e. rotating 90 degrees causes the characters' legs to point AWAY from the camera.
         /// </summary>
-        public ushort Pitch   { get; set; }
+        public ushort Pitch { get; set; }
         public ushort Unknown { get; set; }
 
         public int Null { get; set; }

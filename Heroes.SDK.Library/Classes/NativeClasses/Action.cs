@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Reloaded.Hooks;
-using Reloaded.Hooks.Definitions;
+﻿using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 

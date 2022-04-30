@@ -2,7 +2,7 @@
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct OneNameSectionHeader
     {
         /// <summary>

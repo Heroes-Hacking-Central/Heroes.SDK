@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Definitions.Enums;
+﻿using Heroes.SDK.Definitions.Enums;
 using Heroes.SDK.Utilities.Tagger.Enums;
 using static Heroes.SDK.Utilities.Misc.Mathematics;
 
@@ -24,8 +21,8 @@ namespace Heroes.SDK.Utilities.Tagger
                 stageTag |= StageTag.Exclusive;
 
             // Battle Stages
-            if (IsBetween((int) stage, (int)Stage.EggHawk, (int)Stage.MetalOverlord) ||
-                IsBetween((int) stage, (int)Stage.CityTopBattle, (int)Stage.TurtleShellBattle))
+            if (IsBetween((int)stage, (int)Stage.EggHawk, (int)Stage.MetalOverlord) ||
+                IsBetween((int)stage, (int)Stage.CityTopBattle, (int)Stage.TurtleShellBattle))
                 stageTag |= StageTag.Battle;
 
             // Tutorial Stage
@@ -33,22 +30,22 @@ namespace Heroes.SDK.Utilities.Tagger
                 stageTag |= StageTag.Tutorial;
 
             // Bobsled Stage
-            if (IsBetween((int) stage, (int)Stage.SeasideCourse, (int)Stage.CasinoCourse))
+            if (IsBetween((int)stage, (int)Stage.SeasideCourse, (int)Stage.CasinoCourse))
                 stageTag |= StageTag.Bobsled;
 
             // Bonus Stage
-            if (IsBetween((int) stage, (int)Stage.BonusStage1, (int)Stage.BonusStage7))
+            if (IsBetween((int)stage, (int)Stage.BonusStage1, (int)Stage.BonusStage7))
                 stageTag |= StageTag.Bonus;
 
             // Two Player
-            if (IsBetween((int) stage, (int)Stage.SeasideHill2P, (int)Stage.EggFleetExpert) ||
-                IsBetween((int) stage, (int)Stage.SeasideCourse, (int)Stage.CasinoCourse) ||
-                IsBetween((int) stage, (int)Stage.SpecialStageMultiplayer1, (int)Stage.SpecialStageMultiplayer3))
+            if (IsBetween((int)stage, (int)Stage.SeasideHill2P, (int)Stage.EggFleetExpert) ||
+                IsBetween((int)stage, (int)Stage.SeasideCourse, (int)Stage.CasinoCourse) ||
+                IsBetween((int)stage, (int)Stage.SpecialStageMultiplayer1, (int)Stage.SpecialStageMultiplayer3))
                 stageTag |= StageTag.TwoPlayer;
 
             // Special Stage
-            if (IsBetween((int) stage, (int)Stage.EmeraldChallenge1, (int)Stage.EmeraldChallenge7) ||
-                IsBetween((int) stage, (int)Stage.SpecialStageMultiplayer1, (int)Stage.SpecialStageMultiplayer3))
+            if (IsBetween((int)stage, (int)Stage.EmeraldChallenge1, (int)Stage.EmeraldChallenge7) ||
+                IsBetween((int)stage, (int)Stage.SpecialStageMultiplayer1, (int)Stage.SpecialStageMultiplayer3))
                 stageTag |= StageTag.Special;
 
             return stageTag;

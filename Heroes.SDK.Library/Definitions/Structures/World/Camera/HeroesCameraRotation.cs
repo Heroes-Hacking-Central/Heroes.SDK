@@ -4,13 +4,13 @@ using System.Runtime.CompilerServices;
 
 namespace Heroes.SDK.Definitions.Structures.World.Camera
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct HeroesCameraRotation
     {
         private const float MaxAngleDegrees = 360F;
-        private const float DoublePi = (float) (Math.PI * 2);
-        private const ushort UpsideDownMax = (ushort) (3/4F * ushort.MaxValue);
-        private const ushort UpsideDownMin = (ushort) (1/4F * ushort.MaxValue);
+        private const float DoublePi = (float)(Math.PI * 2);
+        private const ushort UpsideDownMax = (ushort)(3 / 4F * ushort.MaxValue);
+        private const ushort UpsideDownMin = (ushort)(1 / 4F * ushort.MaxValue);
 
         private uint _angleVerticalBams;
         private uint _angleHorizontalBams;
@@ -94,9 +94,9 @@ namespace Heroes.SDK.Definitions.Structures.World.Camera
                 if (invertOnUpsideDown && IsUpsideDown())
                     rotationVector.X *= -1;
 
-                RotationVertical   += rotationVector.Y;
+                RotationVertical += rotationVector.Y;
                 RotationHorizontal += rotationVector.X;
-                RotationRoll       += vector.Z;
+                RotationRoll += vector.Z;
             }
             else if (transformMode == Transform.Absolute)
             {
@@ -134,12 +134,12 @@ namespace Heroes.SDK.Definitions.Structures.World.Camera
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private float BAMSToRadians(uint bams) => (float)((bams % ushort.MaxValue) / (float) ushort.MaxValue * DoublePi);
+        private float BAMSToRadians(uint bams) => (float)((bams % ushort.MaxValue) / (float)ushort.MaxValue * DoublePi);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private uint DegreesToBAMS(float degrees) => (uint)((degrees % MaxAngleDegrees) / MaxAngleDegrees * ushort.MaxValue);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private float BAMSToDegrees(uint bams) => ((bams % ushort.MaxValue) / (float) ushort.MaxValue) * MaxAngleDegrees;
+        private float BAMSToDegrees(uint bams) => ((bams % ushort.MaxValue) / (float)ushort.MaxValue) * MaxAngleDegrees;
     }
 }

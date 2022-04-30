@@ -4,7 +4,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Rank
     /// Represents the times required for ranking for the Extra mission in action stages, for teams Dark and Rose.
     /// Disassembly/Internal Name: ???
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct ExtraMissionTime
     {
         // TODO: Check if this can be removed

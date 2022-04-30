@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Heroes.SDK.Definitions.Enums;
+using System;
 using System.Reflection;
-using System.Text;
-using Heroes.SDK.Definitions.Enums;
 
 namespace Heroes.SDK.Custom
 {
@@ -27,7 +25,7 @@ namespace Heroes.SDK.Custom
         /// </summary>
         public static string GetFileName(Stage value)
         {
-            Type type           = value.GetType();
+            Type type = value.GetType();
             FieldInfo fieldInfo = type.GetField(value.ToString());
 
             FileNameAttribute[] attribs = fieldInfo.GetCustomAttributes(typeof(FileNameAttribute), false) as FileNameAttribute[];

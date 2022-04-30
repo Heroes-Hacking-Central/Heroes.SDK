@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using Heroes.SDK.Classes.PseudoNativeClasses;
+﻿using Heroes.SDK.Classes.PseudoNativeClasses;
 using Heroes.SDK.Definitions.Enums;
 using Heroes.SDK.Definitions.Structures.Input;
 using Heroes.SDK.Definitions.Structures.RenderWare;
@@ -20,17 +19,17 @@ namespace Heroes.SDK.API
         /// <summary>
         /// The stage that is currently being played.
         /// </summary>
-        public static ref Definitions.Enums.Stage CurrentStage => ref RefPointer< Definitions.Enums.Stage>.Create((Definitions.Enums.Stage*) 0x008D6710);
+        public static ref Definitions.Enums.Stage CurrentStage => ref RefPointer<Definitions.Enums.Stage>.Create((Definitions.Enums.Stage*)0x008D6710);
 
         /// <summary>
         /// Describes the state of the game at a given moment in time when the player is inside a stage.
         /// </summary>
-        public static ref GameState GameState => ref RefPointer<GameState>.Create((GameState*) 0x008D66F0);
+        public static ref GameState GameState => ref RefPointer<GameState>.Create((GameState*)0x008D66F0);
 
         /// <summary>
         /// Structure type that controls global game state, such as settings and modes currently in play/use.
         /// </summary>
-        public static RefPointer<ModeSwitch> ModeSwitch => new RefPointer<ModeSwitch>((ModeSwitch*) 0x00A777E4, 2);
+        public static RefPointer<ModeSwitch> ModeSwitch => new RefPointer<ModeSwitch>((ModeSwitch*)0x00A777E4, 2);
 
         /// <summary>
         /// Some event related structure.
@@ -41,7 +40,7 @@ namespace Heroes.SDK.API
         /// <summary>
         /// Stores the current number of victories for each of the players in two player mode.
         /// </summary>
-        public static ref VictoryTracker VictoryTracker => ref RefPointer<VictoryTracker>.Create((VictoryTracker*) 0x009DD6BC);
+        public static ref VictoryTracker VictoryTracker => ref RefPointer<VictoryTracker>.Create((VictoryTracker*)0x009DD6BC);
 
         /// <summary>
         /// Platform specific of inputs from DInput read by the game at the end of the last frame.
@@ -74,7 +73,7 @@ namespace Heroes.SDK.API
         public static bool IsInLevel()
         {
             ref var modeSwitch = ref ModeSwitch.TryDereference(out bool success);
-            if (! success)
+            if (!success)
                 return false;
 
             return modeSwitch.SystemMode == SystemMode.InGame && GameState == GameState.InGame;

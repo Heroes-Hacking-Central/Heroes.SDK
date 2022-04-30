@@ -4,7 +4,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Rank
     /// Represents the times required for ranking for the boss stage, for all teams.
     /// Disassembly/Internal Name: ???
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct BossTime
     {
         // TODO: Check if this can be removed

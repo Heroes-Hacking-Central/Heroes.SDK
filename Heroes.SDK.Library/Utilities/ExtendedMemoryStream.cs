@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Reloaded.Memory;
 using System.IO;
-using System.Text;
-using Reloaded.Memory;
 
 namespace Heroes.SDK.Utilities
 {

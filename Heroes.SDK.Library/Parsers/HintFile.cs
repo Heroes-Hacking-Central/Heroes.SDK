@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Heroes.SDK.Definitions.Structures.Object.Hint;
+using Reloaded.Memory;
+using Reloaded.Memory.Streams;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Heroes.SDK.Definitions.Structures.Object.Hint;
-using Reloaded.Memory;
-using Reloaded.Memory.Streams;
 
 namespace Heroes.SDK.Parsers
 {

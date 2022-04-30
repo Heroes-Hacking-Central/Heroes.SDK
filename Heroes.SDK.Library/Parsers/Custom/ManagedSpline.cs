@@ -1,10 +1,10 @@
-﻿using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using Heroes.SDK.Definitions.Structures.Stage.Splines;
+﻿using Heroes.SDK.Definitions.Structures.Stage.Splines;
 using Reloaded.Messaging.Interfaces;
 using Reloaded.Messaging.Interfaces.Message;
 using Reloaded.Messaging.Serializer.SystemTextJson;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Heroes.SDK.Parsers
 {
@@ -26,9 +26,9 @@ namespace Heroes.SDK.Parsers
         }
 
         // ISerializable
-        public ISerializer GetSerializer() => new SystemTextJsonSerializer(new JsonSerializerOptions { Converters = { new JsonStringEnumConverter() },  WriteIndented = true });
+        public ISerializer GetSerializer() => new SystemTextJsonSerializer(new JsonSerializerOptions { Converters = { new JsonStringEnumConverter() }, WriteIndented = true });
         public ICompressor GetCompressor() => null;
-        public static ManagedSpline Deserialize(byte[] data) => (ManagedSpline) Serializable.Deserialize<ManagedSpline>(data);
+        public static ManagedSpline Deserialize(byte[] data) => (ManagedSpline)Serializable.Deserialize<ManagedSpline>(data);
         public static ManagedSpline Deserialize(string filePath) => Deserialize(File.ReadAllBytes(filePath));
 
     }

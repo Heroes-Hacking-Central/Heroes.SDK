@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Heroes.SDK.Definitions.Structures.Player.TeamTopComponents;
 using System.Runtime.CompilerServices;
-using System.Text;
-using Heroes.SDK.Definitions.Structures.Player.TeamTopComponents;
 
 namespace Heroes.SDK.Utilities.Misc
 {

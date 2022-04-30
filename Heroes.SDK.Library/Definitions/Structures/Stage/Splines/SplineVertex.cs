@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Dynamic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Text.Json.Serialization;
 
 namespace Heroes.SDK.Definitions.Structures.Stage.Splines
 {
     /// <summary>
     /// Represents an individual vertex of a SADX/SA2/Heroes spline.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct SplineVertex
     {
         /// <summary>
@@ -81,13 +79,13 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         {
             float differenceX = Position.X - other.Position.X;
             float differenceZ = Position.Z - other.Position.Z;
-            double adjacent   = Math.Sqrt(Math.Pow(differenceX, 2) + Math.Pow(differenceZ, 2));
+            double adjacent = Math.Sqrt(Math.Pow(differenceX, 2) + Math.Pow(differenceZ, 2));
 
             // Use Pythagoras to get angle between hypotenuse and Y.
             float opposite = Position.Y - other.Position.Y;
 
             // Calculate angle.
-            double tan   = opposite / adjacent;
+            double tan = opposite / adjacent;
             double angle = Math.Tanh(tan);
 
             // (angle / (2 * Math.PI)) gets a decimal e.g. 0.20 where 1 is 100%

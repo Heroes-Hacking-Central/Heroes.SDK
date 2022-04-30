@@ -1,9 +1,9 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.Object.Hint.Enum;
+﻿using Heroes.SDK.Definitions.Structures.Object.Hint.Enum;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Object.Hint
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Size = 12)]
     public struct Entry
     {
@@ -12,36 +12,36 @@ namespace Heroes.SDK.Definitions.Structures.Object.Hint
         /// <summary>
         /// Number of the hint which matches the number in the object layout file.
         /// </summary>
-        public short HintNumber         { get; set; }
+        public short HintNumber { get; set; }
 
         /// <summary>
         /// The character which triggers this hint.
         /// </summary>
-        public HintCharacter HintCharacter      { get; set; }
+        public HintCharacter HintCharacter { get; set; }
 
         /// <summary>
         /// Offset of the hint relative to the end of the hint section.
         /// </summary>
-        public int Offset               { get; set; }
+        public int Offset { get; set; }
 
         /// <summary>
         /// Amount of frames the hint is shown.
         /// </summary>
-        public short ShowDuration       { get; set; }
+        public short ShowDuration { get; set; }
 
         /// <summary>
         /// Index of the next hint to play after this hint completes.
         /// The index is the order it appears in the final file.
         /// </summary>
-        public short NextHint           { get; set; }
+        public short NextHint { get; set; }
 
         public Entry(short hintNumber, HintCharacter hintCharacter, int offset, short showDuration, short nextHint)
         {
-            HintNumber      = hintNumber;
-            HintCharacter       = hintCharacter;
-            Offset          = offset;
-            ShowDuration    = showDuration;
-            NextHint        = nextHint;
+            HintNumber = hintNumber;
+            HintCharacter = hintCharacter;
+            Offset = offset;
+            ShowDuration = showDuration;
+            NextHint = nextHint;
         }
 
         /// <summary>

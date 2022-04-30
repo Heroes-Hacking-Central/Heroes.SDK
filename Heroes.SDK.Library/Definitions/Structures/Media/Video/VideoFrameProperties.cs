@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Media.Video
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit)]
     public struct VideoRenderProperties
     {

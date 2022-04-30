@@ -1,6 +1,6 @@
 ﻿namespace Heroes.SDK.Definitions.Structures.RenderWare
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct RwVersion
     {
         /// <summary>

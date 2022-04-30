@@ -1,5 +1,5 @@
-﻿using System.Numerics;
-using Reloaded.Memory;
+﻿using Reloaded.Memory;
+using System.Numerics;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -7,7 +7,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// <summary>
     /// Note: Big Endian
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct Triangle : IEndianConvertible
     {
         /// <summary>

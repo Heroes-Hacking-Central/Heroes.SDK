@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Heroes.SDK.Utilities.Math;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Heroes.SDK.Utilities.Math;
 using Vector3 = System.Numerics.Vector3;
 
 namespace Heroes.SDK.Definitions.Structures.World.Camera
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x2324)] // The size is not a typo. Verified in PC AND PS2 Disassembly
     public struct HeroesCamera
     {
@@ -81,10 +80,10 @@ namespace Heroes.SDK.Definitions.Structures.World.Camera
         {
             if (transformMode == Transform.Relative)
             {
-                var vectors    = GetCameraVectors();
-                Position       += vectors.LeftVector * vector.X;
-                Position       += vectors.UpVector * vector.Y;
-                Position       += vectors.ForwardVector * vector.Z;
+                var vectors = GetCameraVectors();
+                Position += vectors.LeftVector * vector.X;
+                Position += vectors.UpVector * vector.Y;
+                Position += vectors.ForwardVector * vector.Z;
             }
             else if (transformMode == Transform.Absolute)
             {

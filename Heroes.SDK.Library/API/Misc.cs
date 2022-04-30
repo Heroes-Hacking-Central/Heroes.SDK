@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Definitions.Structures.Custom;
+﻿using Heroes.SDK.Definitions.Structures.Custom;
 using Heroes.SDK.Definitions.Structures.Custom.Colours;
 using Heroes.SDK.Definitions.Structures.Custom.Colours.Enums;
 using Heroes.SDK.Definitions.Structures.Custom.Colours.Formats;
-using Reloaded.Memory.Pointers;
 
 namespace Heroes.SDK.API
 {

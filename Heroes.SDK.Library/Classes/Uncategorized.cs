@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
-using Heroes.SDK.Definitions.Structures.Media.Video;
-using Reloaded.Hooks;
+﻿using Heroes.SDK.Definitions.Structures.Media.Video;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;

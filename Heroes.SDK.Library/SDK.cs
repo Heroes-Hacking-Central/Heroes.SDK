@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using csharp_prs_interfaces;
-using Reloaded.Hooks;
+﻿using csharp_prs_interfaces;
 using Reloaded.Hooks.Definitions;
 
 namespace Heroes.SDK

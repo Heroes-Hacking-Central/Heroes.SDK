@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
-using Heroes.SDK.Classes.PseudoNativeClasses;
+﻿using Heroes.SDK.Classes.PseudoNativeClasses;
 using Heroes.SDK.Definitions.Enums;
 using Heroes.SDK.Definitions.Structures.Stage.Spawn;
 using Heroes.SDK.Definitions.Structures.Stage.Spawn.Collections;
-using Heroes.SDK.Definitions.Structures.Stage.Splines;
 using Reloaded.Memory.Pointers;
 
 namespace Heroes.SDK.API
@@ -59,7 +54,7 @@ namespace Heroes.SDK.API
         {
             var spawnPtr = StageFunctions.GetStartPosition(team);
             startPosition = new RefPointer<PositionStart>(spawnPtr, 1);
-            return startPosition.Address != (void*) 0;
+            return startPosition.Address != (void*)0;
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// <summary>
     /// Note: Big Endian
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct QuadnodeNeighbours : IEndianConvertible
     {
         /// <summary>

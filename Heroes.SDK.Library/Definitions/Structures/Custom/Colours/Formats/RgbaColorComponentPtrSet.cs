@@ -1,14 +1,14 @@
-﻿using System;
-using System.Drawing;
-using Reloaded.Memory.Kernel32;
+﻿using Reloaded.Memory.Kernel32;
 using Reloaded.Memory.Sources;
+using System;
+using System.Drawing;
 
 namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
 {
     /// <summary>
     /// A version of <see cref="RgbaColor"/> where each of the four components is stored in a different memory location.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe struct RgbaColorComponentPtrSet : IRgbaColor
     {
         /// <summary>

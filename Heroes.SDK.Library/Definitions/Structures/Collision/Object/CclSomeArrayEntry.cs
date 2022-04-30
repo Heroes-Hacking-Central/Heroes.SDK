@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Object
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Pack = 0)]
     public struct CclSomeArrayEntry
     {

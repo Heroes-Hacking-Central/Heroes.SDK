@@ -1,5 +1,5 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary;
+﻿using Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare
 {
@@ -9,7 +9,7 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare
     /// <summary>
     /// Disassembly name: Utilfns_t
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x158)]
     public unsafe struct RwEngineInstance
     {

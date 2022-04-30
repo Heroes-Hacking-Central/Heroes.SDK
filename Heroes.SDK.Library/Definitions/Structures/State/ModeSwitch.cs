@@ -1,9 +1,9 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Enums;
+﻿using Heroes.SDK.Definitions.Enums;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.State
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x44)]
     public unsafe struct ModeSwitch
     {

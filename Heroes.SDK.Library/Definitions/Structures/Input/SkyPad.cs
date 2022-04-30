@@ -1,12 +1,12 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.Input.Custom;
+﻿using Heroes.SDK.Definitions.Structures.Input.Custom;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Input
 {
     /// <summary>
     /// The internal structure consumed by the game logic which actually determines the behaviour of the game.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Size = 0x4C)]
     public struct SkyPad
     {
@@ -24,7 +24,7 @@ namespace Heroes.SDK.Definitions.Structures.Input
         /// Contains the buttons that were pressed this frame.
         /// </summary>
         public ButtonFlags OneFramePressButtonFlags;
-        
+
         /// <summary>
         /// Contains the buttons that were released this frame.
         /// </summary>
@@ -33,12 +33,12 @@ namespace Heroes.SDK.Definitions.Structures.Input
         /// <summary>
         /// Pressure of the left trigger between 0 and 255.
         /// </summary>
-        public short TriggerPressureL;          
+        public short TriggerPressureL;
 
         /// <summary>
         /// Pressure of the right trigger between 0 and 255.
         /// </summary>
-        public short TriggerPressureR;          
+        public short TriggerPressureR;
 
         public int Field14;
         public int Field18;

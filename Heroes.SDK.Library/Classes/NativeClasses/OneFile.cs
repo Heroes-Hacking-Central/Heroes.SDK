@@ -1,16 +1,15 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.Archive.OneFile;
+﻿using Heroes.SDK.Definitions.Structures.Archive.OneFile;
 using Heroes.SDK.Parsers;
 using Heroes.SDK.Utilities.Misc;
-using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using System.Runtime.InteropServices;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 using Strings = Heroes.SDK.Utilities.Misc.Strings;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit, Size = 0x5C)]
     public unsafe struct OneFile
     {
@@ -124,7 +123,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <param name="fileNamePtr">The name of the ONE file to load.</param>
         /// <returns>1 if the operation succeeded, else 0.</returns>
         public void* LoadOneFile(void* allocatedMemoryPtr, string fileNamePtr) => Fun_LoadOneFile.GetWrapper()(ref this, allocatedMemoryPtr, fileNamePtr);
-        
+
         /// <summary>
         /// Reads a Camera TMB (NJS_MOTION) from a specified file index in the archive.
         /// </summary>

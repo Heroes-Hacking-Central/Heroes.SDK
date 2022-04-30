@@ -1,7 +1,5 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary;
+﻿using Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary;
 using Heroes.SDK.Definitions.Structures.RenderWare.Camera;
-using Reloaded.Hooks;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
 

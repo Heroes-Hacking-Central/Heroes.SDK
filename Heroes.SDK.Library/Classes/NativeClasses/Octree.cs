@@ -1,9 +1,7 @@
-﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Classes.PseudoNativeClasses;
-using Heroes.SDK.Definitions.Structures.Collision.Stage;
-using Reloaded.Hooks;
+﻿using Heroes.SDK.Classes.PseudoNativeClasses;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using System.Runtime.InteropServices;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.NativeClasses
@@ -12,7 +10,7 @@ namespace Heroes.SDK.Classes.NativeClasses
     /// Note: This is actually a quadtree.
     /// </summary>
     [StructLayout(LayoutKind.Explicit)]
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe struct Octree
     {
         // TODO: In-memory parser of Collision Files, just like there is a parser of ONE files.

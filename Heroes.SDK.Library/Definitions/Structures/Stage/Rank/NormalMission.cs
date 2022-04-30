@@ -4,7 +4,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Rank
     /// Represents the scores required for ranking for the Normal mission of an action stage, for all teams.
     /// Disassembly/Internal Name: ???
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct NormalMission
     {
         /// <summary>

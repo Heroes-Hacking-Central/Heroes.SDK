@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Reloaded.Memory.Pointers;
+﻿using Reloaded.Memory.Pointers;
 
 namespace Heroes.SDK.Definitions.Structures.Graphics.Device
 {

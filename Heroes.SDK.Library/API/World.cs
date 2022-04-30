@@ -1,8 +1,6 @@
 ﻿using Heroes.SDK.Classes.NativeClasses;
 using Heroes.SDK.Classes.PseudoNativeClasses;
 using Heroes.SDK.Custom;
-using Heroes.SDK.Definitions.Structures.Collision;
-using Heroes.SDK.Definitions.Structures.RenderWare;
 using Heroes.SDK.Definitions.Structures.State;
 using Reloaded.Memory.Pointers;
 

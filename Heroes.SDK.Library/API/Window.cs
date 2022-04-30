@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Reloaded.Memory.Kernel32;
-using Reloaded.Memory.Sources;
 
 namespace Heroes.SDK.API
 {

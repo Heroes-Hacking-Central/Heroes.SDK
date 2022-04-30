@@ -15,7 +15,7 @@
         /// <summary>
         /// Player is in the middle of a level.
         /// </summary>
-        InGame   = 2,
+        InGame = 2,
 
         /// <summary>
         /// The Easy Menu: Black and White Stage Select

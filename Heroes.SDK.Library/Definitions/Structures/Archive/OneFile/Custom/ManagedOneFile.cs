@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Definitions.Structures.RenderWare;
+﻿using Heroes.SDK.Definitions.Structures.RenderWare;
 using static Heroes.SDK.SDK;
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom
@@ -41,7 +38,7 @@ namespace Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom
             Name = name;
             IsDataCompressed = false;
             Data = data;
-            RwVersion = new RwVersion(3,2,0,0);
+            RwVersion = new RwVersion(3, 2, 0, 0);
         }
 
         /// <summary>

@@ -1,7 +1,6 @@
-﻿using System.Runtime.InteropServices;
-using Reloaded.Hooks;
-using Reloaded.Hooks.Definitions;
+﻿using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
+using System.Runtime.InteropServices;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 
 namespace Heroes.SDK.Classes.PseudoNativeClasses
@@ -10,7 +9,7 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
     {
         /* Function Declarations */
         public static IFunction<Native_ReadConfigfromINI> Fun_ReadConfigfromINI { get; } = SDK.ReloadedHooks.CreateFunction<Native_ReadConfigfromINI>(0x00629CE0);
-        
+
         /* Function Definitions */
 
         /// <summary>

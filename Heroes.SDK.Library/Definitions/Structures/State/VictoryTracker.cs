@@ -1,12 +1,12 @@
-﻿using System;
-using Heroes.SDK.Definitions.Enums.Custom;
+﻿using Heroes.SDK.Definitions.Enums.Custom;
+using System;
 
 namespace Heroes.SDK.Definitions.Structures.State
 {
     /// <summary>
     /// Structure that tracks the individual victories for each of the four players.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct VictoryTracker
     {
         public byte PlayerOne;

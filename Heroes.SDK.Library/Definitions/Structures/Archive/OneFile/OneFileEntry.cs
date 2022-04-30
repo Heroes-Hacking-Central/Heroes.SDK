@@ -1,12 +1,12 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom;
+﻿using Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom;
 using Heroes.SDK.Definitions.Structures.RenderWare;
+using System;
+using System.Runtime.CompilerServices;
 using static Heroes.SDK.SDK;
 
 namespace Heroes.SDK.Definitions.Structures.Archive.OneFile
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe struct OneFileEntry
     {
         /// <summary>

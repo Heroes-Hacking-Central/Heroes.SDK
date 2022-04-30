@@ -4,7 +4,7 @@
     /// Individual array entry for action stage.
     /// Disassembly/Internal Name: ???
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct MultiplayerBrag
     {
         public Enums.Stage StageId;

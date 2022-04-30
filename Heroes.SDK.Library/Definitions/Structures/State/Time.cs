@@ -6,7 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.State
     /// This struct contains the in-game timer.
     /// The timer you see when playing a level.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct Time
     {
         private const float Framerate = 60F;
@@ -21,7 +21,7 @@ namespace Heroes.SDK.Definitions.Structures.State
         /// </summary>
         public TimeSpan ToTimeSpan()
         {
-            return new TimeSpan(0, 0, Minutes, Seconds, (int) FramesAsMilliseconds());
+            return new TimeSpan(0, 0, Minutes, Seconds, (int)FramesAsMilliseconds());
         }
 
         /// <summary>
@@ -29,9 +29,9 @@ namespace Heroes.SDK.Definitions.Structures.State
         /// </summary>
         public void FromTimeSpan(TimeSpan timeSpan)
         {
-            Minutes = (byte) timeSpan.Minutes;
-            Seconds = (byte) timeSpan.Seconds;
-            Frames  = (byte) MillisecondsAsFrames(timeSpan.Milliseconds);
+            Minutes = (byte)timeSpan.Minutes;
+            Seconds = (byte)timeSpan.Seconds;
+            Frames = (byte)MillisecondsAsFrames(timeSpan.Milliseconds);
         }
 
         private float FramesAsMilliseconds() => ((Frames / Framerate) * SecondInMilliseconds);

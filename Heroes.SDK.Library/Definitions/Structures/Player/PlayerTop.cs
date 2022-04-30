@@ -1,11 +1,11 @@
-﻿using System.Numerics;
-using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.Collision.Object;
+﻿using Heroes.SDK.Definitions.Structures.Collision.Object;
 using Heroes.SDK.Definitions.Structures.Player.PlayerTopComponents;
+using System.Numerics;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Player
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit)]
     public struct PlayerTop
     {

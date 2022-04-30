@@ -1,7 +1,6 @@
-﻿using System;
-using Heroes.SDK.Classes.PseudoNativeClasses;
-using Reloaded.Hooks;
+﻿using Heroes.SDK.Classes.PseudoNativeClasses;
 using Reloaded.Hooks.Definitions;
+using System;
 
 namespace Heroes.SDK.API
 {

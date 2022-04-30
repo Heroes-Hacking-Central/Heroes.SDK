@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Definitions.Enums;
+﻿using Heroes.SDK.Definitions.Enums;
 
 namespace Heroes.SDK.Utilities.Namer
 {

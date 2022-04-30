@@ -8,7 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// If none, specify 65535.
     /// Note: Big Endian
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct TriangleAdjacentIndices : IEndianConvertible
     {
         /// <summary>

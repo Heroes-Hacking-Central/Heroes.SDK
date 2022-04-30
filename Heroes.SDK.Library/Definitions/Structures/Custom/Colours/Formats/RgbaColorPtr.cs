@@ -1,14 +1,14 @@
-﻿using System;
-using System.Drawing;
-using Reloaded.Memory.Kernel32;
+﻿using Reloaded.Memory.Kernel32;
 using Reloaded.Memory.Sources;
+using System;
+using System.Drawing;
 
 namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
 {
     /// <summary>
     /// Represents a colour formed using the R,G,B,A components.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe struct RgbaColorPtr : IRgbaColor
     {
         /// <summary>
@@ -30,7 +30,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
         /// </summary>
         public RgbaColorPtr(long colorPtr)
         {
-            Color = (RgbaColor*) colorPtr;
+            Color = (RgbaColor*)colorPtr;
             ChangePermissions();
         }
 

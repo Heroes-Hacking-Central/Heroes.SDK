@@ -1,5 +1,5 @@
-﻿using System.Runtime.InteropServices;
-using Reloaded.Memory;
+﻿using Reloaded.Memory;
+using System.Runtime.InteropServices;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -8,7 +8,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// Defines an individual quadnode in the collision file.
     /// Note: Big Endian
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential, Size = 32)]
     public struct Quadnode : IEndianConvertible
     {

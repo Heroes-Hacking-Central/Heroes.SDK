@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Player
 {
@@ -9,7 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.Player
     /// A structure representing the physics data layout for Sonic Adventure, Sonic Adventure DX, Sonic Adventure 2,
     /// Sonic Adventure 2 Battle, Sonic Heroes. Phys.bin contains an array of this structure.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential)]
     public struct Physics
     {

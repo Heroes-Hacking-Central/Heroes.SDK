@@ -1,11 +1,7 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using Heroes.SDK.Definitions.Enums;
+﻿using Heroes.SDK.Definitions.Enums;
 using Heroes.SDK.Definitions.Enums.Custom;
-using Heroes.SDK.Definitions.Structures.Collision.Object;
 using Heroes.SDK.Definitions.Structures.Player;
 using Heroes.SDK.Definitions.Structures.Player.TeamTopComponents;
-using Heroes.SDK.Definitions.Structures.State;
 using Heroes.SDK.Utilities.Namer;
 using Reloaded.Memory.Pointers;
 using static Heroes.SDK.Utilities.Misc.Player;
@@ -59,11 +55,11 @@ namespace Heroes.SDK.API
         /// </summary>
         public static BlittablePointer<PlayerTop> GetCurrentCharacter(Players players)
         {
-            var formation = TeamTop[(int) players].AsReference().Formation;
-            formation     = SwapFlyPower(formation);
+            var formation = TeamTop[(int)players].AsReference().Formation;
+            formation = SwapFlyPower(formation);
             return PlayerTop[((int)players * NumberOfPlayersInTeam) + (int)formation];
         }
-        
+
         /// <summary>
         /// Retrieves the character of the formation which is currently in control by the player.
         /// This one differs from <see cref="GetCurrentCharacter"/> in the fact that it accounts for the Flight formation.
@@ -75,7 +71,7 @@ namespace Heroes.SDK.API
         public static BlittablePointer<PlayerTop> GetCurrentCharacterFly(Players players)
         {
             var formation = TeamTop[(int)players].AsReference().Formation;
-            
+
             if (formation == Formation.Fly)
             {
                 var characters = GetCharactersForPlayer(players);

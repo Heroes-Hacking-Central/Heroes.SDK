@@ -1,15 +1,14 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.Criware.FileSystem;
-using Reloaded.Hooks;
+﻿using Heroes.SDK.Definitions.Structures.Criware.FileSystem;
 using Reloaded.Hooks.Definitions;
+using System;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
     /// <summary>
     /// Note: The CRI Filesystem is actually C code, but it was built in an object oriented-like way.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct CriFileSystem
     {

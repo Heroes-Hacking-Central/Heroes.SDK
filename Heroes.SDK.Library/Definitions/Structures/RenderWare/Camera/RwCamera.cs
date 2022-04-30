@@ -1,9 +1,9 @@
-﻿using System.Numerics;
-using Heroes.SDK.Definitions.Structures.RenderWare.Camera.Enum;
+﻿using Heroes.SDK.Definitions.Structures.RenderWare.Camera.Enum;
+using System.Numerics;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Camera
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe struct RwCamera
     {
         public RwObjectHasFrame OnjectHasFrame;

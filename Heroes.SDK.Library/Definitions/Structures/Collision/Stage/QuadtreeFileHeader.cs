@@ -1,6 +1,6 @@
-﻿using System.Numerics;
+﻿using Reloaded.Memory;
+using System.Numerics;
 using System.Runtime.InteropServices;
-using Reloaded.Memory;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -9,7 +9,7 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
     /// Disassembly/Internal Name: OCTREE_FILE_HEADER
     /// Note: Big Endian
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential)]
     public struct QuadtreeFileHeader : IEndianConvertible
     {

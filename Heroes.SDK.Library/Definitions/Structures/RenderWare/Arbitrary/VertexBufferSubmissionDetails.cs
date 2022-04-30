@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct VertexBufferSubmissionDetails
     {
@@ -22,7 +19,7 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary
         public short Y;
     }
 
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct VertexBufferSubmission
     {

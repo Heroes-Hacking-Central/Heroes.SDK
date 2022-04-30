@@ -1,14 +1,14 @@
-﻿using System;
-using Heroes.SDK.Parsers;
+﻿using Heroes.SDK.Parsers;
 using Reloaded.Memory;
 using Reloaded.Memory.Sources;
+using System;
 
 namespace Heroes.SDK.Definitions.Structures.Stage.Splines
 {
     /// <summary>
     /// Struct that defines a spline header.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe struct Spline : IDisposable
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
     /// <summary>
     /// Represents a colour formed using the R,G,B,A components.
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct RgbaColor
     {
         /// <summary>
@@ -44,7 +44,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
         }
 
         public static RgbaColor FromColor(Color color) => new RgbaColor(color.R, color.G, color.B, color.A);
-        public static Color ToColor(RgbaColor color)   => Color.FromArgb(color.A, color.R, color.G, color.B);
+        public static Color ToColor(RgbaColor color) => Color.FromArgb(color.A, color.R, color.G, color.B);
         public static implicit operator Color(RgbaColor color) => ToColor(color);
         public static implicit operator RgbaColor(Color color) => FromColor(color);
     }

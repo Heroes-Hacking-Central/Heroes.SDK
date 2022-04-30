@@ -2,7 +2,7 @@
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Arbitrary
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit, Size = 0x5C)]
     public unsafe struct RwViewport
     {

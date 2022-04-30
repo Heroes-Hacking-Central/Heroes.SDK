@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Definitions.Structures.Custom.Colours.Formats;
+﻿using Heroes.SDK.Definitions.Structures.Custom.Colours.Formats;
 
 namespace Heroes.SDK.Definitions.Structures.Custom.Colours
 {

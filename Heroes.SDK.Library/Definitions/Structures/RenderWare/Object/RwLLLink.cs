@@ -2,7 +2,7 @@
 
 namespace Heroes.SDK.Definitions.Structures.RenderWare.Object
 {
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct RwLLLink
     {

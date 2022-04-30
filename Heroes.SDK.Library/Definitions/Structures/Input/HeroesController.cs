@@ -6,7 +6,7 @@ namespace Heroes.SDK.Definitions.Structures.Input
     /// Describes a controller structure used for storing controls obtained from the PC version of the game.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public struct HeroesController
     {
         /// <summary>
@@ -70,9 +70,9 @@ namespace Heroes.SDK.Definitions.Structures.Input
         /// <param name="before">The inputs that were pressed on the last frame.</param>
         public void Finalize(ButtonFlags before)
         {
-            OneFrameReleaseButtonFlag   = GetReleasedButtons(before, ButtonFlags);
-            OneFramePressButtonFlag     = GetPressedButtons(before, ButtonFlags);
-            MinusOneMinusButtonFlags    = GetMinusOneButtonFlags(ButtonFlags);
+            OneFrameReleaseButtonFlag = GetReleasedButtons(before, ButtonFlags);
+            OneFramePressButtonFlag = GetPressedButtons(before, ButtonFlags);
+            MinusOneMinusButtonFlags = GetMinusOneButtonFlags(ButtonFlags);
         }
 
         /*

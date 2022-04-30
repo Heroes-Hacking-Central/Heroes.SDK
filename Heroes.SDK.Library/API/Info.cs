@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Heroes.SDK.Utilities.Namer;
-using Heroes.SDK.Utilities.Tagger;
-using Heroes.SDK.Utilities.Tagger.Enums;
+﻿using Heroes.SDK.Utilities.Tagger.Enums;
 
 namespace Heroes.SDK.API
 {

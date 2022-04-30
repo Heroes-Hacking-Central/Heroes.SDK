@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using Heroes.SDK.Classes.NativeClasses;
+﻿using Heroes.SDK.Classes.NativeClasses;
 using Heroes.SDK.Definitions.Structures.Archive.OneFile;
 using Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom;
 using Heroes.SDK.Definitions.Structures.RenderWare;
 using Heroes.SDK.Utilities;
 using Reloaded.Memory.Pointers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Parsers
 {
@@ -18,18 +18,18 @@ namespace Heroes.SDK.Parsers
     ///
     /// If you are looking for the ONEFILE class used by the game, consider <see cref="OneFile"/>
     /// </summary>
-    [Equals(DoNotAddEqualityOperators =true)]
+    [Equals(DoNotAddEqualityOperators = true)]
     public unsafe class OneArchive : IDisposable
     {
         /// <summary>
         /// Address of the ONE archive header.
         /// </summary>
-        public OneArchiveHeader*        Header { get; private set; }
+        public OneArchiveHeader* Header { get; private set; }
 
         /// <summary>
         /// Address of the file name section header.
         /// </summary>
-        public OneNameSectionHeader*    NameSectionHeader { get; private set; }
+        public OneNameSectionHeader* NameSectionHeader { get; private set; }
 
         /// <summary>
         /// Address of the array of file names.
@@ -44,7 +44,7 @@ namespace Heroes.SDK.Parsers
         /// These entries are tuples of file data and file headers and thus are not fixed in length.
         /// To get the individual files use <see cref="GetFileEntryEnumerator"/>
         /// </summary>
-        public OneFileEntry*            Files { get; private set; }
+        public OneFileEntry* Files { get; private set; }
 
         private GCHandle? _handle;
         private int _fileLength;
@@ -57,7 +57,7 @@ namespace Heroes.SDK.Parsers
         public OneArchive(byte[] data)
         {
             _handle = GCHandle.Alloc(data, GCHandleType.Pinned);
-            var dataPointer = (byte*) _handle?.AddrOfPinnedObject();
+            var dataPointer = (byte*)_handle?.AddrOfPinnedObject();
             SetupPointers(dataPointer);
         }
 
@@ -71,10 +71,10 @@ namespace Heroes.SDK.Parsers
 
         private void SetupPointers(byte* oneFileStart)
         {
-            Header            = (OneArchiveHeader*)      oneFileStart;
-            NameSectionHeader = (OneNameSectionHeader*) ((byte*)Header   + sizeof(OneArchiveHeader));
-            Names             = new FixedArrayPtr<OneFileName>((ulong)((byte*)NameSectionHeader + sizeof(OneNameSectionHeader)), NameSectionHeader->GetNameCount());
-            Files             = (OneFileEntry*) ((byte*)Names.Pointer + NameSectionHeader->FileNameSectionLength);
+            Header = (OneArchiveHeader*)oneFileStart;
+            NameSectionHeader = (OneNameSectionHeader*)((byte*)Header + sizeof(OneArchiveHeader));
+            Names = new FixedArrayPtr<OneFileName>((ulong)((byte*)NameSectionHeader + sizeof(OneNameSectionHeader)), NameSectionHeader->GetNameCount());
+            Files = (OneFileEntry*)((byte*)Names.Pointer + NameSectionHeader->FileNameSectionLength);
 
             _fileLength = Header->FileSize + sizeof(OneArchiveHeader);
         }
@@ -143,11 +143,11 @@ namespace Heroes.SDK.Parsers
         /// </summary>
         public List<ManagedOneFile> GetFiles()
         {
-            var files          = new List<ManagedOneFile>(NameSectionHeader->GetNameCount());
+            var files = new List<ManagedOneFile>(NameSectionHeader->GetNameCount());
             var fileEnumerator = GetFileEntryEnumerator();
             while (fileEnumerator.MoveNext())
             {
-                files.Add(fileEnumerator.Current->ToManaged((OneFileName*) Names.Pointer));
+                files.Add(fileEnumerator.Current->ToManaged((OneFileName*)Names.Pointer));
             }
 
             return files;
@@ -178,16 +178,16 @@ namespace Heroes.SDK.Parsers
 
         public ref struct OneArchiveEntryEnumerator
         {
-            public  OneFileEntry* Current { get; private set; }
+            public OneFileEntry* Current { get; private set; }
             private OneFileEntry* _initial;
 
             private void* _maxPointer;
 
             public OneArchiveEntryEnumerator(OneFileEntry* initial, void* maxPointer)
             {
-                Current        = null;
-                _initial       = initial;
-                _maxPointer    = maxPointer;
+                Current = null;
+                _initial = initial;
+                _maxPointer = maxPointer;
             }
 
             public bool MoveNext()
@@ -200,12 +200,12 @@ namespace Heroes.SDK.Parsers
                 }
 
                 // Every item thereafter.
-                Current = (OneFileEntry*) Unsafe.Add<byte>(Current, Current->FileSize);
+                Current = (OneFileEntry*)Unsafe.Add<byte>(Current, Current->FileSize);
                 Current += 1;
                 return (void*)Current < _maxPointer;
             }
 
-            public void Reset()   => Current = null;
+            public void Reset() => Current = null;
             public void Dispose() { }
         }
     }
