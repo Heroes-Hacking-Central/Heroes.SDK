@@ -70,7 +70,7 @@ See [Advanced Usage](./Docs/AdvancedUsage.md)
 2. Add `Heroes.SDK` to your solution.
 3. Add `Heroes.SDK` as a project reference to your project.
 
-You might need to update the project you are referencing this library to `netstandard2.0`/`net6.0` or newer.
+You might need to update the project you are referencing this library to `netstandard2.0`/`netcoreapp3.1` or newer.
 
 ### Adding External Libraries
 
