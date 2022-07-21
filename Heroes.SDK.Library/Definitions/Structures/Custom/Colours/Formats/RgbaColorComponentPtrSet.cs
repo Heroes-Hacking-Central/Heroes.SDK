@@ -44,10 +44,10 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
         {
             // Ideally this shouldn't be in constructor but I feel like end users wouldn't call an explicit method if
             // I made one.
-            Memory.Instance.ChangePermission((IntPtr)R, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
-            Memory.Instance.ChangePermission((IntPtr)G, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
-            Memory.Instance.ChangePermission((IntPtr)B, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
-            Memory.Instance.ChangePermission((IntPtr)A, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangePermission((nuint)R, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangePermission((nuint)G, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangePermission((nuint)B, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangePermission((nuint)A, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
         }
 
         /// <summary>

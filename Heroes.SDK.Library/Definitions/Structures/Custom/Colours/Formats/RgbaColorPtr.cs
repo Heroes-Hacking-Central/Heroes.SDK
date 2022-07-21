@@ -38,7 +38,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
         {
             // Ideally this shouldn't be in constructor but I feel like end users wouldn't call an explicit method if
             // I made one.
-            Memory.Instance.ChangePermission((IntPtr)Color, sizeof(RgbaColor), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangePermission((nuint)Color, sizeof(RgbaColor), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
         }
 
         public void SetColor(RgbaColor color) => *Color = color;

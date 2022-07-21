@@ -73,7 +73,7 @@ namespace Heroes.SDK.Parsers
         {
             Header = (OneArchiveHeader*)oneFileStart;
             NameSectionHeader = (OneNameSectionHeader*)((byte*)Header + sizeof(OneArchiveHeader));
-            Names = new FixedArrayPtr<OneFileName>((ulong)((byte*)NameSectionHeader + sizeof(OneNameSectionHeader)), NameSectionHeader->GetNameCount());
+            Names = new FixedArrayPtr<OneFileName>((UIntPtr)((byte*)NameSectionHeader + sizeof(OneNameSectionHeader)), NameSectionHeader->GetNameCount());
             Files = (OneFileEntry*)((byte*)Names.Pointer + NameSectionHeader->FileNameSectionLength);
 
             _fileLength = Header->FileSize + sizeof(OneArchiveHeader);

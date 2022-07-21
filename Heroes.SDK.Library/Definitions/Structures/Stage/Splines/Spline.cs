@@ -64,7 +64,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         public void Dispose()
         {
             var memory = Memory.Instance;
-            memory.Free((IntPtr)VertexList);
+            memory.Free((nuint)VertexList);
         }
 
         /* Construction Helpers */
@@ -76,7 +76,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
 
             int structSize = StructArray.GetSize<SplineVertex>(vertices.Length);
             VertexList = (SplineVertex*)memory.Allocate(structSize);
-            StructArray.ToPtr((IntPtr)VertexList, vertices);
+            StructArray.ToPtr((nuint)VertexList, vertices);
         }
     }
 }

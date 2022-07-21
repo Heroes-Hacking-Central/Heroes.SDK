@@ -30,7 +30,7 @@ namespace Heroes.SDK.Utilities.Misc
         /// <param name="pointer">The pointer to write to.</param>
         public static unsafe void ToCharPtr(this Encoding encoding, string text, byte* pointer)
         {
-            Memory.CurrentProcess.WriteRaw((IntPtr)pointer, encoding.GetBytes(text));
+            Memory.CurrentProcess.WriteRaw((nuint)pointer, encoding.GetBytes(text));
         }
 
         /// <summary>
