@@ -1,5 +1,10 @@
-﻿using csharp_prs_interfaces;
+﻿using System.Runtime.CompilerServices;
+using csharp_prs_interfaces;
 using Reloaded.Hooks.Definitions;
+
+#if NET5_0_OR_GREATER
+    [module: SkipLocalsInit]
+#endif
 
 namespace Heroes.SDK
 {
