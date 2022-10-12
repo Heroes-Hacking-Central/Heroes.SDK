@@ -7,7 +7,12 @@ namespace Heroes.SDK.Definitions.Structures.Custom
     {
         public ref bool Fog => ref RefPointer<bool>.Create((bool*)0x008CAEB8);
         public ref bool FullScreen => ref RefPointer<bool>.Create((bool*)0x008CAEDC);
-
+        
+        /// <summary>
+        /// Hardcoded resolution.
+        /// </summary>
+        public ref byte ScreenSize => ref RefPointer<byte>.Create((byte*)0x008CAEE0);
+        
         /// <summary>
         /// Note: Language is overwritten by the language stored in the game save.
         /// This only affects language until a save file is loaded.
