@@ -1,5 +1,6 @@
 ﻿using Reloaded.Memory;
 using System.Runtime.InteropServices;
+using Reloaded.Memory.Utilities;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -54,10 +55,10 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
             Indices.SwapEndian();
             Neighbours.SwapEndian();
 
-            Endian.Reverse(ref NumTriangles);
-            Endian.Reverse(ref OffsetTriangleList);
-            Endian.Reverse(ref PositioningHorizontalOffset);
-            Endian.Reverse(ref PositioningVerticalOffset);
+            NumTriangles = Endian.Reverse(NumTriangles);
+            OffsetTriangleList = Endian.Reverse(OffsetTriangleList);
+            PositioningHorizontalOffset = Endian.Reverse(PositioningHorizontalOffset);
+            PositioningVerticalOffset = Endian.Reverse(PositioningVerticalOffset);
         }
     }
 }

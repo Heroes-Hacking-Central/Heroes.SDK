@@ -1,7 +1,9 @@
-﻿using Reloaded.Memory.Kernel32;
-using Reloaded.Memory.Sources;
-using System;
+﻿using System;
 using System.Drawing;
+using Reloaded.Memory;
+using Reloaded.Memory.Enums;
+using Reloaded.Memory.Interfaces;
+using Reloaded.Memory.Native.Windows;
 
 namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
 {
@@ -44,10 +46,10 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
         {
             // Ideally this shouldn't be in constructor but I feel like end users wouldn't call an explicit method if
             // I made one.
-            Memory.Instance.ChangePermission((nuint)R, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
-            Memory.Instance.ChangePermission((nuint)G, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
-            Memory.Instance.ChangePermission((nuint)B, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
-            Memory.Instance.ChangePermission((nuint)A, sizeof(byte), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangeProtection((nuint)R, sizeof(byte), MemoryProtection.ReadWriteExecute);
+            Memory.Instance.ChangeProtection((nuint)G, sizeof(byte), MemoryProtection.ReadWriteExecute);
+            Memory.Instance.ChangeProtection((nuint)B, sizeof(byte), MemoryProtection.ReadWriteExecute);
+            Memory.Instance.ChangeProtection((nuint)A, sizeof(byte), MemoryProtection.ReadWriteExecute);
         }
 
         /// <summary>

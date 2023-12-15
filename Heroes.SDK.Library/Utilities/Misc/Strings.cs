@@ -1,6 +1,6 @@
-﻿using Reloaded.Memory.Sources;
-using System;
+﻿using System;
 using System.Text;
+using Reloaded.Memory;
 
 namespace Heroes.SDK.Utilities.Misc
 {
@@ -30,7 +30,7 @@ namespace Heroes.SDK.Utilities.Misc
         /// <param name="pointer">The pointer to write to.</param>
         public static unsafe void ToCharPtr(this Encoding encoding, string text, byte* pointer)
         {
-            Memory.CurrentProcess.WriteRaw((nuint)pointer, encoding.GetBytes(text));
+            Memory.Instance.WriteRaw((nuint)pointer, encoding.GetBytes(text));
         }
 
         /// <summary>

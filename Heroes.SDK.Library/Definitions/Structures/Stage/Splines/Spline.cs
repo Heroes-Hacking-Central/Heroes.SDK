@@ -1,7 +1,7 @@
 ﻿using Heroes.SDK.Parsers;
 using Reloaded.Memory;
-using Reloaded.Memory.Sources;
 using System;
+using Reloaded.Memory.Structs;
 
 namespace Heroes.SDK.Definitions.Structures.Stage.Splines
 {
@@ -64,7 +64,7 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
         public void Dispose()
         {
             var memory = Memory.Instance;
-            memory.Free((nuint)VertexList);
+            memory.Free(new MemoryAllocation((nuint)VertexList, (UIntPtr)0));
         }
 
         /* Construction Helpers */
@@ -74,9 +74,9 @@ namespace Heroes.SDK.Definitions.Structures.Stage.Splines
             var memory = Memory.Instance;
             var vertices = managedSpline.Vertices;
 
-            int structSize = StructArray.GetSize<SplineVertex>(vertices.Length);
-            VertexList = (SplineVertex*)memory.Allocate(structSize);
-            StructArray.ToPtr((nuint)VertexList, vertices);
+            int structSize = sizeof(SplineVertex) * vertices.Length;
+            VertexList = (SplineVertex*)memory.Allocate((nuint)structSize).Address;
+            vertices.AsSpan().CopyTo(new Span<SplineVertex>(VertexList, vertices.Length));
         }
     }
 }

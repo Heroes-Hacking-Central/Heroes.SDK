@@ -15,19 +15,19 @@ namespace Heroes.SDK.Classes.NativeClasses
         /// <summary>
         /// Points to the main collision file loaded, e.g. s03.cl
         /// </summary>
-        public static RefPointer<Octree> CollisionFile { get; } = new RefPointer<Octree>((Octree*)0x00A77684, 2);
+        public static Octree** CollisionFile => (Octree**)0x00A77684;
 
         /// <summary>
         /// Points to the water collision file loaded, e.g. s03_wt.cl
         /// Water collision leaves splashes as the characters run on it.
         /// </summary>
-        public static RefPointer<Octree> WaterCollisionFile { get; } = new RefPointer<Octree>((Octree*)0x00A77688, 2);
+        public static Octree** WaterCollisionFile => (Octree**)0x00A77688;
 
         /// <summary>
         /// Points to the death collision file loaded, e.g. s03_xx.cl
         /// Death collision kills a character that touches it.
         /// </summary>
-        public static RefPointer<Octree> DeathCollisionFile { get; } = new RefPointer<Octree>((Octree*)0x00A7768C, 2);
+        public static Octree** DeathCollisionFile => (Octree**)0x00A7768C;
 
         /* Function Declarations */
         public static IFunction<Native_InitCollision> Fun_InitCollision { get; } = SDK.ReloadedHooks.CreateFunction<Native_InitCollision>(0x00425500);

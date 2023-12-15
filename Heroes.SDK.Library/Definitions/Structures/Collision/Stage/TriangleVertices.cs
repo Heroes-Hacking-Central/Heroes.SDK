@@ -1,4 +1,5 @@
 ﻿using Reloaded.Memory;
+using Reloaded.Memory.Utilities;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -27,9 +28,9 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
 
         public void SwapEndian()
         {
-            Endian.Reverse(ref One);
-            Endian.Reverse(ref Two);
-            Endian.Reverse(ref Three);
+            One = Endian.Reverse(One);
+            Two = Endian.Reverse(Two);
+            Three = Endian.Reverse(Three);
         }
     }
 }

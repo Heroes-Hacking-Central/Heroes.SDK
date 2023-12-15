@@ -16,24 +16,24 @@ namespace Heroes.SDK.API
         /// <summary>
         /// Contains the elapsed time for the current stage.
         /// </summary>
-        public static ref Time Time => ref RefPointer<Time>.Create((Time*)0x009DD708);
+        public static ref Time Time => ref new Ptr<Time>((Time*)0x009DD708).AsRef();
 
         /// <summary>
         /// Points to the main collision file loaded, e.g. s03.cl
         /// </summary>
-        public static RefPointer<Octree> CollisionFile => TObjLand.CollisionFile;
+        public static Octree** CollisionFile => TObjLand.CollisionFile;
 
         /// <summary>
         /// Points to the water collision file loaded, e.g. s03_wt.cl
         /// Water collision leaves splashes as the characters run on it.
         /// </summary>
-        public static RefPointer<Octree> WaterCollisionFile => TObjLand.WaterCollisionFile;
+        public static Octree** WaterCollisionFile => TObjLand.WaterCollisionFile;
 
         /// <summary>
         /// Points to the death collision file loaded, e.g. s03_xx.cl
         /// Death collision kills a character that touches it.
         /// </summary>
-        public static RefPointer<Octree> DeathCollisionFile => TObjLand.DeathCollisionFile;
+        public static Octree** DeathCollisionFile => TObjLand.DeathCollisionFile;
 
         /// <summary>
         /// Unloads any existing collision and loads a new collision flle.
@@ -43,24 +43,24 @@ namespace Heroes.SDK.API
         /// <param name="stageName">Name of the collision file without extension in the `collisions` folder.</param>
         public static void LoadCollision(string stageName)
         {
-            if (CollisionFile.TryDereference(out Octree* collision))
+            if (*CollisionFile != null)
             {
-                collision->Destructor();
-                CStandardLibrary.Free(collision);
+                (*CollisionFile)->Destructor();
+                CStandardLibrary.Free(*CollisionFile);
             }
 
-            if (WaterCollisionFile.TryDereference(out Octree* waterCollision))
+            if (*WaterCollisionFile != null)
             {
-                waterCollision->Destructor();
-                CStandardLibrary.Free(waterCollision);
+                (*WaterCollisionFile)->Destructor();
+                CStandardLibrary.Free(*WaterCollisionFile);
             }
 
-            if (DeathCollisionFile.TryDereference(out Octree* deathCollision))
+            if (*DeathCollisionFile != null)
             {
-                deathCollision->Destructor();
-                CStandardLibrary.Free(deathCollision);
+                (*DeathCollisionFile)->Destructor();
+                CStandardLibrary.Free(*DeathCollisionFile);
             }
-
+            
             TObjLand.Fun_InitCollision.GetWrapper()(stageName);
         }
 

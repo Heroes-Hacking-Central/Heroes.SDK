@@ -1,5 +1,6 @@
 ﻿using Reloaded.Memory;
 using System.Numerics;
+using Reloaded.Memory.Utilities;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -43,9 +44,9 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
             Indices.SwapEndian();
             Adjacents.SwapEndian();
 
-            Endian.Reverse(ref NormalUnitVector.X);
-            Endian.Reverse(ref NormalUnitVector.Y);
-            Endian.Reverse(ref NormalUnitVector.Z);
+            NormalUnitVector.X = Endian.Reverse(NormalUnitVector.X);
+            NormalUnitVector.Y = Endian.Reverse(NormalUnitVector.Y);
+            NormalUnitVector.Z = Endian.Reverse(NormalUnitVector.Z);
         }
     }
 }

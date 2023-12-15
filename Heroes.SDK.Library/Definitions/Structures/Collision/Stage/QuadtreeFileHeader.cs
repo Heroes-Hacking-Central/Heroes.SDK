@@ -1,6 +1,8 @@
 ﻿using Reloaded.Memory;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using Reloaded.Memory.Extensions;
+using Reloaded.Memory.Utilities;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage
@@ -66,21 +68,21 @@ namespace Heroes.SDK.Definitions.Structures.Collision.Stage
 
         public void SwapEndian()
         {
-            Endian.Reverse(ref NumberOfBytes);
+            NumberOfBytes = Endian.Reverse(NumberOfBytes);
 
-            Endian.Reverse(ref QuadtreeOffset);
-            Endian.Reverse(ref TriangleOffset);
-            Endian.Reverse(ref VertexOffset);
+            QuadtreeOffset = Endian.Reverse(QuadtreeOffset);
+            TriangleOffset = Endian.Reverse(TriangleOffset);
+            VertexOffset = Endian.Reverse(VertexOffset);
 
-            Endian.Reverse(ref QuadtreeCenter.X);
-            Endian.Reverse(ref QuadtreeCenter.Y);
-            Endian.Reverse(ref QuadtreeCenter.Z);
-            Endian.Reverse(ref QuadtreeSize);
+            QuadtreeCenter.X = Endian.Reverse(QuadtreeCenter.X);
+            QuadtreeCenter.Y = Endian.Reverse(QuadtreeCenter.Y);
+            QuadtreeCenter.Z = Endian.Reverse(QuadtreeCenter.Z);
+            QuadtreeSize = Endian.Reverse(QuadtreeSize);
 
-            Endian.Reverse(ref BasePower);
-            Endian.Reverse(ref NumTriangles);
-            Endian.Reverse(ref NumVertices);
-            Endian.Reverse(ref NumNodes);
+            BasePower = Endian.Reverse(BasePower);
+            NumTriangles = Endian.Reverse(NumTriangles);
+            NumVertices = Endian.Reverse(NumVertices);
+            NumNodes = Endian.Reverse(NumNodes);
         }
     }
 }

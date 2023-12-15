@@ -6,9 +6,11 @@ using Heroes.SDK.Utilities;
 using Reloaded.Memory.Pointers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Reloaded.Memory.Extensions;
 
 namespace Heroes.SDK.Parsers
 {
@@ -73,8 +75,8 @@ namespace Heroes.SDK.Parsers
         {
             Header = (OneArchiveHeader*)oneFileStart;
             NameSectionHeader = (OneNameSectionHeader*)((byte*)Header + sizeof(OneArchiveHeader));
-            Names = new FixedArrayPtr<OneFileName>((UIntPtr)((byte*)NameSectionHeader + sizeof(OneNameSectionHeader)), NameSectionHeader->GetNameCount());
-            Files = (OneFileEntry*)((byte*)Names.Pointer + NameSectionHeader->FileNameSectionLength);
+            Names = new FixedArrayPtr<OneFileName>((OneFileName*)((byte*)NameSectionHeader + sizeof(OneNameSectionHeader)), NameSectionHeader->GetNameCount());
+            Files = (OneFileEntry*)((byte*)Names.Pointer.Pointer + NameSectionHeader->FileNameSectionLength);
 
             _fileLength = Header->FileSize + sizeof(OneArchiveHeader);
         }
@@ -119,20 +121,20 @@ namespace Heroes.SDK.Parsers
             var totalSize = sizeOfHeaders + sizeOfNameSection + sizeOfFileSection;
 
             // Make file.
-            using var memStream = new ExtendedMemoryStream(totalSize);
-            memStream.Append(new OneArchiveHeader(totalSize - sizeof(OneArchiveHeader), version));
-            memStream.Append(new OneNameSectionHeader(sizeOfNameSection, version));
-            memStream.Append(new OneFileName("")); // Dummy entries
-            memStream.Append(new OneFileName(""));
+            using var memStream = new MemoryStream(totalSize);
+            memStream.Write(new OneArchiveHeader(totalSize - sizeof(OneArchiveHeader), version));
+            memStream.Write(new OneNameSectionHeader(sizeOfNameSection, version));
+            memStream.Write(new OneFileName("")); // Dummy entries
+            memStream.Write(new OneFileName(""));
 
             foreach (var file in files)
-                memStream.Append(new OneFileName(file.Name));
+                memStream.Write(new OneFileName(file.Name));
 
             int nameSectionIndex = 2;
             foreach (var file in files)
             {
-                memStream.Append(new OneFileEntry(nameSectionIndex++, file.GetCompressedData().Length, file.RwVersion));
-                memStream.Append(file.GetCompressedData());
+                memStream.Write(new OneFileEntry(nameSectionIndex++, file.GetCompressedData().Length, file.RwVersion));
+                memStream.Write(file.GetCompressedData().AsSpan());
             }
 
             return memStream.ToArray();

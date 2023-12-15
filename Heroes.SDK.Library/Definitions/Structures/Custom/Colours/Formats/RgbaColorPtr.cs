@@ -1,7 +1,9 @@
-﻿using Reloaded.Memory.Kernel32;
-using Reloaded.Memory.Sources;
-using System;
+﻿using System;
 using System.Drawing;
+using Reloaded.Memory;
+using Reloaded.Memory.Enums;
+using Reloaded.Memory.Interfaces;
+using Reloaded.Memory.Native.Windows;
 
 namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
 {
@@ -38,7 +40,7 @@ namespace Heroes.SDK.Definitions.Structures.Custom.Colours.Formats
         {
             // Ideally this shouldn't be in constructor but I feel like end users wouldn't call an explicit method if
             // I made one.
-            Memory.Instance.ChangePermission((nuint)Color, sizeof(RgbaColor), Kernel32.MEM_PROTECTION.PAGE_EXECUTE_READWRITE);
+            Memory.Instance.ChangeProtection((nuint)Color, sizeof(RgbaColor), MemoryProtection.ReadWriteExecute);
         }
 
         public void SetColor(RgbaColor color) => *Color = color;

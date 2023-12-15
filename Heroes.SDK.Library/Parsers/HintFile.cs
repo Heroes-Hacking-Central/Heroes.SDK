@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Reloaded.Memory.Extensions;
 
 namespace Heroes.SDK.Parsers
 {
@@ -42,34 +43,32 @@ namespace Heroes.SDK.Parsers
         /// <param name="fileLength">The size of the hint file.</param>
         public static unsafe HintFile FromArray(byte* fileData, int fileLength)
         {
-            using (UnmanagedMemoryStream fileDataStream = new UnmanagedMemoryStream(fileData, fileLength))
+            using UnmanagedMemoryStream fileDataStream = new UnmanagedMemoryStream(fileData, fileLength);
+            var reader = new BufferedStreamReader<UnmanagedMemoryStream>(fileDataStream, 4096);
+
+            // Get all entries.
+            var entries = new List<Entry>((fileLength / 2) / sizeof(Entry));
+            Entry entry;
+
+            do
             {
-                var reader = new BufferedStreamReader(fileDataStream, 4096);
-
-                // Get all entries.
-                var entries = new List<Entry>((fileLength / 2) / sizeof(Entry));
-                Entry entry;
-
-                do
-                {
-                    reader.Read(out entry);
-                    entries.Add(entry);
-                }
-                while (!entry.Equals(Entry.Null));
-                entries.RemoveAt(entries.Count - 1);
-
-                // Convert all entries to managed.
-                byte* stringDataPtr = &fileData[reader.Position()];
-                var managedEntries = new ManagedEntry[entries.Count];
-                for (int i = 0; i < managedEntries.Length; i++)
-                {
-                    var textPtr = &stringDataPtr[entries[i].Offset];
-                    var text = _encoder.GetString(textPtr, Strlen(textPtr));
-                    managedEntries[i] = new ManagedEntry(entries[i], text);
-                }
-
-                return new HintFile(managedEntries);
+                reader.Read(out entry);
+                entries.Add(entry);
             }
+            while (!entry.Equals(Entry.Null));
+            entries.RemoveAt(entries.Count - 1);
+
+            // Convert all entries to managed.
+            byte* stringDataPtr = &fileData[reader.Position];
+            var managedEntries = new ManagedEntry[entries.Count];
+            for (int i = 0; i < managedEntries.Length; i++)
+            {
+                var textPtr = &stringDataPtr[entries[i].Offset];
+                var text = _encoder.GetString(textPtr, Strlen(textPtr));
+                managedEntries[i] = new ManagedEntry(entries[i], text);
+            }
+
+            return new HintFile(managedEntries);
         }
 
         /// <summary>
@@ -85,7 +84,7 @@ namespace Heroes.SDK.Parsers
         /// <summary>
         /// Creates a byte array to be read by the game from a <see cref="HintFile"/>.
         /// </summary>
-        public byte[] ToArray()
+        public unsafe byte[] ToArray()
         {
             // Make native entries.
             var entries = new Entry[Entries.Length];
@@ -105,15 +104,20 @@ namespace Heroes.SDK.Parsers
             }
 
             var nullEntry = Entry.Null;
-            var nullEntryBytes = Struct.GetBytes(ref nullEntry);
+            var nullEntryPtr = &nullEntry;
+            var nullEntryBytes = new Span<byte>(nullEntryPtr, sizeof(Entry));
             var stringDataBytes = stringData.ToArray();
 
-            var entryData = StructArray.GetBytes(entries);
-            var allData = new byte[entryData.Length + nullEntryBytes.Length + stringData.Count];
-            Buffer.BlockCopy(entryData, 0, allData, 0, entryData.Length);
-            Buffer.BlockCopy(nullEntryBytes, 0, allData, entryData.Length, nullEntryBytes.Length);
-            Buffer.BlockCopy(stringDataBytes, 0, allData, entryData.Length + nullEntryBytes.Length, stringDataBytes.Length);
-            return allData;
+            fixed (Entry* entry = &entries[0])
+            {
+                var entryData = new Span<byte>(entry, sizeof(Entry) * entries.Length);
+                var allData = new byte[entryData.Length + nullEntryBytes.Length + stringData.Count];
+                var allDataSpan = allData.AsSpanFast();
+                entryData.CopyTo(allData);
+                nullEntryBytes.CopyTo(allDataSpan.SliceFast(entryData.Length));
+                stringDataBytes.CopyTo(allDataSpan.SliceFast(entryData.Length + nullEntryBytes.Length));
+                return allData;
+            }
         }
 
         /// <summary>

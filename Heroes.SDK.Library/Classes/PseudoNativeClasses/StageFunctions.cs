@@ -17,16 +17,16 @@ namespace Heroes.SDK.Classes.PseudoNativeClasses
         private const int MultiPlayerBragEntryLength = 21;
 
         /// <summary> Singleplayer start positions for each team. </summary>
-        public static RefFixedArrayPtr<SingleplayerStart> SinglePlayerStart { get; } = new RefFixedArrayPtr<SingleplayerStart>(0x7C2FC8, SinglePlayerStartEntryLength);
+        public static FixedArrayPtr<SingleplayerStart> SinglePlayerStart { get; } = new((SingleplayerStart*)0x7C2FC8, SinglePlayerStartEntryLength);
 
         /// <summary> End positions for each team. </summary>
-        public static RefFixedArrayPtr<SingleplayerEnd> BothPlayerEnd { get; } = new RefFixedArrayPtr<SingleplayerEnd>(0x7C45B8, BothPlayerEndEntryLength);
+        public static FixedArrayPtr<SingleplayerEnd> BothPlayerEnd { get; } = new((SingleplayerEnd*)0x7C45B8, BothPlayerEndEntryLength);
 
         /// <summary> Multiplayer start positions for each team. </summary>
-        public static RefFixedArrayPtr<MultiplayerStart> MultiplayerStart { get; } = new RefFixedArrayPtr<MultiplayerStart>(0x7C5E18, MultiPlayerStartEntryLength);
+        public static FixedArrayPtr<MultiplayerStart> MultiplayerStart { get; } = new((MultiplayerStart*)0x7C5E18, MultiPlayerStartEntryLength);
 
         /// <summary> Multiplayer end positions for each team. </summary>
-        public static RefFixedArrayPtr<MultiplayerBrag> MultiPlayerBrag { get; } = new RefFixedArrayPtr<MultiplayerBrag>(0x7C6380, MultiPlayerBragEntryLength);
+        public static FixedArrayPtr<MultiplayerBrag> MultiPlayerBrag { get; } = new((MultiplayerBrag*)0x7C6380, MultiPlayerBragEntryLength);
 
 
         /* Function Declarations */
