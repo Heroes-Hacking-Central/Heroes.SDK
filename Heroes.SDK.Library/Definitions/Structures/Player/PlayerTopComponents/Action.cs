@@ -47,10 +47,12 @@
         PowerGliding = 0x43,
         WallStand = 0x44,
         WallJump = 0x45,
+        Amy_Tornado = 0x48,
         TailsRingThrow = 0x4B,
         HammerSwing = 0x4C,
         HammerFloat = 0x4D,
         LightSpeedDash = 0x53,
         Kick = 0x54,
+        SFA = 0x55,
     }
 }
