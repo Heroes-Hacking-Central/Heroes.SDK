@@ -2,6 +2,8 @@
 using System.Numerics;
 using Heroes.SDK.Definitions.Structures.Player;
 using Heroes.SDK.Definitions.Enums;
+using Heroes.SDK.Definitions.Structures.Collision.Object;
+
 
 namespace Heroes.SDK.Classes.NativeClasses
 {
@@ -13,8 +15,11 @@ namespace Heroes.SDK.Classes.NativeClasses
         public TObject t;
         [FieldOffset(0x28)]
         public fixed byte gap28[4];
+        /// <summary>
+        /// Contains various properties relating to the player's collision with objects in the game world.
+        /// </summary>
         [FieldOffset(0x2C)]
-        public fixed byte colli[0x88];
+        public CclPlayerEntry colli;
         [FieldOffset(0xB4)]
         public fixed byte gapB4[6];
         [FieldOffset(0xBA)]
@@ -43,10 +48,21 @@ namespace Heroes.SDK.Classes.NativeClasses
         public TObjTeam* pTObjTeam;
         [FieldOffset(0xD0)]
         public fixed byte gapD0[4];
+        /// <summary>
+        /// Amount of frames in the air as a ball.
+        /// </summary>
         [FieldOffset(0xD4)]
         public short jumpBallTime;
+        /// <summary>
+        /// Remaining amount of frames during which the player has no control (in mid air).
+        /// Used by dash ramps, etc.
+        /// Preserves airborne momentum and resets on landing.
+        /// </summary>
         [FieldOffset(0xD6)]
         public short nocontimer;
+        /// <summary>
+        /// Amount of frames the character is stationery on the ground.
+        /// </summary>
         [FieldOffset(0xD8)]
         public short idleTime;
         [FieldOffset(0xDC)]
@@ -61,8 +77,15 @@ namespace Heroes.SDK.Classes.NativeClasses
         public float field_EC;
         [FieldOffset(0xF0)]
         public float field_F0;
+
+        /// <summary>
+        /// The current action character is performing, e.g. on rail, jumping, being thundershot etc.
+        /// </summary>
         [FieldOffset(0xF4)]
         public short mode;
+        /// <summary>
+        /// Same as <see cref="Action"/>. Purpose unknown.
+        /// </summary>
         [FieldOffset(0xF6)]
         public short stateCopy;
         [FieldOffset(0xF8)]
@@ -71,12 +94,25 @@ namespace Heroes.SDK.Classes.NativeClasses
         public short flashTimer;
         [FieldOffset(0xFC)]
         public Vector3 acc;
+        /// <summary>
+        /// Velocity in the X, Y, Z direction (forward, upward, sideways).
+        /// </summary>
         [FieldOffset(0x108)]
         public Vector3 spd;
+        /// <summary>
+        /// The X, Y, Z position of the character.
+        /// </summary>
         [FieldOffset(0x114)]
         public Vector3 position;
+        /// <summary>
+        /// BAMS 0 - 65535. Yaw is clockwise, turning 90 degrees makes the character face right.
+        /// </summary>
         [FieldOffset(0x120)]
         public Vector3 ang;
+
+        /// <summary>
+        /// Size of the character in the X, Y, Z directions.
+        /// </summary>
         [FieldOffset(0x12C)]
         public Vector3 scale;
         [FieldOffset(0x138)]
@@ -109,6 +145,11 @@ namespace Heroes.SDK.Classes.NativeClasses
         public short flag;
         [FieldOffset(0x1C0)]
         public byte playerStatus_0x1C0;
+        /// <summary>
+        /// Contains the actively used physics constants for this character.
+        /// The physics constants are copied here from on every character switch and
+        /// when performing certain actions that implicitly switch characters e.g. Rocket Accel.
+        /// </summary>
         [FieldOffset(0x1C4)]
         public Physics p;
         [FieldOffset(0x248)]
