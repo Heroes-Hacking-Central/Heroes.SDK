@@ -1,6 +1,5 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.RenderWare;
+﻿using System.Runtime.InteropServices;
+using System.Numerics;
 using Heroes.SDK.Definitions.Structures.Player;
 using Heroes.SDK.Definitions.Enums;
 
@@ -71,23 +70,23 @@ namespace Heroes.SDK.Classes.NativeClasses
         [FieldOffset(0xFA)]
         public short flashTimer;
         [FieldOffset(0xFC)]
-        public RwV3d acc;
+        public Vector3 acc;
         [FieldOffset(0x108)]
-        public RwV3d spd;
+        public Vector3 spd;
         [FieldOffset(0x114)]
-        public RwV3d position;
+        public Vector3 position;
         [FieldOffset(0x120)]
-        public sAngle ang;
+        public Vector3 ang;
         [FieldOffset(0x12C)]
-        public RwV3d scale;
+        public Vector3 scale;
         [FieldOffset(0x138)]
         public MOTIONWK mwp;
         [FieldOffset(0x174)]
-        public RwV3d field_174;
+        public Vector3 field_174;
         [FieldOffset(0x180)]
-        public sAngle accelerationDirection;
+        public Vector3 accelerationDirection;
         [FieldOffset(0x18C)]
-        public RwV3d slopeCollisionAngleMaybe;
+        public Vector3 slopeCollisionAngleMaybe;
         [FieldOffset(0x198)]
         public int int0x198_wallJumpRotationMaybe;
         [FieldOffset(0x19C)]
@@ -125,7 +124,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         [FieldOffset(0x260)]
         public fixed byte gap260[12];
         [FieldOffset(0x26C)]
-        public RwV3d flyFormationPosition;
+        public Vector3 flyFormationPosition;
         [FieldOffset(0x278)]
         public int targetPosGroundPolyGroupNo;
         [FieldOffset(0x27C)]
@@ -181,7 +180,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         [FieldOffset(0x31E)]
         public fixed byte gap31E[6];
         [FieldOffset(0x324)]
-        public RwV3d tornadoOrigin;
+        public Vector3 tornadoOrigin;
         [FieldOffset(0x330)]
         public float alphaAmount__;
         [FieldOffset(0x340)]
@@ -279,7 +278,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         [FieldOffset(0x98A)]
         public short lightDashRingCount_HHC;
         [FieldOffset(0x98C)]
-        public RwV3d lightDashLastRingPos_HHC;
+        public Vector3 lightDashLastRingPos_HHC;
         [FieldOffset(0x998)]
         public fixed byte gap998[12];
         [FieldOffset(0x9A4)]
@@ -305,7 +304,7 @@ namespace Heroes.SDK.Classes.NativeClasses
         [FieldOffset(0x9F0)]
         public void* pSuperSonicAura;
         [FieldOffset(0x9F4)]
-        public RwV3d field_9F4;
+        public Vector3 field_9F4;
         [FieldOffset(0xA00)]
         public void* pSuperSonicSparkles;
         [FieldOffset(0xA04)]

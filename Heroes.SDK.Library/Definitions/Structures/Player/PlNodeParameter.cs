@@ -1,5 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-using Heroes.SDK.Definitions.Structures.RenderWare;
+using System.Numerics;
 using Heroes.SDK.Definitions.Structures.RenderWare.Camera;
 using Heroes.SDK.Definitions.Structures.RenderWare.Object;
 
@@ -15,6 +15,6 @@ namespace Heroes.SDK.Definitions.Structures.Player
         public byte field_8;
         public fixed byte gap9[7];
         public RwMatrixTag matrix;
-        public RwV3d pos;
+        public Vector3 pos;
     };
 }
