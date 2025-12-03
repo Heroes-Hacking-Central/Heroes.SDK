@@ -15,6 +15,8 @@ namespace Heroes.SDK.Tests
         [Fact]
         public void CanDecompressAndRecompress()
         {
+            SDK.Init(null, new csharp_prs.PrsInstance());
+
             var oneArchive = new OneArchive(Assets.Assets.PrimitiveModels);
             var files = oneArchive.GetFiles();
 
@@ -25,8 +27,8 @@ namespace Heroes.SDK.Tests
             Assert.Equal(files.Count, newFiles.Count);
             for (int x = 0; x < files.Count; x++)
             {
-                var oldFile = files[0];
-                var newFile = newFiles[0];
+                var oldFile = files[x];
+                var newFile = newFiles[x];
                 Assert.Equal(oldFile.GetUncompressedData(), newFile.GetUncompressedData());
             }
         }
