@@ -1,5 +1,4 @@
-﻿using Reloaded.Memory;
-using Reloaded.Memory.Utilities;
+﻿using Reloaded.Memory.Utilities;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
 namespace Heroes.SDK.Definitions.Structures.Collision.Stage

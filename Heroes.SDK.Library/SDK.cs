@@ -1,8 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using csharp_prs_interfaces;
+﻿using csharp_prs_interfaces;
 using Reloaded.Hooks.Definitions;
 
 #if NET5_0_OR_GREATER
+using System.Runtime.CompilerServices;
     [module: SkipLocalsInit]
 #endif
 

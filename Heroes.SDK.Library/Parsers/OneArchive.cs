@@ -2,7 +2,6 @@
 using Heroes.SDK.Definitions.Structures.Archive.OneFile;
 using Heroes.SDK.Definitions.Structures.Archive.OneFile.Custom;
 using Heroes.SDK.Definitions.Structures.RenderWare;
-using Heroes.SDK.Utilities;
 using Reloaded.Memory.Pointers;
 using System;
 using System.Collections.Generic;
