@@ -1,4 +1,5 @@
-﻿using Heroes.SDK.Definitions.Enums;
+﻿using Heroes.SDK.Classes.NativeClasses;
+using Heroes.SDK.Definitions.Enums;
 using Heroes.SDK.Definitions.Enums.Custom;
 using Heroes.SDK.Definitions.Structures.Player;
 using Heroes.SDK.Definitions.Structures.Player.TeamTopComponents;
@@ -31,7 +32,7 @@ namespace Heroes.SDK.API
         /// Contains properties for each of the characters in order of Speed, Flight, Power
         /// Size of this array is <see cref="GetCharacterCount"/>.
         /// </summary>
-        public static FixedArrayPtr<Ptr<PlayerTop>> PlayerTop { get; } = new((Ptr<PlayerTop>*)0x00A4B1B0, 8);
+        public static FixedArrayPtr<Ptr<TObjPlayer>> PlayerTop { get; } = new((Ptr<TObjPlayer>*)0x00A4B1B0, 8);
 
         /// <summary>
         /// Contains the individual physics entries for each of the characters.
@@ -53,7 +54,7 @@ namespace Heroes.SDK.API
         /// <summary>
         /// Retrieves the character of the formation which is currently in control by the player.
         /// </summary>
-        public static Ptr<PlayerTop> GetCurrentCharacter(Players players)
+        public static Ptr<TObjPlayer> GetCurrentCharacter(Players players)
         {
             var formation = TeamTop.Get((int)players).AsRef().Formation;
             formation = SwapFlyPower(formation);
@@ -68,7 +69,7 @@ namespace Heroes.SDK.API
         ///
         /// This method returns the character in control of the position of the characters when in fly formation.
         /// </summary>
-        public static Ptr<PlayerTop> GetCurrentCharacterFly(Players players)
+        public static Ptr<TObjPlayer> GetCurrentCharacterFly(Players players)
         {
             var formation = TeamTop.Get((int)players).AsRef().Formation;
 
@@ -77,7 +78,7 @@ namespace Heroes.SDK.API
                 var characters = GetCharactersForPlayer(players);
                 for (int x = 0; x < characters.Count; x++)
                 {
-                    if (characters.Get(x).AsRef().Action != Action.FlyFormationDefault)
+                    if (characters.Get(x).AsRef().mode != (short)Action.FlyFormationDefault)
                         return characters.Get(x);
                 }
             }
@@ -89,9 +90,9 @@ namespace Heroes.SDK.API
         /// <summary>
         /// Retrieves an array of all characters controlled by a given player.
         /// </summary>
-        public static FixedArrayPtr<Ptr<PlayerTop>> GetCharactersForPlayer(Players players)
+        public static FixedArrayPtr<Ptr<TObjPlayer>> GetCharactersForPlayer(Players players)
         {
-            return new FixedArrayPtr<Ptr<PlayerTop>>(&PlayerTop.Pointer.Pointer[(int)players * NumberOfPlayersInTeam], NumberOfPlayersInTeam);
+            return new FixedArrayPtr<Ptr<TObjPlayer>>(&PlayerTop.Pointer.Pointer[(int)players * NumberOfPlayersInTeam], NumberOfPlayersInTeam);
         }
 
         /// <summary>

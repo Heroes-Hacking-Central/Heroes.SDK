@@ -13,87 +13,87 @@ namespace Heroes.SDK.Definitions.Structures.Player
         /// <summary>
         /// Amount of frames in which the character will fall at a decreased rate when rolling off a ledge.
         /// </summary>
-        public int HangTime { get; set; }
+        public int jump2_timer { get; set; }
 
         /// <summary>
         /// Higher values indicate easier acceleration on rough surfaces.
         /// </summary>
-        public float FloorGrip { get; set; }
+        public float pos_error { get; set; }
 
         /// <summary>
         /// The horizontal speed cap, maximum speed in X/Z axis.
         /// </summary>
-        public float HorizontalSpeedCap { get; set; }
+        public float lim_h_spd { get; set; }
 
         /// <summary>
         /// The vertical speed cap, maximum speed in Y axis.
         /// </summary>
-        public float VerticalSpeedCap { get; set; }
+        public float lim_v_spd { get; set; }
 
         /// <summary>
         /// Affects character acceleration.
         /// </summary>
-        public float UnknownAccelRelated { get; set; }
+        public float max_x_spd { get; set; }
 
         /// <summary>
         /// Unknown. This value is same as in SADX.
         /// </summary>
-        public float Unknown1 { get; set; }
+        public float max_psh_spd { get; set; }
 
         /// <summary>
         /// The initial vertical speed set by the game when the player presses the "Jump" button.
         /// </summary>
-        public float InitialJumpSpeed { get; set; }
+        public float jmp_y_spd { get; set; }
 
         /// <summary>
         /// Seems related to springs (at least in SADX), unknown.
         /// </summary>
-        public float SpringControl { get; set; }
+        public float nocon_speed { get; set; }
 
         /// <summary>
         /// Unknown value.
         /// </summary>
-        public float Unknown2 { get; set; }
+        public float slide_speed { get; set; }
 
         /// <summary>
         /// If the character is below this speed, the roll will be cancelled.
         /// </summary>
-        public float RollingMinimumSpeed { get; set; }
+        public float jog_speed { get; set; }
 
         /// <summary>
         /// Unknown value. SADX/SA2: Rolling End Speed
         /// </summary>
-        public float RollingEndSpeed { get; set; }
+        public float run_speed { get; set; }
 
         /// <summary>
         /// Speed after starting to roll as Sonic or punching as Knuckles.
         /// </summary>
-        public float Action1Speed { get; set; }
+        public float rush_speed { get; set; }
 
         /// <summary>
         /// The minimum speed of knockback/push in another direction when making contact with a wall.
         /// </summary>
-        public float MinWallHitKnockbackSpeed { get; set; }
+        public float crash_speed { get; set; }
 
         /// <summary>
         /// Speed after kicking as Sonic or punching as Knuckles.
         /// </summary>
-        public float Action2Speed { get; set; }
+        public float dash_speed { get; set; }
 
         /// <summary>
         /// While jump is held, this is added to speed. Allows for higher jumps when holding jump.
         /// </summary>
-        public float JumpHoldAddSpeed { get; set; }
+        public float jmp_addit { get; set; }
 
         /// <summary>
         /// The character's ground horizontal acceleration. Speed is set to this value when starting from a neutral position and is applied constantly until the character reaches a set speed.
         /// </summary>
-        public float GroundStartingAcceleration { get; set; }
+        public float run_accel { get; set; }
 
         /// <summary>
         /// How fast the character gains speed in the air.
         /// </summary>
-        public float AirAcceleration { get; set; }
+        public float air_accel { get; set; }
 
         /// <summary>
         /// How fast the character decelerates naturally on the ground when no buttons are held.

@@ -1,10 +1,12 @@
 ﻿using Heroes.SDK.Definitions.Structures.Collision.Object;
 using Heroes.SDK.Definitions.Structures.Player.PlayerTopComponents;
+using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace Heroes.SDK.Definitions.Structures.Player
 {
+    [Obsolete]
     [Equals(DoNotAddEqualityOperators = true)]
     [StructLayout(LayoutKind.Explicit)]
     public struct PlayerTop
@@ -60,13 +62,13 @@ namespace Heroes.SDK.Definitions.Structures.Player
         /// The current action character is performing, e.g. on rail, jumping, being thundershot etc.
         /// </summary>
         [FieldOffset(0xF4)]
-        public Action Action;
+        public PlayerTopComponents.Action Action;
 
         /// <summary>
         /// Same as <see cref="Action"/>. Purpose unknown.
         /// </summary>
         [FieldOffset(0xF6)]
-        public Action CopyOfAction;
+        public PlayerTopComponents.Action CopyOfAction;
 
         [FieldOffset(0xF8)]
         public int field_F8;

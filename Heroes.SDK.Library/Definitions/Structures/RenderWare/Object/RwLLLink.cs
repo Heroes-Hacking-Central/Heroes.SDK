@@ -9,4 +9,10 @@ namespace Heroes.SDK.Definitions.Structures.RenderWare.Object
         public RwLLLink* next;
         public RwLLLink* prev;
     }
+
+    public struct RwLinkList
+    {
+        RwLLLink link;
+    };
+
 }
