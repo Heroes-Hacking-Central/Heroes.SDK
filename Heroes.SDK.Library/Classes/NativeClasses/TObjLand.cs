@@ -1,6 +1,5 @@
 ﻿using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
-using Reloaded.Memory.Pointers;
 using System.Runtime.InteropServices;
 using static Reloaded.Hooks.Definitions.X86.FunctionAttribute;
 

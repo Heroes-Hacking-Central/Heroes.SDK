@@ -1,5 +1,4 @@
 ﻿using Heroes.SDK.Definitions.Structures.Object.Hint;
-using Reloaded.Memory;
 using Reloaded.Memory.Streams;
 using System;
 using System.Collections.Generic;

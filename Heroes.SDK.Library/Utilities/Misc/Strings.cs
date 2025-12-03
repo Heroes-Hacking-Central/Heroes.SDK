@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using Reloaded.Memory;
 
 namespace Heroes.SDK.Utilities.Misc

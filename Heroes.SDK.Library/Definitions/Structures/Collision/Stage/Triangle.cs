@@ -1,5 +1,4 @@
-﻿using Reloaded.Memory;
-using System.Numerics;
+﻿using System.Numerics;
 using Reloaded.Memory.Utilities;
 using IEndianConvertible = Heroes.SDK.Utilities.Misc.Interfaces.IEndianConvertible;
 
