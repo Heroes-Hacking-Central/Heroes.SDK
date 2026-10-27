@@ -70,7 +70,7 @@ See [Advanced Usage](./Docs/AdvancedUsage.md)
 2. Add `Heroes.SDK` to your solution.
 3. Add `Heroes.SDK` as a project reference to your project.
 
-You might need to update the project you are referencing this library to `netstandard2.0`/`netcoreapp3.1` or newer.
+You might need to update the project you are referencing this library to `netstandard2.0`/`netstandard2.1`/`net9.0`/`net10.0` or newer.
 
 ### Adding External Libraries
 
@@ -105,8 +105,8 @@ SDK.Init(ReloadedHooks, PrsInstance);
 [CSharp.Prs Shared Library](https://github.com/Sewer56/Reloaded.SharedLib.Csharp.Prs.ReloadedII)
 
 - If using Reloaded-II's [Inter Mod Communication](https://github.com/Reloaded-Project/Reloaded-II/blob/master/Docs/InterModCommunication.md) to expose interfaces, **DO NOT INCLUDE THE TYPES FROM THE SDK IN YOUR INTERFACES**. 
-  - Not only would that force mods to have a copy of the SDK in their output folder but it would force them to use the same version of the SDK as the source mod.
-  - If you require to use some structs from the SDK, copy the structs into your interface library from the SDK and cast wherever needed from the copied type to the SDK type. See [Heroes.Controller.Hook](https://github.com/Sewer56/Heroes.Controller.Hook.ReloadedII/tree/master/Heroes.Controller.Hook.Interfaces) if an example is required.
+- Not only would that force mods to have a copy of the SDK in their output folder but it would force them to use the same version of the SDK as the source mod.
+- If you require to use some structs from the SDK, copy the structs into your interface library from the SDK and cast wherever needed from the copied type to the SDK type. See [Heroes.Controller.Hook](https://github.com/Sewer56/Heroes.Controller.Hook.ReloadedII/tree/master/Heroes.Controller.Hook.Interfaces) if an example is required.
 
 
 ## Submitting Issues
@@ -119,4 +119,4 @@ If you are submitting an issue, your issue should include the following:
 
 ## Real-time Assistance & Discussion
 The toolkit developer(s) and other community members familiar with it are frequently available at:
-- [The Heroes Hacking Central](https://discord.gg/QS9QrgR)
+- [Heroes & Shadow Hacking Central](https://discord.gg/3zMPyqt)
